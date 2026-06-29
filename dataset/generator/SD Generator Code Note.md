@@ -1,0 +1,1 @@
+The SD Generator source code is available from the corresponding author on reasonable request. The generator specification, pipeline steps, and real data anchors are fully documented in O'Regan et al. (2026), EIG Technical Report EIG-TR-2026-001, and in the accompanying GitHub repository at https://doi.org/10.5281/zenodo.XXXXXXX."
