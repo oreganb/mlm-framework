@@ -1,0 +1,2336 @@
+@prefix mlm: <https://eig.tyndall.ie/mlm#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+mlm:MLM a mlm:KnowledgeGraph ; rdfs:label "Multi-Layered Modelling Knowledge Graph" .
+mlm:Deterministic a mlm:Layer ; rdfs:label "Deterministic" .
+mlm:Stochastic a mlm:Layer ; rdfs:label "Stochastic" .
+mlm:AI_ML a mlm:Layer ; rdfs:label "AI/ML" .
+mlm:RL_Q_Learning a mlm:Layer ; rdfs:label "RL/Q-Learning" .
+mlm:DS-F a mlm:DatasetFamily ; rdfs:label "Foundational" .
+mlm:DS-E a mlm:DatasetFamily ; rdfs:label "Energy" .
+mlm:DS-O a mlm:DatasetFamily ; rdfs:label "Occupancy" .
+mlm:DS-A a mlm:DatasetFamily ; rdfs:label "Advanced" .
+mlm:DS-P a mlm:DatasetFamily ; rdfs:label "Predictive" .
+mlm:DS-NWP a mlm:Dataset ; rdfs:label "DS-NWP" .
+mlm:DS-MARINE a mlm:Dataset ; rdfs:label "DS-MARINE" .
+mlm:DS-ASTRONOMY a mlm:Dataset ; rdfs:label "DS-ASTRONOMY" .
+mlm:DS-RADAR a mlm:Dataset ; rdfs:label "DS-RADAR" .
+mlm:DS-LOCAL-SENSOR a mlm:Dataset ; rdfs:label "DS-LOCAL-SENSOR" .
+mlm:DS-CALENDAR a mlm:Dataset ; rdfs:label "DS-CALENDAR" .
+mlm:DS-WEATHER a mlm:Dataset ; rdfs:label "DS-WEATHER" .
+mlm:DS-BUILDING a mlm:Dataset ; rdfs:label "DS-BUILDING" .
+mlm:DS-OCCUPANCY a mlm:Dataset ; rdfs:label "DS-OCCUPANCY" .
+mlm:DS-ENERGY a mlm:Dataset ; rdfs:label "DS-ENERGY" .
+mlm:DS-PV a mlm:Dataset ; rdfs:label "DS-PV" .
+mlm:DS-INVERTER a mlm:Dataset ; rdfs:label "DS-INVERTER" .
+mlm:DS-BATTERY a mlm:Dataset ; rdfs:label "DS-BATTERY" .
+mlm:DS-EV a mlm:Dataset ; rdfs:label "DS-EV" .
+mlm:DS-HVAC a mlm:Dataset ; rdfs:label "DS-HVAC" .
+mlm:DS-SENSOR a mlm:Dataset ; rdfs:label "DS-SENSOR" .
+mlm:DS-SMART-METER a mlm:Dataset ; rdfs:label "DS-SMART-METER" .
+mlm:DS-MARKET a mlm:Dataset ; rdfs:label "DS-MARKET" .
+mlm:DS-CARBON a mlm:Dataset ; rdfs:label "DS-CARBON" .
+mlm:DS-GRID a mlm:Dataset ; rdfs:label "DS-GRID" .
+mlm:DS-TARIFF a mlm:Dataset ; rdfs:label "DS-TARIFF" .
+mlm:Asset-Temperature-sensors-room-flow-return a mlm:Asset ; rdfs:label "Temperature sensors room flow return" .
+mlm:Asset-Relative-humidity-sensors a mlm:Asset ; rdfs:label "Relative humidity sensors" .
+mlm:Asset-CO-sensors a mlm:Asset ; rdfs:label "CO sensors" .
+mlm:Asset-VOC-PM-sensors a mlm:Asset ; rdfs:label "VOC PM sensors" .
+mlm:Asset-Window-Door-open-closed-sensors a mlm:Asset ; rdfs:label "Window Door open closed sensors" .
+mlm:Asset-Radiator-UFH-flow-sensors a mlm:Asset ; rdfs:label "Radiator UFH flow sensors" .
+mlm:Asset-Whole-house-smart-meter a mlm:Asset ; rdfs:label "Whole house smart meter" .
+mlm:Asset-Electrical-submeters a mlm:Asset ; rdfs:label "Electrical submeters" .
+mlm:Asset-Heat-meters-heating-cooling-loops a mlm:Asset ; rdfs:label "Heat meters heating cooling loops" .
+mlm:Asset-PV-inverter a mlm:Asset ; rdfs:label "PV inverter" .
+mlm:Asset-Battery-storage a mlm:Asset ; rdfs:label "Battery storage" .
+mlm:Asset-EV-charger-smart-V2G a mlm:Asset ; rdfs:label "EV charger smart V2G" .
+mlm:Asset-Heat-pump-ASHP-GSHP a mlm:Asset ; rdfs:label "Heat pump ASHP GSHP" .
+mlm:Asset-PCM-storage-small-scale a mlm:Asset ; rdfs:label "PCM storage small scale" .
+mlm:Asset-Buffer-tanks-thermal-storage a mlm:Asset ; rdfs:label "Buffer tanks thermal storage" .
+mlm:Asset-ERV-HRV a mlm:Asset ; rdfs:label "ERV HRV" .
+mlm:Asset-Mixing-3-way-valves a mlm:Asset ; rdfs:label "Mixing 3 way valves" .
+mlm:Asset-Shading-blinds-actuators a mlm:Asset ; rdfs:label "Shading blinds actuators" .
+mlm:Asset-ATS-STS-crossover-switches a mlm:Asset ; rdfs:label "ATS STS crossover switches" .
+mlm:Asset-Dynamic-tariff-grid-signals a mlm:Asset ; rdfs:label "Dynamic tariff grid signals" .
+mlm:Asset-Carbon-intensity-signals a mlm:Asset ; rdfs:label "Carbon intensity signals" .
+mlm:Asset-Weather-nowcast-ensemble-forecasts a mlm:Asset ; rdfs:label "Weather nowcast ensemble forecasts" .
+mlm:Asset-Occupant-preferences-override-app a mlm:Asset ; rdfs:label "Occupant preferences override app" .
+mlm:Formula-B a mlm:FormulaFamily ; rdfs:label "Formula family for B-Series" .
+mlm:Formula-C a mlm:FormulaFamily ; rdfs:label "Formula family for C-Series" .
+mlm:Formula-D a mlm:FormulaFamily ; rdfs:label "Formula family for D-Series" .
+mlm:Formula-F a mlm:FormulaFamily ; rdfs:label "Formula family for F-Series" .
+mlm:Formula-L a mlm:FormulaFamily ; rdfs:label "Formula family for L-Series" .
+mlm:Formula-M a mlm:FormulaFamily ; rdfs:label "Formula family for M-Series" .
+mlm:Formula-O a mlm:FormulaFamily ; rdfs:label "Formula family for O-Series" .
+mlm:Formula-P a mlm:FormulaFamily ; rdfs:label "Formula family for P-Series" .
+mlm:Formula-R a mlm:FormulaFamily ; rdfs:label "Formula family for R-Series" .
+mlm:Formula-T a mlm:FormulaFamily ; rdfs:label "Formula family for T-Series" .
+mlm:Formula-G a mlm:FormulaFamily ; rdfs:label "Formula family for G-Series" .
+mlm:Formula-K a mlm:FormulaFamily ; rdfs:label "Formula family for K-Series" .
+mlm:Formula-W a mlm:FormulaFamily ; rdfs:label "Formula family for W-Series" .
+mlm:ODEON a mlm:Application ; rdfs:label "ODEON" .
+mlm:FLEXUS a mlm:Application ; rdfs:label "FLEXUS" .
+mlm:ARC-Tool a mlm:Application ; rdfs:label "ARC-Tool" .
+mlm:RD-Map a mlm:ResponseDerivative ; rdfs:label "Response Derivative Map" .
+mlm:W-Series a mlm:Series ; rdfs:label "Weather & Exogenous" .
+mlm:O-Series a mlm:Series ; rdfs:label "Occupancy, Behaviour & DHW" .
+mlm:M-Series a mlm:Series ; rdfs:label "Market, Tariff & Carbon Pricing" .
+mlm:L-Series a mlm:Series ; rdfs:label "Load & End-Use Decomposition" .
+mlm:R-Series a mlm:Series ; rdfs:label "Renewables & DER" .
+mlm:T-Series a mlm:Series ; rdfs:label "Thermal Envelope & HVAC/Plant" .
+mlm:B-Series a mlm:Series ; rdfs:label "Battery, EV & Storage" .
+mlm:G-Series a mlm:Series ; rdfs:label "Grid, Microgrid & Protection" .
+mlm:C-Series a mlm:Series ; rdfs:label "Optimisation & Control" .
+mlm:D-Series a mlm:Series ; rdfs:label "Data Quality & Imputation" .
+mlm:P-Series a mlm:Series ; rdfs:label "Trading, Revenue & KPIs" .
+mlm:K-Series a mlm:Series ; rdfs:label "Carbon, Compliance & Policy" .
+mlm:F-Series a mlm:Series ; rdfs:label "Meta-Learning, Transfer & Privacy" .
+mlm:W01 a mlm:Model ; rdfs:label "Solar Irradiance Model" .
+mlm:W02 a mlm:Model ; rdfs:label "Ambient Temperature Model" .
+mlm:W03 a mlm:Model ; rdfs:label "Wind Speed & Direction Model" .
+mlm:W04 a mlm:Model ; rdfs:label "Rainfall & Precipitation Model" .
+mlm:W05 a mlm:Model ; rdfs:label "Cloud Cover Model (OKTAS)" .
+mlm:W06 a mlm:Model ; rdfs:label "Humidity & Dew Point Model" .
+mlm:W07 a mlm:Model ; rdfs:label "Atmospheric Pressure Model" .
+mlm:W08 a mlm:Model ; rdfs:label "Solar Geometry Model" .
+mlm:W09 a mlm:Model ; rdfs:label "Coastal & Marine Conditions Model" .
+mlm:W10 a mlm:Model ; rdfs:label "Extreme Weather Event Model" .
+mlm:W11 a mlm:Model ; rdfs:label "Fog & Visibility Model" .
+mlm:W12 a mlm:Model ; rdfs:label "UV Index Model" .
+mlm:W13 a mlm:Model ; rdfs:label "Seasonal Pattern Model" .
+mlm:W14 a mlm:Model ; rdfs:label "Weather Ensemble Generator" .
+mlm:W15 a mlm:Model ; rdfs:label "Nowcasting Model (T+0 to T+60min)" .
+mlm:W16 a mlm:Model ; rdfs:label "Day-Ahead Forecast Model (T+24h)" .
+mlm:W17 a mlm:Model ; rdfs:label "Microclimate Correction Model" .
+mlm:W18 a mlm:Model ; rdfs:label "Grid-Stress Weather Indicator" .
+mlm:W19 a mlm:Model ; rdfs:label "Islanding Condition Weather Model" .
+mlm:W20 a mlm:Model ; rdfs:label "OKTAS-to-PV Availability Mapping Model" .
+mlm:O01 a mlm:Model ; rdfs:label "Occupancy Probability Model" .
+mlm:O02 a mlm:Model ; rdfs:label "Occupant Schedule Model" .
+mlm:O03 a mlm:Model ; rdfs:label "Thermal Comfort Feedback Model" .
+mlm:O04 a mlm:Model ; rdfs:label "DHW Demand Model" .
+mlm:O05 a mlm:Model ; rdfs:label "Appliance Use Model" .
+mlm:O06 a mlm:Model ; rdfs:label "Lighting Demand Model" .
+mlm:O07 a mlm:Model ; rdfs:label "EV Departure/Return Model" .
+mlm:O08 a mlm:Model ; rdfs:label "Occupant Heat Gain Model" .
+mlm:O09 a mlm:Model ; rdfs:label "Natural Ventilation Model" .
+mlm:O10 a mlm:Model ; rdfs:label "Smart Appliance Price Response Model" .
+mlm:O11 a mlm:Model ; rdfs:label "Behavioural Flexibility Willingness Model" .
+mlm:O12 a mlm:Model ; rdfs:label "Holiday & Event Pattern Model" .
+mlm:O13 a mlm:Model ; rdfs:label "Household Archetype Classification Model" .
+mlm:O14 a mlm:Model ; rdfs:label "Income-Energy Consumption Correlation Model" .
+mlm:O15 a mlm:Model ; rdfs:label "Occupant Override & HMI Signal Model" .
+mlm:M01 a mlm:Model ; rdfs:label "Day-Ahead Price Forecast Model" .
+mlm:M02 a mlm:Model ; rdfs:label "Intraday Price Model" .
+mlm:M03 a mlm:Model ; rdfs:label "System Marginal Price Model" .
+mlm:M04 a mlm:Model ; rdfs:label "Distribution Network Tariff Model" .
+mlm:M05 a mlm:Model ; rdfs:label "Time-of-Use Tariff Model" .
+mlm:M06 a mlm:Model ; rdfs:label "Demand Response Incentive Model" .
+mlm:M07 a mlm:Model ; rdfs:label "P2P Energy Price Mechanism Model" .
+mlm:M08 a mlm:Model ; rdfs:label "Carbon Intensity Forecast Model" .
+mlm:M09 a mlm:Model ; rdfs:label "Carbon Price Model" .
+mlm:M10 a mlm:Model ; rdfs:label "Flexibility Market Price Model" .
+mlm:M11 a mlm:Model ; rdfs:label "Feed-in Tariff Model" .
+mlm:M12 a mlm:Model ; rdfs:label "Market Ensemble Generator" .
+mlm:L01 a mlm:Model ; rdfs:label "Net Load Model" .
+mlm:L02 a mlm:Model ; rdfs:label "NILM Disaggregation Model" .
+mlm:L03 a mlm:Model ; rdfs:label "HVAC Load Decomposition Model" .
+mlm:L04 a mlm:Model ; rdfs:label "Appliance Load Model" .
+mlm:L05 a mlm:Model ; rdfs:label "Lighting Load Model" .
+mlm:L06 a mlm:Model ; rdfs:label "DHW Load Model" .
+mlm:L07 a mlm:Model ; rdfs:label "EV Charging Load Model" .
+mlm:L08 a mlm:Model ; rdfs:label "Base Load Model (Non-Controllable)" .
+mlm:L09 a mlm:Model ; rdfs:label "Flexible Load Identification Model" .
+mlm:L10 a mlm:Model ; rdfs:label "Load Forecasting Model" .
+mlm:L11 a mlm:Model ; rdfs:label "Peak Load Detection & Forecasting Model" .
+mlm:L12 a mlm:Model ; rdfs:label "Load Profile Clustering Model" .
+mlm:L13 a mlm:Model ; rdfs:label "Demand Response Adjusted Load Model" .
+mlm:R01 a mlm:Model ; rdfs:label "PV Generation Model" .
+mlm:R02 a mlm:Model ; rdfs:label "Wind Generation Model" .
+mlm:R03 a mlm:Model ; rdfs:label "PV Degradation & Soiling Model" .
+mlm:R04 a mlm:Model ; rdfs:label "MPPT Model" .
+mlm:R05 a mlm:Model ; rdfs:label "Inverter Efficiency Model" .
+mlm:R06 a mlm:Model ; rdfs:label "PV Curtailment Model" .
+mlm:R07 a mlm:Model ; rdfs:label "Micro-Wind Turbine Model" .
+mlm:R08 a mlm:Model ; rdfs:label "Hybrid PV + Battery Combined Output Model" .
+mlm:R09 a mlm:Model ; rdfs:label "DER Availability Stochastic Model" .
+mlm:R10 a mlm:Model ; rdfs:label "Self-Consumption Optimisation Model" .
+mlm:T01 a mlm:Model ; rdfs:label "Building Thermal RC Model" .
+mlm:T02 a mlm:Model ; rdfs:label "HVAC COP Model" .
+mlm:T03 a mlm:Model ; rdfs:label "Heat Pump Thermal Model" .
+mlm:T04 a mlm:Model ; rdfs:label "Solar Thermal Gain Model" .
+mlm:T05 a mlm:Model ; rdfs:label "Infiltration & Ventilation Heat Loss Model" .
+mlm:T06 a mlm:Model ; rdfs:label "Radiator Hydronic Circuit Model" .
+mlm:T07 a mlm:Model ; rdfs:label "PCM Thermal Storage Model" .
+mlm:T08 a mlm:Model ; rdfs:label "Hot Water Cylinder (DHW) Model" .
+mlm:T09 a mlm:Model ; rdfs:label "Underfloor Heating Model" .
+mlm:T10 a mlm:Model ; rdfs:label "Thermal Comfort Index Model (PMV/PPD)" .
+mlm:T11 a mlm:Model ; rdfs:label "Building Fabric Archetype Lookup Model" .
+mlm:T12 a mlm:Model ; rdfs:label "Multi-Zone Heat Transfer Model" .
+mlm:T13 a mlm:Model ; rdfs:label "High-Temperature Heat Pump (HTHP) Model" .
+mlm:T14 a mlm:Model ; rdfs:label "Chiller Thermal Model" .
+mlm:T15 a mlm:Model ; rdfs:label "Gas/Oil Boiler Thermal Model" .
+mlm:T16 a mlm:Model ; rdfs:label "Heat Exchanger NTU-ε Model" .
+mlm:T17 a mlm:Model ; rdfs:label "Thermal Inertia & Lag Model" .
+mlm:T18 a mlm:Model ; rdfs:label "Thermal Setpoint Optimisation Model" .
+mlm:T19 a mlm:Model ; rdfs:label "Building EPC Classification Model" .
+mlm:T20 a mlm:Model ; rdfs:label "Surrogate Thermal Model (Fast ANN)" .
+mlm:B01 a mlm:Model ; rdfs:label "Battery SoC Prediction Model" .
+mlm:B02 a mlm:Model ; rdfs:label "Battery State of Health Degradation Model" .
+mlm:B03 a mlm:Model ; rdfs:label "EV Arrival/Departure Markov Model" .
+mlm:B04 a mlm:Model ; rdfs:label "EV Charging Demand Prediction Model" .
+mlm:B05 a mlm:Model ; rdfs:label "V2G Availability Model" .
+mlm:B06 a mlm:Model ; rdfs:label "Battery Lifetime Monte Carlo Model" .
+mlm:B07 a mlm:Model ; rdfs:label "Multi-Battery Coordination Model" .
+mlm:B08 a mlm:Model ; rdfs:label "Battery Thermal Limit Model" .
+mlm:B09 a mlm:Model ; rdfs:label "Federated Battery Learning Model" .
+mlm:B10 a mlm:Model ; rdfs:label "Battery Revenue Optimisation Model" .
+mlm:G01 a mlm:Model ; rdfs:label "Feeder Power Flow Model" .
+mlm:G02 a mlm:Model ; rdfs:label "Grid Import/Export Limits Model" .
+mlm:G03 a mlm:Model ; rdfs:label "Frequency Deviation Model" .
+mlm:G04 a mlm:Model ; rdfs:label "Voltage Stability Model" .
+mlm:G05 a mlm:Model ; rdfs:label "Power Factor Model" .
+mlm:G06 a mlm:Model ; rdfs:label "Network Loss Model" .
+mlm:G07 a mlm:Model ; rdfs:label "Microgrid Islanding Detection Model" .
+mlm:G08 a mlm:Model ; rdfs:label "Fragmented Islanding Segment Model" .
+mlm:G09 a mlm:Model ; rdfs:label "Protection Scheme & Recloser Model" .
+mlm:G10 a mlm:Model ; rdfs:label "EV Grid Impact Model" .
+mlm:G11 a mlm:Model ; rdfs:label "DER Hosting Capacity Model" .
+mlm:G12 a mlm:Model ; rdfs:label "Community Energy Balance Model" .
+mlm:C01 a mlm:Model ; rdfs:label "MILP Flexibility Engine" .
+mlm:C02 a mlm:Model ; rdfs:label "MPC Controller" .
+mlm:C03 a mlm:Model ; rdfs:label "Determinization Bridge" .
+mlm:C04 a mlm:Model ; rdfs:label "Q-Table Dispatch Policy" .
+mlm:C05 a mlm:Model ; rdfs:label "DQN Controller" .
+mlm:C06 a mlm:Model ; rdfs:label "Actor-Critic HVAC Controller" .
+mlm:C07 a mlm:Model ; rdfs:label "Multi-Agent RL Community Coordinator" .
+mlm:C08 a mlm:Model ; rdfs:label "Response Derivative Engine" .
+mlm:C09 a mlm:Model ; rdfs:label "Fragmented Islanding Controller" .
+mlm:C10 a mlm:Model ; rdfs:label "Governance & Safety Layer" .
+mlm:D01 a mlm:Model ; rdfs:label "Weather Data QA Gate" .
+mlm:D02 a mlm:Model ; rdfs:label "PV Data Plausibility Validator" .
+mlm:D03 a mlm:Model ; rdfs:label "Battery Data Consistency Validator" .
+mlm:D04 a mlm:Model ; rdfs:label "Sensor Fault Detection Model" .
+mlm:D05 a mlm:Model ; rdfs:label "Smart Meter Data QA Model" .
+mlm:D06 a mlm:Model ; rdfs:label "Missing Data Imputation Model" .
+mlm:D07 a mlm:Model ; rdfs:label "Outlier Detection Model" .
+mlm:D08 a mlm:Model ; rdfs:label "Model Drift Detection & Retraining Trigger" .
+mlm:P01 a mlm:Model ; rdfs:label "P2P Energy Trading Revenue Model" .
+mlm:P02 a mlm:Model ; rdfs:label "Intraday Trading Model" .
+mlm:P03 a mlm:Model ; rdfs:label "Flexibility Market Bidding Model" .
+mlm:P04 a mlm:Model ; rdfs:label "Self-Consumption KPI Model" .
+mlm:P05 a mlm:Model ; rdfs:label "Bill Savings KPI Model" .
+mlm:P06 a mlm:Model ; rdfs:label "PED Performance KPI Model" .
+mlm:P07 a mlm:Model ; rdfs:label "Response Derivative KPI Model" .
+mlm:P08 a mlm:Model ; rdfs:label "Portfolio Aggregation & Market Bid Model" .
+mlm:K01 a mlm:Model ; rdfs:label "Avoided Carbon Model" .
+mlm:K02 a mlm:Model ; rdfs:label "EPC Compliance Model" .
+mlm:K03 a mlm:Model ; rdfs:label "EU ETS Reporting Model" .
+mlm:K04 a mlm:Model ; rdfs:label "Carbon Budget Tracker" .
+mlm:K05 a mlm:Model ; rdfs:label "Policy Alignment & Incentive Eligibility Model" .
+mlm:F01 a mlm:Model ; rdfs:label "Federated Averaging Model" .
+mlm:F02 a mlm:Model ; rdfs:label "Transfer Learning Adapter" .
+mlm:F03 a mlm:Model ; rdfs:label "Differential Privacy Layer" .
+mlm:F04 a mlm:Model ; rdfs:label "Cross-Site Calibration Model" .
+mlm:F05 a mlm:Model ; rdfs:label "Model Versioning & Rollback Controller" .
+mlm:F06 a mlm:Model ; rdfs:label "Data Residency Controller" .
+mlm:CAT-01 a mlm:Catalogue ; rdfs:label "01 building_classification" .
+mlm:CAT-02 a mlm:Catalogue ; rdfs:label "02 building" .
+mlm:CAT-03 a mlm:Catalogue ; rdfs:label "03 occupancy" .
+mlm:CAT-04 a mlm:Catalogue ; rdfs:label "04 space" .
+mlm:CAT-05 a mlm:Catalogue ; rdfs:label "05 building_fabric" .
+mlm:CAT-06 a mlm:Catalogue ; rdfs:label "06 building_benchmark" .
+mlm:CAT-07 a mlm:Catalogue ; rdfs:label "07 building_archetype" .
+mlm:CAT-08 a mlm:Catalogue ; rdfs:label "08 geographic" .
+mlm:CAT-09 a mlm:Catalogue ; rdfs:label "09 weather_climate" .
+mlm:CAT-10 a mlm:Catalogue ; rdfs:label "10 asset_classification" .
+mlm:CAT-11 a mlm:Catalogue ; rdfs:label "11 asset" .
+mlm:CAT-12 a mlm:Catalogue ; rdfs:label "12 asset_benchmark" .
+mlm:CAT-13 a mlm:Catalogue ; rdfs:label "13 utility_network" .
+mlm:CAT-14 a mlm:Catalogue ; rdfs:label "14 actor" .
+mlm:CAT-15 a mlm:Catalogue ; rdfs:label "15 organisation" .
+mlm:CAT-16 a mlm:Catalogue ; rdfs:label "16 role" .
+mlm:CAT-17 a mlm:Catalogue ; rdfs:label "17 user" .
+mlm:CAT-18 a mlm:Catalogue ; rdfs:label "18 stakeholder" .
+mlm:CAT-19 a mlm:Catalogue ; rdfs:label "19 energy_carrier" .
+mlm:CAT-20 a mlm:Catalogue ; rdfs:label "20 market" .
+mlm:CAT-21 a mlm:Catalogue ; rdfs:label "21 tariff" .
+mlm:CAT-22 a mlm:Catalogue ; rdfs:label "22 product" .
+mlm:CAT-23 a mlm:Catalogue ; rdfs:label "23 contract" .
+mlm:CAT-24 a mlm:Catalogue ; rdfs:label "24 schedule" .
+mlm:CAT-25 a mlm:Catalogue ; rdfs:label "25 trade" .
+mlm:CAT-26 a mlm:Catalogue ; rdfs:label "26 trade_window" .
+mlm:CAT-27 a mlm:Catalogue ; rdfs:label "27 settlement" .
+mlm:CAT-28 a mlm:Catalogue ; rdfs:label "28 carbon" .
+mlm:CAT-29 a mlm:Catalogue ; rdfs:label "29 flexibility_service" .
+mlm:CAT-30 a mlm:Catalogue ; rdfs:label "30 flexibility" .
+mlm:CAT-31 a mlm:Catalogue ; rdfs:label "31 platform" .
+mlm:CAT-32 a mlm:Catalogue ; rdfs:label "32 digital_twin" .
+mlm:CAT-33 a mlm:Catalogue ; rdfs:label "33 digital_twin_template" .
+mlm:CAT-34 a mlm:Catalogue ; rdfs:label "34 communication" .
+mlm:CAT-35 a mlm:Catalogue ; rdfs:label "35 edge_infrastructure" .
+mlm:CAT-36 a mlm:Catalogue ; rdfs:label "36 device" .
+mlm:CAT-37 a mlm:Catalogue ; rdfs:label "37 data_source" .
+mlm:CAT-38 a mlm:Catalogue ; rdfs:label "38 data" .
+mlm:CAT-39 a mlm:Catalogue ; rdfs:label "39 metadata" .
+mlm:CAT-40 a mlm:Catalogue ; rdfs:label "40 data_quality" .
+mlm:CAT-41 a mlm:Catalogue ; rdfs:label "41 feature" .
+mlm:CAT-42 a mlm:Catalogue ; rdfs:label "42 synthetic_data" .
+mlm:CAT-43 a mlm:Catalogue ; rdfs:label "43 dataset" .
+mlm:CAT-44 a mlm:Catalogue ; rdfs:label "44 model" .
+mlm:CAT-45 a mlm:Catalogue ; rdfs:label "45 algorithm" .
+mlm:CAT-46 a mlm:Catalogue ; rdfs:label "46 forecast" .
+mlm:CAT-47 a mlm:Catalogue ; rdfs:label "47 validation" .
+mlm:CAT-48 a mlm:Catalogue ; rdfs:label "48 hyperparameter" .
+mlm:CAT-49 a mlm:Catalogue ; rdfs:label "49 explainability" .
+mlm:CAT-50 a mlm:Catalogue ; rdfs:label "50 training" .
+mlm:CAT-51 a mlm:Catalogue ; rdfs:label "51 model_benchmark" .
+mlm:CAT-52 a mlm:Catalogue ; rdfs:label "52 response_derivative" .
+mlm:CAT-53 a mlm:Catalogue ; rdfs:label "53 response_behaviour" .
+mlm:CAT-54 a mlm:Catalogue ; rdfs:label "54 sensitivity" .
+mlm:CAT-55 a mlm:Catalogue ; rdfs:label "55 response_profile" .
+mlm:CAT-56 a mlm:Catalogue ; rdfs:label "56 response_event" .
+mlm:CAT-57 a mlm:Catalogue ; rdfs:label "57 kpi" .
+mlm:CAT-58 a mlm:Catalogue ; rdfs:label "58 objective" .
+mlm:CAT-59 a mlm:Catalogue ; rdfs:label "59 constraint" .
+mlm:CAT-60 a mlm:Catalogue ; rdfs:label "60 decision_intelligence" .
+mlm:CAT-61 a mlm:Catalogue ; rdfs:label "61 action" .
+mlm:CAT-62 a mlm:Catalogue ; rdfs:label "62 control_strategy" .
+mlm:CAT-63 a mlm:Catalogue ; rdfs:label "63 event" .
+mlm:CAT-64 a mlm:Catalogue ; rdfs:label "64 workflow" .
+mlm:CAT-65 a mlm:Catalogue ; rdfs:label "65 benchmark" .
+mlm:CAT-66 a mlm:Catalogue ; rdfs:label "66 reinforcement_learning" .
+mlm:CAT-67 a mlm:Catalogue ; rdfs:label "67 reward" .
+mlm:CAT-68 a mlm:Catalogue ; rdfs:label "68 penalty" .
+mlm:CAT-69 a mlm:Catalogue ; rdfs:label "69 context" .
+mlm:CAT-70 a mlm:Catalogue ; rdfs:label "70 model_selection" .
+mlm:CAT-71 a mlm:Catalogue ; rdfs:label "71 learning_policy" .
+mlm:CAT-72 a mlm:Catalogue ; rdfs:label "72 agent" .
+mlm:CAT-73 a mlm:Catalogue ; rdfs:label "73 application" .
+mlm:CAT-74 a mlm:Catalogue ; rdfs:label "74 service" .
+mlm:CAT-75 a mlm:Catalogue ; rdfs:label "75 dashboard" .
+mlm:CAT-76 a mlm:Catalogue ; rdfs:label "76 alert" .
+mlm:CAT-77 a mlm:Catalogue ; rdfs:label "77 report" .
+mlm:CAT-78 a mlm:Catalogue ; rdfs:label "78 use_case" .
+mlm:CAT-79 a mlm:Catalogue ; rdfs:label "79 ontology" .
+mlm:CAT-80 a mlm:Catalogue ; rdfs:label "80 knowledge_graph" .
+mlm:CAT-81 a mlm:Catalogue ; rdfs:label "81 semantic_mapping" .
+mlm:CAT-82 a mlm:Catalogue ; rdfs:label "82 vocabulary" .
+mlm:CAT-83 a mlm:Catalogue ; rdfs:label "83 taxonomy" .
+mlm:CAT-84 a mlm:Catalogue ; rdfs:label "84 reasoning_rule" .
+mlm:CAT-85 a mlm:Catalogue ; rdfs:label "85 semantic_pattern" .
+mlm:CAT-86 a mlm:Catalogue ; rdfs:label "86 community" .
+mlm:CAT-87 a mlm:Catalogue ; rdfs:label "87 district" .
+mlm:CAT-88 a mlm:Catalogue ; rdfs:label "88 site" .
+mlm:CAT-89 a mlm:Catalogue ; rdfs:label "89 scenario" .
+mlm:CAT-90 a mlm:Catalogue ; rdfs:label "90 project" .
+mlm:CAT-91 a mlm:Catalogue ; rdfs:label "91 policy" .
+mlm:CAT-92 a mlm:Catalogue ; rdfs:label "92 regulation" .
+mlm:CAT-93 a mlm:Catalogue ; rdfs:label "93 compliance" .
+mlm:CAT-94 a mlm:Catalogue ; rdfs:label "94 standard" .
+mlm:BAND-physical a mlm:CatalogueBand ; rdfs:label "physical" .
+mlm:BAND-actors a mlm:CatalogueBand ; rdfs:label "actors" .
+mlm:BAND-markets a mlm:CatalogueBand ; rdfs:label "markets" .
+mlm:BAND-flexibility a mlm:CatalogueBand ; rdfs:label "flexibility" .
+mlm:BAND-data a mlm:CatalogueBand ; rdfs:label "data" .
+mlm:BAND-models a mlm:CatalogueBand ; rdfs:label "models" .
+mlm:BAND-response_derivative a mlm:CatalogueBand ; rdfs:label "response_derivative" .
+mlm:BAND-decision a mlm:CatalogueBand ; rdfs:label "decision" .
+mlm:BAND-rl_agents a mlm:CatalogueBand ; rdfs:label "rl_agents" .
+mlm:BAND-applications a mlm:CatalogueBand ; rdfs:label "applications" .
+mlm:BAND-semantics a mlm:CatalogueBand ; rdfs:label "semantics" .
+mlm:BAND-governance a mlm:CatalogueBand ; rdfs:label "governance" .
+
+mlm:MLM mlm:has_layer mlm:Deterministic .
+mlm:MLM mlm:has_layer mlm:Stochastic .
+mlm:MLM mlm:has_layer mlm:AI_ML .
+mlm:MLM mlm:has_layer mlm:RL_Q_Learning .
+mlm:MLM mlm:has_dataset_family mlm:DS-F .
+mlm:MLM mlm:has_dataset_family mlm:DS-E .
+mlm:MLM mlm:has_dataset_family mlm:DS-O .
+mlm:MLM mlm:has_dataset_family mlm:DS-A .
+mlm:MLM mlm:has_dataset_family mlm:DS-P .
+mlm:DS-F mlm:contains_dataset mlm:DS-NWP .
+mlm:DS-F mlm:contains_dataset mlm:DS-MARINE .
+mlm:DS-F mlm:contains_dataset mlm:DS-ASTRONOMY .
+mlm:DS-F mlm:contains_dataset mlm:DS-RADAR .
+mlm:DS-F mlm:contains_dataset mlm:DS-LOCAL-SENSOR .
+mlm:DS-F mlm:contains_dataset mlm:DS-CALENDAR .
+mlm:DS-F mlm:contains_dataset mlm:DS-WEATHER .
+mlm:DS-F mlm:contains_dataset mlm:DS-BUILDING .
+mlm:DS-O mlm:contains_dataset mlm:DS-OCCUPANCY .
+mlm:DS-E mlm:contains_dataset mlm:DS-ENERGY .
+mlm:DS-E mlm:contains_dataset mlm:DS-PV .
+mlm:DS-E mlm:contains_dataset mlm:DS-INVERTER .
+mlm:DS-E mlm:contains_dataset mlm:DS-BATTERY .
+mlm:DS-E mlm:contains_dataset mlm:DS-EV .
+mlm:DS-E mlm:contains_dataset mlm:DS-HVAC .
+mlm:DS-E mlm:contains_dataset mlm:DS-SENSOR .
+mlm:DS-E mlm:contains_dataset mlm:DS-SMART-METER .
+mlm:DS-E mlm:contains_dataset mlm:DS-MARKET .
+mlm:DS-A mlm:contains_dataset mlm:DS-CARBON .
+mlm:DS-A mlm:contains_dataset mlm:DS-GRID .
+mlm:DS-A mlm:contains_dataset mlm:DS-TARIFF .
+mlm:MLM mlm:has_asset mlm:Asset-Temperature-sensors-room-flow-return .
+mlm:MLM mlm:has_asset mlm:Asset-Relative-humidity-sensors .
+mlm:MLM mlm:has_asset mlm:Asset-CO-sensors .
+mlm:MLM mlm:has_asset mlm:Asset-VOC-PM-sensors .
+mlm:MLM mlm:has_asset mlm:Asset-Window-Door-open-closed-sensors .
+mlm:MLM mlm:has_asset mlm:Asset-Radiator-UFH-flow-sensors .
+mlm:MLM mlm:has_asset mlm:Asset-Whole-house-smart-meter .
+mlm:MLM mlm:has_asset mlm:Asset-Electrical-submeters .
+mlm:MLM mlm:has_asset mlm:Asset-Heat-meters-heating-cooling-loops .
+mlm:MLM mlm:has_asset mlm:Asset-PV-inverter .
+mlm:MLM mlm:has_asset mlm:Asset-Battery-storage .
+mlm:MLM mlm:has_asset mlm:Asset-EV-charger-smart-V2G .
+mlm:MLM mlm:has_asset mlm:Asset-Heat-pump-ASHP-GSHP .
+mlm:MLM mlm:has_asset mlm:Asset-PCM-storage-small-scale .
+mlm:MLM mlm:has_asset mlm:Asset-Buffer-tanks-thermal-storage .
+mlm:MLM mlm:has_asset mlm:Asset-ERV-HRV .
+mlm:MLM mlm:has_asset mlm:Asset-Mixing-3-way-valves .
+mlm:MLM mlm:has_asset mlm:Asset-Shading-blinds-actuators .
+mlm:MLM mlm:has_asset mlm:Asset-ATS-STS-crossover-switches .
+mlm:MLM mlm:has_asset mlm:Asset-Dynamic-tariff-grid-signals .
+mlm:MLM mlm:has_asset mlm:Asset-Carbon-intensity-signals .
+mlm:MLM mlm:has_asset mlm:Asset-Weather-nowcast-ensemble-forecasts .
+mlm:MLM mlm:has_asset mlm:Asset-Occupant-preferences-override-app .
+mlm:MLM mlm:has_application mlm:ODEON .
+mlm:MLM mlm:has_application mlm:FLEXUS .
+mlm:MLM mlm:has_application mlm:ARC-Tool .
+mlm:MLM mlm:has_rd_map mlm:RD-Map .
+mlm:C08 mlm:implements mlm:RD-Map .
+mlm:MLM mlm:has_series mlm:W-Series .
+mlm:W-Series mlm:belongs_to_layer mlm:Stochastic .
+mlm:W-Series mlm:uses_dataset_family mlm:DS-F .
+mlm:W-Series mlm:uses_formula_family mlm:Formula-W .
+mlm:MLM mlm:has_series mlm:O-Series .
+mlm:O-Series mlm:belongs_to_layer mlm:Stochastic .
+mlm:O-Series mlm:uses_dataset_family mlm:DS-O .
+mlm:O-Series mlm:uses_formula_family mlm:Formula-O .
+mlm:MLM mlm:has_series mlm:M-Series .
+mlm:M-Series mlm:belongs_to_layer mlm:Stochastic .
+mlm:M-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:M-Series mlm:uses_dataset_family mlm:DS-P .
+mlm:M-Series mlm:uses_formula_family mlm:Formula-M .
+mlm:MLM mlm:has_series mlm:L-Series .
+mlm:L-Series mlm:belongs_to_layer mlm:Deterministic .
+mlm:L-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:L-Series mlm:uses_formula_family mlm:Formula-L .
+mlm:MLM mlm:has_series mlm:R-Series .
+mlm:R-Series mlm:belongs_to_layer mlm:Deterministic .
+mlm:R-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:R-Series mlm:uses_dataset_family mlm:DS-F .
+mlm:R-Series mlm:uses_formula_family mlm:Formula-R .
+mlm:MLM mlm:has_series mlm:T-Series .
+mlm:T-Series mlm:belongs_to_layer mlm:Deterministic .
+mlm:T-Series mlm:uses_dataset_family mlm:DS-F .
+mlm:T-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:T-Series mlm:uses_formula_family mlm:Formula-T .
+mlm:MLM mlm:has_series mlm:B-Series .
+mlm:B-Series mlm:belongs_to_layer mlm:AI_ML .
+mlm:B-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:B-Series mlm:uses_dataset_family mlm:DS-A .
+mlm:B-Series mlm:uses_formula_family mlm:Formula-B .
+mlm:MLM mlm:has_series mlm:G-Series .
+mlm:G-Series mlm:belongs_to_layer mlm:Deterministic .
+mlm:G-Series mlm:uses_dataset_family mlm:DS-A .
+mlm:G-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:G-Series mlm:uses_formula_family mlm:Formula-G .
+mlm:MLM mlm:has_series mlm:C-Series .
+mlm:C-Series mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C-Series mlm:uses_dataset_family mlm:DS-A .
+mlm:C-Series mlm:uses_dataset_family mlm:DS-P .
+mlm:C-Series mlm:uses_formula_family mlm:Formula-C .
+mlm:MLM mlm:has_series mlm:D-Series .
+mlm:D-Series mlm:belongs_to_layer mlm:AI_ML .
+mlm:D-Series mlm:uses_dataset_family mlm:DS-F .
+mlm:D-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:D-Series mlm:uses_dataset_family mlm:DS-O .
+mlm:D-Series mlm:uses_dataset_family mlm:DS-A .
+mlm:D-Series mlm:uses_formula_family mlm:Formula-D .
+mlm:MLM mlm:has_series mlm:P-Series .
+mlm:P-Series mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P-Series mlm:uses_dataset_family mlm:DS-P .
+mlm:P-Series mlm:uses_dataset_family mlm:DS-E .
+mlm:P-Series mlm:uses_formula_family mlm:Formula-P .
+mlm:MLM mlm:has_series mlm:K-Series .
+mlm:K-Series mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:K-Series mlm:uses_dataset_family mlm:DS-P .
+mlm:K-Series mlm:uses_formula_family mlm:Formula-K .
+mlm:MLM mlm:has_series mlm:F-Series .
+mlm:F-Series mlm:belongs_to_layer mlm:AI_ML .
+mlm:F-Series mlm:uses_dataset_family mlm:DS-A .
+mlm:F-Series mlm:uses_formula_family mlm:Formula-F .
+mlm:W-Series mlm:has_model mlm:W01 .
+mlm:W01 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W01 mlm:uses_formula_family mlm:Formula-W .
+mlm:W01 mlm:requires_dataset_family mlm:DS-F .
+mlm:W01 mlm:feeds_into mlm:R01 .
+mlm:W01 mlm:feeds_into mlm:T04 .
+mlm:W01 mlm:feeds_into mlm:W20 .
+mlm:W01 mlm:contributes_rd mlm:C08 .
+mlm:W-Series mlm:has_model mlm:W02 .
+mlm:W02 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W02 mlm:uses_formula_family mlm:Formula-W .
+mlm:W02 mlm:requires_dataset_family mlm:DS-F .
+mlm:W02 mlm:feeds_into mlm:T01 .
+mlm:W02 mlm:feeds_into mlm:R01 .
+mlm:W02 mlm:feeds_into mlm:B08 .
+mlm:W02 mlm:feeds_into mlm:C03 .
+mlm:W02 mlm:contributes_rd mlm:C08 .
+mlm:W-Series mlm:has_model mlm:W03 .
+mlm:W03 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W03 mlm:uses_formula_family mlm:Formula-W .
+mlm:W03 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W04 .
+mlm:W04 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W04 mlm:uses_formula_family mlm:Formula-W .
+mlm:W04 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W05 .
+mlm:W05 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W05 mlm:uses_formula_family mlm:Formula-W .
+mlm:W05 mlm:requires_dataset_family mlm:DS-F .
+mlm:W05 mlm:feeds_into mlm:W01 .
+mlm:W05 mlm:feeds_into mlm:W20 .
+mlm:W-Series mlm:has_model mlm:W06 .
+mlm:W06 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W06 mlm:uses_formula_family mlm:Formula-W .
+mlm:W06 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W07 .
+mlm:W07 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W07 mlm:uses_formula_family mlm:Formula-W .
+mlm:W07 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W08 .
+mlm:W08 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W08 mlm:uses_formula_family mlm:Formula-W .
+mlm:W08 mlm:requires_dataset_family mlm:DS-F .
+mlm:W08 mlm:feeds_into mlm:W01 .
+mlm:W08 mlm:feeds_into mlm:R01 .
+mlm:W-Series mlm:has_model mlm:W09 .
+mlm:W09 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W09 mlm:uses_formula_family mlm:Formula-W .
+mlm:W09 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W10 .
+mlm:W10 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W10 mlm:uses_formula_family mlm:Formula-W .
+mlm:W10 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W11 .
+mlm:W11 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W11 mlm:uses_formula_family mlm:Formula-W .
+mlm:W11 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W12 .
+mlm:W12 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W12 mlm:uses_formula_family mlm:Formula-W .
+mlm:W12 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W13 .
+mlm:W13 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W13 mlm:uses_formula_family mlm:Formula-W .
+mlm:W13 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W14 .
+mlm:W14 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W14 mlm:uses_formula_family mlm:Formula-W .
+mlm:W14 mlm:requires_dataset_family mlm:DS-F .
+mlm:W14 mlm:feeds_into mlm:C03 .
+mlm:W-Series mlm:has_model mlm:W15 .
+mlm:W15 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W15 mlm:uses_formula_family mlm:Formula-W .
+mlm:W15 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W16 .
+mlm:W16 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W16 mlm:uses_formula_family mlm:Formula-W .
+mlm:W16 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W17 .
+mlm:W17 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W17 mlm:uses_formula_family mlm:Formula-W .
+mlm:W17 mlm:requires_dataset_family mlm:DS-F .
+mlm:W17 mlm:feeds_into mlm:W01 .
+mlm:W17 mlm:feeds_into mlm:W02 .
+mlm:W-Series mlm:has_model mlm:W18 .
+mlm:W18 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W18 mlm:uses_formula_family mlm:Formula-W .
+mlm:W18 mlm:requires_dataset_family mlm:DS-F .
+mlm:W-Series mlm:has_model mlm:W19 .
+mlm:W19 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W19 mlm:uses_formula_family mlm:Formula-W .
+mlm:W19 mlm:requires_dataset_family mlm:DS-F .
+mlm:W19 mlm:feeds_into mlm:C09 .
+mlm:W-Series mlm:has_model mlm:W20 .
+mlm:W20 mlm:belongs_to_layer mlm:Stochastic .
+mlm:W20 mlm:uses_formula_family mlm:Formula-W .
+mlm:W20 mlm:requires_dataset_family mlm:DS-F .
+mlm:W20 mlm:feeds_into mlm:C01 .
+mlm:W20 mlm:feeds_into mlm:B05 .
+mlm:O-Series mlm:has_model mlm:O01 .
+mlm:O01 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O01 mlm:uses_formula_family mlm:Formula-O .
+mlm:O01 mlm:requires_dataset_family mlm:DS-O .
+mlm:O01 mlm:feeds_into mlm:T01 .
+mlm:O01 mlm:feeds_into mlm:O08 .
+mlm:O01 mlm:feeds_into mlm:L01 .
+mlm:O01 mlm:feeds_into mlm:C01 .
+mlm:O01 mlm:contributes_rd mlm:C08 .
+mlm:O-Series mlm:has_model mlm:O02 .
+mlm:O02 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O02 mlm:uses_formula_family mlm:Formula-O .
+mlm:O02 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O03 .
+mlm:O03 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O03 mlm:uses_formula_family mlm:Formula-O .
+mlm:O03 mlm:requires_dataset_family mlm:DS-O .
+mlm:O03 mlm:feeds_into mlm:C10 .
+mlm:O03 mlm:feeds_into mlm:C01 .
+mlm:O-Series mlm:has_model mlm:O04 .
+mlm:O04 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O04 mlm:uses_formula_family mlm:Formula-O .
+mlm:O04 mlm:requires_dataset_family mlm:DS-O .
+mlm:O04 mlm:feeds_into mlm:T08 .
+mlm:O04 mlm:feeds_into mlm:L06 .
+mlm:O-Series mlm:has_model mlm:O05 .
+mlm:O05 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O05 mlm:uses_formula_family mlm:Formula-O .
+mlm:O05 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O06 .
+mlm:O06 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O06 mlm:uses_formula_family mlm:Formula-O .
+mlm:O06 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O07 .
+mlm:O07 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O07 mlm:uses_formula_family mlm:Formula-O .
+mlm:O07 mlm:requires_dataset_family mlm:DS-O .
+mlm:O07 mlm:feeds_into mlm:B03 .
+mlm:O07 mlm:feeds_into mlm:B04 .
+mlm:O07 mlm:feeds_into mlm:B05 .
+mlm:O-Series mlm:has_model mlm:O08 .
+mlm:O08 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O08 mlm:uses_formula_family mlm:Formula-O .
+mlm:O08 mlm:requires_dataset_family mlm:DS-O .
+mlm:O08 mlm:feeds_into mlm:T01 .
+mlm:O-Series mlm:has_model mlm:O09 .
+mlm:O09 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O09 mlm:uses_formula_family mlm:Formula-O .
+mlm:O09 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O10 .
+mlm:O10 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O10 mlm:uses_formula_family mlm:Formula-O .
+mlm:O10 mlm:requires_dataset_family mlm:DS-O .
+mlm:O10 mlm:feeds_into mlm:L13 .
+mlm:O10 mlm:feeds_into mlm:C01 .
+mlm:O-Series mlm:has_model mlm:O11 .
+mlm:O11 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O11 mlm:uses_formula_family mlm:Formula-O .
+mlm:O11 mlm:requires_dataset_family mlm:DS-O .
+mlm:O11 mlm:feeds_into mlm:P08 .
+mlm:O-Series mlm:has_model mlm:O12 .
+mlm:O12 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O12 mlm:uses_formula_family mlm:Formula-O .
+mlm:O12 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O13 .
+mlm:O13 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O13 mlm:uses_formula_family mlm:Formula-O .
+mlm:O13 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O14 .
+mlm:O14 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O14 mlm:uses_formula_family mlm:Formula-O .
+mlm:O14 mlm:requires_dataset_family mlm:DS-O .
+mlm:O-Series mlm:has_model mlm:O15 .
+mlm:O15 mlm:belongs_to_layer mlm:Stochastic .
+mlm:O15 mlm:uses_formula_family mlm:Formula-O .
+mlm:O15 mlm:requires_dataset_family mlm:DS-O .
+mlm:M-Series mlm:has_model mlm:M01 .
+mlm:M01 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M01 mlm:uses_formula_family mlm:Formula-M .
+mlm:M01 mlm:requires_dataset_family mlm:DS-E .
+mlm:M01 mlm:requires_dataset_family mlm:DS-P .
+mlm:M01 mlm:feeds_into mlm:C01 .
+mlm:M01 mlm:feeds_into mlm:P01 .
+mlm:M01 mlm:feeds_into mlm:P05 .
+mlm:M01 mlm:contributes_rd mlm:C08 .
+mlm:M-Series mlm:has_model mlm:M02 .
+mlm:M02 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M02 mlm:uses_formula_family mlm:Formula-M .
+mlm:M02 mlm:requires_dataset_family mlm:DS-E .
+mlm:M02 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M03 .
+mlm:M03 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M03 mlm:uses_formula_family mlm:Formula-M .
+mlm:M03 mlm:requires_dataset_family mlm:DS-E .
+mlm:M03 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M04 .
+mlm:M04 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M04 mlm:uses_formula_family mlm:Formula-M .
+mlm:M04 mlm:requires_dataset_family mlm:DS-E .
+mlm:M04 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M05 .
+mlm:M05 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M05 mlm:uses_formula_family mlm:Formula-M .
+mlm:M05 mlm:requires_dataset_family mlm:DS-E .
+mlm:M05 mlm:requires_dataset_family mlm:DS-P .
+mlm:M05 mlm:feeds_into mlm:O10 .
+mlm:M05 mlm:feeds_into mlm:C01 .
+mlm:M-Series mlm:has_model mlm:M06 .
+mlm:M06 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M06 mlm:uses_formula_family mlm:Formula-M .
+mlm:M06 mlm:requires_dataset_family mlm:DS-E .
+mlm:M06 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M07 .
+mlm:M07 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M07 mlm:uses_formula_family mlm:Formula-M .
+mlm:M07 mlm:requires_dataset_family mlm:DS-E .
+mlm:M07 mlm:requires_dataset_family mlm:DS-P .
+mlm:M07 mlm:feeds_into mlm:P01 .
+mlm:M07 mlm:feeds_into mlm:G12 .
+mlm:M-Series mlm:has_model mlm:M08 .
+mlm:M08 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M08 mlm:uses_formula_family mlm:Formula-M .
+mlm:M08 mlm:requires_dataset_family mlm:DS-E .
+mlm:M08 mlm:requires_dataset_family mlm:DS-P .
+mlm:M08 mlm:feeds_into mlm:C01 .
+mlm:M08 mlm:feeds_into mlm:K01 .
+mlm:M08 mlm:feeds_into mlm:K03 .
+mlm:M08 mlm:contributes_rd mlm:C08 .
+mlm:M-Series mlm:has_model mlm:M09 .
+mlm:M09 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M09 mlm:uses_formula_family mlm:Formula-M .
+mlm:M09 mlm:requires_dataset_family mlm:DS-E .
+mlm:M09 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M10 .
+mlm:M10 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M10 mlm:uses_formula_family mlm:Formula-M .
+mlm:M10 mlm:requires_dataset_family mlm:DS-E .
+mlm:M10 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M11 .
+mlm:M11 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M11 mlm:uses_formula_family mlm:Formula-M .
+mlm:M11 mlm:requires_dataset_family mlm:DS-E .
+mlm:M11 mlm:requires_dataset_family mlm:DS-P .
+mlm:M-Series mlm:has_model mlm:M12 .
+mlm:M12 mlm:belongs_to_layer mlm:Stochastic .
+mlm:M12 mlm:uses_formula_family mlm:Formula-M .
+mlm:M12 mlm:requires_dataset_family mlm:DS-E .
+mlm:M12 mlm:requires_dataset_family mlm:DS-P .
+mlm:M12 mlm:feeds_into mlm:C03 .
+mlm:L-Series mlm:has_model mlm:L01 .
+mlm:L01 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L01 mlm:uses_formula_family mlm:Formula-L .
+mlm:L01 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L02 .
+mlm:L02 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L02 mlm:uses_formula_family mlm:Formula-L .
+mlm:L02 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L03 .
+mlm:L03 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L03 mlm:uses_formula_family mlm:Formula-L .
+mlm:L03 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L04 .
+mlm:L04 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L04 mlm:uses_formula_family mlm:Formula-L .
+mlm:L04 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L05 .
+mlm:L05 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L05 mlm:uses_formula_family mlm:Formula-L .
+mlm:L05 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L06 .
+mlm:L06 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L06 mlm:uses_formula_family mlm:Formula-L .
+mlm:L06 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L07 .
+mlm:L07 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L07 mlm:uses_formula_family mlm:Formula-L .
+mlm:L07 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L08 .
+mlm:L08 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L08 mlm:uses_formula_family mlm:Formula-L .
+mlm:L08 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L09 .
+mlm:L09 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L09 mlm:uses_formula_family mlm:Formula-L .
+mlm:L09 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L10 .
+mlm:L10 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L10 mlm:uses_formula_family mlm:Formula-L .
+mlm:L10 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L11 .
+mlm:L11 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L11 mlm:uses_formula_family mlm:Formula-L .
+mlm:L11 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L12 .
+mlm:L12 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L12 mlm:uses_formula_family mlm:Formula-L .
+mlm:L12 mlm:requires_dataset_family mlm:DS-E .
+mlm:L-Series mlm:has_model mlm:L13 .
+mlm:L13 mlm:belongs_to_layer mlm:Deterministic .
+mlm:L13 mlm:uses_formula_family mlm:Formula-L .
+mlm:L13 mlm:requires_dataset_family mlm:DS-E .
+mlm:R-Series mlm:has_model mlm:R01 .
+mlm:R01 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R01 mlm:uses_formula_family mlm:Formula-R .
+mlm:R01 mlm:requires_dataset_family mlm:DS-E .
+mlm:R01 mlm:requires_dataset_family mlm:DS-F .
+mlm:R01 mlm:feeds_into mlm:L01 .
+mlm:R01 mlm:feeds_into mlm:B01 .
+mlm:R01 mlm:feeds_into mlm:C01 .
+mlm:R01 mlm:feeds_into mlm:P01 .
+mlm:R01 mlm:feeds_into mlm:K01 .
+mlm:R01 mlm:contributes_rd mlm:C08 .
+mlm:R-Series mlm:has_model mlm:R02 .
+mlm:R02 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R02 mlm:uses_formula_family mlm:Formula-R .
+mlm:R02 mlm:requires_dataset_family mlm:DS-E .
+mlm:R02 mlm:requires_dataset_family mlm:DS-F .
+mlm:R-Series mlm:has_model mlm:R03 .
+mlm:R03 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R03 mlm:uses_formula_family mlm:Formula-R .
+mlm:R03 mlm:requires_dataset_family mlm:DS-E .
+mlm:R03 mlm:requires_dataset_family mlm:DS-F .
+mlm:R-Series mlm:has_model mlm:R04 .
+mlm:R04 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R04 mlm:uses_formula_family mlm:Formula-R .
+mlm:R04 mlm:requires_dataset_family mlm:DS-E .
+mlm:R04 mlm:requires_dataset_family mlm:DS-F .
+mlm:R-Series mlm:has_model mlm:R05 .
+mlm:R05 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R05 mlm:uses_formula_family mlm:Formula-R .
+mlm:R05 mlm:requires_dataset_family mlm:DS-E .
+mlm:R05 mlm:requires_dataset_family mlm:DS-F .
+mlm:R-Series mlm:has_model mlm:R06 .
+mlm:R06 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R06 mlm:uses_formula_family mlm:Formula-R .
+mlm:R06 mlm:requires_dataset_family mlm:DS-E .
+mlm:R06 mlm:requires_dataset_family mlm:DS-F .
+mlm:R06 mlm:feeds_into mlm:K01 .
+mlm:R06 mlm:feeds_into mlm:G02 .
+mlm:R-Series mlm:has_model mlm:R07 .
+mlm:R07 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R07 mlm:uses_formula_family mlm:Formula-R .
+mlm:R07 mlm:requires_dataset_family mlm:DS-E .
+mlm:R07 mlm:requires_dataset_family mlm:DS-F .
+mlm:R-Series mlm:has_model mlm:R08 .
+mlm:R08 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R08 mlm:uses_formula_family mlm:Formula-R .
+mlm:R08 mlm:requires_dataset_family mlm:DS-E .
+mlm:R08 mlm:requires_dataset_family mlm:DS-F .
+mlm:R08 mlm:feeds_into mlm:G12 .
+mlm:R08 mlm:feeds_into mlm:P04 .
+mlm:R-Series mlm:has_model mlm:R09 .
+mlm:R09 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R09 mlm:uses_formula_family mlm:Formula-R .
+mlm:R09 mlm:requires_dataset_family mlm:DS-E .
+mlm:R09 mlm:requires_dataset_family mlm:DS-F .
+mlm:R-Series mlm:has_model mlm:R10 .
+mlm:R10 mlm:belongs_to_layer mlm:Deterministic .
+mlm:R10 mlm:uses_formula_family mlm:Formula-R .
+mlm:R10 mlm:requires_dataset_family mlm:DS-E .
+mlm:R10 mlm:requires_dataset_family mlm:DS-F .
+mlm:T-Series mlm:has_model mlm:T01 .
+mlm:T01 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T01 mlm:uses_formula_family mlm:Formula-T .
+mlm:T01 mlm:requires_dataset_family mlm:DS-F .
+mlm:T01 mlm:requires_dataset_family mlm:DS-E .
+mlm:T01 mlm:feeds_into mlm:C01 .
+mlm:T01 mlm:feeds_into mlm:T10 .
+mlm:T01 mlm:feeds_into mlm:T12 .
+mlm:T01 mlm:feeds_into mlm:O03 .
+mlm:T01 mlm:contributes_rd mlm:C08 .
+mlm:T-Series mlm:has_model mlm:T02 .
+mlm:T02 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T02 mlm:uses_formula_family mlm:Formula-T .
+mlm:T02 mlm:requires_dataset_family mlm:DS-F .
+mlm:T02 mlm:requires_dataset_family mlm:DS-E .
+mlm:T02 mlm:feeds_into mlm:T03 .
+mlm:T02 mlm:feeds_into mlm:L03 .
+mlm:T02 mlm:feeds_into mlm:C01 .
+mlm:T-Series mlm:has_model mlm:T03 .
+mlm:T03 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T03 mlm:uses_formula_family mlm:Formula-T .
+mlm:T03 mlm:requires_dataset_family mlm:DS-F .
+mlm:T03 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T04 .
+mlm:T04 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T04 mlm:uses_formula_family mlm:Formula-T .
+mlm:T04 mlm:requires_dataset_family mlm:DS-F .
+mlm:T04 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T05 .
+mlm:T05 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T05 mlm:uses_formula_family mlm:Formula-T .
+mlm:T05 mlm:requires_dataset_family mlm:DS-F .
+mlm:T05 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T06 .
+mlm:T06 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T06 mlm:uses_formula_family mlm:Formula-T .
+mlm:T06 mlm:requires_dataset_family mlm:DS-F .
+mlm:T06 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T07 .
+mlm:T07 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T07 mlm:uses_formula_family mlm:Formula-T .
+mlm:T07 mlm:requires_dataset_family mlm:DS-F .
+mlm:T07 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T08 .
+mlm:T08 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T08 mlm:uses_formula_family mlm:Formula-T .
+mlm:T08 mlm:requires_dataset_family mlm:DS-F .
+mlm:T08 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T09 .
+mlm:T09 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T09 mlm:uses_formula_family mlm:Formula-T .
+mlm:T09 mlm:requires_dataset_family mlm:DS-F .
+mlm:T09 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T10 .
+mlm:T10 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T10 mlm:uses_formula_family mlm:Formula-T .
+mlm:T10 mlm:requires_dataset_family mlm:DS-F .
+mlm:T10 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T11 .
+mlm:T11 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T11 mlm:uses_formula_family mlm:Formula-T .
+mlm:T11 mlm:requires_dataset_family mlm:DS-F .
+mlm:T11 mlm:requires_dataset_family mlm:DS-E .
+mlm:T11 mlm:feeds_into mlm:T01 .
+mlm:T11 mlm:feeds_into mlm:K02 .
+mlm:T11 mlm:feeds_into mlm:T19 .
+mlm:T-Series mlm:has_model mlm:T12 .
+mlm:T12 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T12 mlm:uses_formula_family mlm:Formula-T .
+mlm:T12 mlm:requires_dataset_family mlm:DS-F .
+mlm:T12 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T13 .
+mlm:T13 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T13 mlm:uses_formula_family mlm:Formula-T .
+mlm:T13 mlm:requires_dataset_family mlm:DS-F .
+mlm:T13 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T14 .
+mlm:T14 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T14 mlm:uses_formula_family mlm:Formula-T .
+mlm:T14 mlm:requires_dataset_family mlm:DS-F .
+mlm:T14 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T15 .
+mlm:T15 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T15 mlm:uses_formula_family mlm:Formula-T .
+mlm:T15 mlm:requires_dataset_family mlm:DS-F .
+mlm:T15 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T16 .
+mlm:T16 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T16 mlm:uses_formula_family mlm:Formula-T .
+mlm:T16 mlm:requires_dataset_family mlm:DS-F .
+mlm:T16 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T17 .
+mlm:T17 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T17 mlm:uses_formula_family mlm:Formula-T .
+mlm:T17 mlm:requires_dataset_family mlm:DS-F .
+mlm:T17 mlm:requires_dataset_family mlm:DS-E .
+mlm:T17 mlm:feeds_into mlm:C01 .
+mlm:T17 mlm:feeds_into mlm:C02 .
+mlm:T17 mlm:feeds_into mlm:P07 .
+mlm:T-Series mlm:has_model mlm:T18 .
+mlm:T18 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T18 mlm:uses_formula_family mlm:Formula-T .
+mlm:T18 mlm:requires_dataset_family mlm:DS-F .
+mlm:T18 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T19 .
+mlm:T19 mlm:belongs_to_layer mlm:Deterministic .
+mlm:T19 mlm:uses_formula_family mlm:Formula-T .
+mlm:T19 mlm:requires_dataset_family mlm:DS-F .
+mlm:T19 mlm:requires_dataset_family mlm:DS-E .
+mlm:T-Series mlm:has_model mlm:T20 .
+mlm:T20 mlm:belongs_to_layer mlm:AI_ML .
+mlm:T20 mlm:uses_formula_family mlm:Formula-T .
+mlm:T20 mlm:requires_dataset_family mlm:DS-F .
+mlm:T20 mlm:requires_dataset_family mlm:DS-E .
+mlm:B-Series mlm:has_model mlm:B01 .
+mlm:B01 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B01 mlm:uses_formula_family mlm:Formula-B .
+mlm:B01 mlm:requires_dataset_family mlm:DS-E .
+mlm:B01 mlm:requires_dataset_family mlm:DS-A .
+mlm:B01 mlm:feeds_into mlm:C01 .
+mlm:B01 mlm:feeds_into mlm:B02 .
+mlm:B01 mlm:feeds_into mlm:B05 .
+mlm:B01 mlm:feeds_into mlm:P01 .
+mlm:B01 mlm:contributes_rd mlm:C08 .
+mlm:B-Series mlm:has_model mlm:B02 .
+mlm:B02 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B02 mlm:uses_formula_family mlm:Formula-B .
+mlm:B02 mlm:requires_dataset_family mlm:DS-E .
+mlm:B02 mlm:requires_dataset_family mlm:DS-A .
+mlm:B02 mlm:feeds_into mlm:B01 .
+mlm:B02 mlm:feeds_into mlm:K04 .
+mlm:B-Series mlm:has_model mlm:B03 .
+mlm:B03 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B03 mlm:uses_formula_family mlm:Formula-B .
+mlm:B03 mlm:requires_dataset_family mlm:DS-E .
+mlm:B03 mlm:requires_dataset_family mlm:DS-A .
+mlm:B-Series mlm:has_model mlm:B04 .
+mlm:B04 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B04 mlm:uses_formula_family mlm:Formula-B .
+mlm:B04 mlm:requires_dataset_family mlm:DS-E .
+mlm:B04 mlm:requires_dataset_family mlm:DS-A .
+mlm:B-Series mlm:has_model mlm:B05 .
+mlm:B05 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B05 mlm:uses_formula_family mlm:Formula-B .
+mlm:B05 mlm:requires_dataset_family mlm:DS-E .
+mlm:B05 mlm:requires_dataset_family mlm:DS-A .
+mlm:B05 mlm:feeds_into mlm:C01 .
+mlm:B05 mlm:feeds_into mlm:B07 .
+mlm:B-Series mlm:has_model mlm:B06 .
+mlm:B06 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B06 mlm:uses_formula_family mlm:Formula-B .
+mlm:B06 mlm:requires_dataset_family mlm:DS-E .
+mlm:B06 mlm:requires_dataset_family mlm:DS-A .
+mlm:B-Series mlm:has_model mlm:B07 .
+mlm:B07 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B07 mlm:uses_formula_family mlm:Formula-B .
+mlm:B07 mlm:requires_dataset_family mlm:DS-E .
+mlm:B07 mlm:requires_dataset_family mlm:DS-A .
+mlm:B-Series mlm:has_model mlm:B08 .
+mlm:B08 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B08 mlm:uses_formula_family mlm:Formula-B .
+mlm:B08 mlm:requires_dataset_family mlm:DS-E .
+mlm:B08 mlm:requires_dataset_family mlm:DS-A .
+mlm:B-Series mlm:has_model mlm:B09 .
+mlm:B09 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B09 mlm:uses_formula_family mlm:Formula-B .
+mlm:B09 mlm:requires_dataset_family mlm:DS-E .
+mlm:B09 mlm:requires_dataset_family mlm:DS-A .
+mlm:B-Series mlm:has_model mlm:B10 .
+mlm:B10 mlm:belongs_to_layer mlm:AI_ML .
+mlm:B10 mlm:uses_formula_family mlm:Formula-B .
+mlm:B10 mlm:requires_dataset_family mlm:DS-E .
+mlm:B10 mlm:requires_dataset_family mlm:DS-A .
+mlm:G-Series mlm:has_model mlm:G01 .
+mlm:G01 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G01 mlm:uses_formula_family mlm:Formula-G .
+mlm:G01 mlm:requires_dataset_family mlm:DS-A .
+mlm:G01 mlm:requires_dataset_family mlm:DS-E .
+mlm:G01 mlm:feeds_into mlm:C01 .
+mlm:G01 mlm:feeds_into mlm:G04 .
+mlm:G01 mlm:feeds_into mlm:G06 .
+mlm:G-Series mlm:has_model mlm:G02 .
+mlm:G02 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G02 mlm:uses_formula_family mlm:Formula-G .
+mlm:G02 mlm:requires_dataset_family mlm:DS-A .
+mlm:G02 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G03 .
+mlm:G03 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G03 mlm:uses_formula_family mlm:Formula-G .
+mlm:G03 mlm:requires_dataset_family mlm:DS-A .
+mlm:G03 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G04 .
+mlm:G04 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G04 mlm:uses_formula_family mlm:Formula-G .
+mlm:G04 mlm:requires_dataset_family mlm:DS-A .
+mlm:G04 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G05 .
+mlm:G05 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G05 mlm:uses_formula_family mlm:Formula-G .
+mlm:G05 mlm:requires_dataset_family mlm:DS-A .
+mlm:G05 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G06 .
+mlm:G06 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G06 mlm:uses_formula_family mlm:Formula-G .
+mlm:G06 mlm:requires_dataset_family mlm:DS-A .
+mlm:G06 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G07 .
+mlm:G07 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G07 mlm:uses_formula_family mlm:Formula-G .
+mlm:G07 mlm:requires_dataset_family mlm:DS-A .
+mlm:G07 mlm:requires_dataset_family mlm:DS-E .
+mlm:G07 mlm:feeds_into mlm:C09 .
+mlm:G07 mlm:feeds_into mlm:G08 .
+mlm:G-Series mlm:has_model mlm:G08 .
+mlm:G08 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G08 mlm:uses_formula_family mlm:Formula-G .
+mlm:G08 mlm:requires_dataset_family mlm:DS-A .
+mlm:G08 mlm:requires_dataset_family mlm:DS-E .
+mlm:G08 mlm:feeds_into mlm:C09 .
+mlm:G-Series mlm:has_model mlm:G09 .
+mlm:G09 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G09 mlm:uses_formula_family mlm:Formula-G .
+mlm:G09 mlm:requires_dataset_family mlm:DS-A .
+mlm:G09 mlm:requires_dataset_family mlm:DS-E .
+mlm:G09 mlm:feeds_into mlm:C09 .
+mlm:G-Series mlm:has_model mlm:G10 .
+mlm:G10 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G10 mlm:uses_formula_family mlm:Formula-G .
+mlm:G10 mlm:requires_dataset_family mlm:DS-A .
+mlm:G10 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G11 .
+mlm:G11 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G11 mlm:uses_formula_family mlm:Formula-G .
+mlm:G11 mlm:requires_dataset_family mlm:DS-A .
+mlm:G11 mlm:requires_dataset_family mlm:DS-E .
+mlm:G-Series mlm:has_model mlm:G12 .
+mlm:G12 mlm:belongs_to_layer mlm:Deterministic .
+mlm:G12 mlm:uses_formula_family mlm:Formula-G .
+mlm:G12 mlm:requires_dataset_family mlm:DS-A .
+mlm:G12 mlm:requires_dataset_family mlm:DS-E .
+mlm:G12 mlm:feeds_into mlm:P06 .
+mlm:G12 mlm:feeds_into mlm:P07 .
+mlm:G12 mlm:feeds_into mlm:G03 .
+mlm:C-Series mlm:has_model mlm:C01 .
+mlm:C01 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C01 mlm:uses_formula_family mlm:Formula-C .
+mlm:C01 mlm:requires_dataset_family mlm:DS-A .
+mlm:C01 mlm:requires_dataset_family mlm:DS-P .
+mlm:C01 mlm:feeds_into mlm:B01 .
+mlm:C01 mlm:feeds_into mlm:T01 .
+mlm:C01 mlm:feeds_into mlm:P01 .
+mlm:C01 mlm:feeds_into mlm:C08 .
+mlm:C-Series mlm:has_model mlm:C02 .
+mlm:C02 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C02 mlm:uses_formula_family mlm:Formula-C .
+mlm:C02 mlm:requires_dataset_family mlm:DS-A .
+mlm:C02 mlm:requires_dataset_family mlm:DS-P .
+mlm:C-Series mlm:has_model mlm:C03 .
+mlm:C03 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C03 mlm:uses_formula_family mlm:Formula-C .
+mlm:C03 mlm:requires_dataset_family mlm:DS-A .
+mlm:C03 mlm:requires_dataset_family mlm:DS-P .
+mlm:C03 mlm:feeds_into mlm:C01 .
+mlm:C-Series mlm:has_model mlm:C04 .
+mlm:C04 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C04 mlm:uses_formula_family mlm:Formula-C .
+mlm:C04 mlm:requires_dataset_family mlm:DS-A .
+mlm:C04 mlm:requires_dataset_family mlm:DS-P .
+mlm:C-Series mlm:has_model mlm:C05 .
+mlm:C05 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C05 mlm:uses_formula_family mlm:Formula-C .
+mlm:C05 mlm:requires_dataset_family mlm:DS-A .
+mlm:C05 mlm:requires_dataset_family mlm:DS-P .
+mlm:C-Series mlm:has_model mlm:C06 .
+mlm:C06 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C06 mlm:uses_formula_family mlm:Formula-C .
+mlm:C06 mlm:requires_dataset_family mlm:DS-A .
+mlm:C06 mlm:requires_dataset_family mlm:DS-P .
+mlm:C-Series mlm:has_model mlm:C07 .
+mlm:C07 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C07 mlm:uses_formula_family mlm:Formula-C .
+mlm:C07 mlm:requires_dataset_family mlm:DS-A .
+mlm:C07 mlm:requires_dataset_family mlm:DS-P .
+mlm:C-Series mlm:has_model mlm:C08 .
+mlm:C08 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C08 mlm:uses_formula_family mlm:Formula-C .
+mlm:C08 mlm:requires_dataset_family mlm:DS-A .
+mlm:C08 mlm:requires_dataset_family mlm:DS-P .
+mlm:C08 mlm:feeds_into mlm:C05 .
+mlm:C08 mlm:feeds_into mlm:C09 .
+mlm:C08 mlm:feeds_into mlm:C10 .
+mlm:C08 mlm:feeds_into mlm:P07 .
+mlm:C08 mlm:implements_rd mlm:RD-Map .
+mlm:C-Series mlm:has_model mlm:C09 .
+mlm:C09 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C09 mlm:uses_formula_family mlm:Formula-C .
+mlm:C09 mlm:requires_dataset_family mlm:DS-A .
+mlm:C09 mlm:requires_dataset_family mlm:DS-P .
+mlm:C09 mlm:feeds_into mlm:C01 .
+mlm:C09 mlm:implements_rd mlm:RD-Map .
+mlm:C-Series mlm:has_model mlm:C10 .
+mlm:C10 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:C10 mlm:uses_formula_family mlm:Formula-C .
+mlm:C10 mlm:requires_dataset_family mlm:DS-A .
+mlm:C10 mlm:requires_dataset_family mlm:DS-P .
+mlm:C10 mlm:feeds_into mlm:T01 .
+mlm:C10 mlm:feeds_into mlm:B01 .
+mlm:C10 mlm:implements_rd mlm:RD-Map .
+mlm:D-Series mlm:has_model mlm:D01 .
+mlm:D01 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D01 mlm:uses_formula_family mlm:Formula-D .
+mlm:D01 mlm:requires_dataset_family mlm:DS-F .
+mlm:D01 mlm:requires_dataset_family mlm:DS-E .
+mlm:D01 mlm:requires_dataset_family mlm:DS-O .
+mlm:D01 mlm:requires_dataset_family mlm:DS-A .
+mlm:D01 mlm:feeds_into mlm:W01 .
+mlm:D01 mlm:feeds_into mlm:W02 .
+mlm:D01 mlm:feeds_into mlm:W03 .
+mlm:D01 mlm:feeds_into mlm:W04 .
+mlm:D01 mlm:feeds_into mlm:W05 .
+mlm:D-Series mlm:has_model mlm:D02 .
+mlm:D02 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D02 mlm:uses_formula_family mlm:Formula-D .
+mlm:D02 mlm:requires_dataset_family mlm:DS-F .
+mlm:D02 mlm:requires_dataset_family mlm:DS-E .
+mlm:D02 mlm:requires_dataset_family mlm:DS-O .
+mlm:D02 mlm:requires_dataset_family mlm:DS-A .
+mlm:D-Series mlm:has_model mlm:D03 .
+mlm:D03 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D03 mlm:uses_formula_family mlm:Formula-D .
+mlm:D03 mlm:requires_dataset_family mlm:DS-F .
+mlm:D03 mlm:requires_dataset_family mlm:DS-E .
+mlm:D03 mlm:requires_dataset_family mlm:DS-O .
+mlm:D03 mlm:requires_dataset_family mlm:DS-A .
+mlm:D-Series mlm:has_model mlm:D04 .
+mlm:D04 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D04 mlm:uses_formula_family mlm:Formula-D .
+mlm:D04 mlm:requires_dataset_family mlm:DS-F .
+mlm:D04 mlm:requires_dataset_family mlm:DS-E .
+mlm:D04 mlm:requires_dataset_family mlm:DS-O .
+mlm:D04 mlm:requires_dataset_family mlm:DS-A .
+mlm:D-Series mlm:has_model mlm:D05 .
+mlm:D05 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D05 mlm:uses_formula_family mlm:Formula-D .
+mlm:D05 mlm:requires_dataset_family mlm:DS-F .
+mlm:D05 mlm:requires_dataset_family mlm:DS-E .
+mlm:D05 mlm:requires_dataset_family mlm:DS-O .
+mlm:D05 mlm:requires_dataset_family mlm:DS-A .
+mlm:D-Series mlm:has_model mlm:D06 .
+mlm:D06 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D06 mlm:uses_formula_family mlm:Formula-D .
+mlm:D06 mlm:requires_dataset_family mlm:DS-F .
+mlm:D06 mlm:requires_dataset_family mlm:DS-E .
+mlm:D06 mlm:requires_dataset_family mlm:DS-O .
+mlm:D06 mlm:requires_dataset_family mlm:DS-A .
+mlm:D-Series mlm:has_model mlm:D07 .
+mlm:D07 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D07 mlm:uses_formula_family mlm:Formula-D .
+mlm:D07 mlm:requires_dataset_family mlm:DS-F .
+mlm:D07 mlm:requires_dataset_family mlm:DS-E .
+mlm:D07 mlm:requires_dataset_family mlm:DS-O .
+mlm:D07 mlm:requires_dataset_family mlm:DS-A .
+mlm:D-Series mlm:has_model mlm:D08 .
+mlm:D08 mlm:belongs_to_layer mlm:AI_ML .
+mlm:D08 mlm:uses_formula_family mlm:Formula-D .
+mlm:D08 mlm:requires_dataset_family mlm:DS-F .
+mlm:D08 mlm:requires_dataset_family mlm:DS-E .
+mlm:D08 mlm:requires_dataset_family mlm:DS-O .
+mlm:D08 mlm:requires_dataset_family mlm:DS-A .
+mlm:D08 mlm:feeds_into mlm:F01 .
+mlm:D08 mlm:feeds_into mlm:F02 .
+mlm:P-Series mlm:has_model mlm:P01 .
+mlm:P01 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P01 mlm:uses_formula_family mlm:Formula-P .
+mlm:P01 mlm:requires_dataset_family mlm:DS-P .
+mlm:P01 mlm:requires_dataset_family mlm:DS-E .
+mlm:P01 mlm:feeds_into mlm:P05 .
+mlm:P01 mlm:feeds_into mlm:P08 .
+mlm:P-Series mlm:has_model mlm:P02 .
+mlm:P02 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P02 mlm:uses_formula_family mlm:Formula-P .
+mlm:P02 mlm:requires_dataset_family mlm:DS-P .
+mlm:P02 mlm:requires_dataset_family mlm:DS-E .
+mlm:P-Series mlm:has_model mlm:P03 .
+mlm:P03 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P03 mlm:uses_formula_family mlm:Formula-P .
+mlm:P03 mlm:requires_dataset_family mlm:DS-P .
+mlm:P03 mlm:requires_dataset_family mlm:DS-E .
+mlm:P-Series mlm:has_model mlm:P04 .
+mlm:P04 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P04 mlm:uses_formula_family mlm:Formula-P .
+mlm:P04 mlm:requires_dataset_family mlm:DS-P .
+mlm:P04 mlm:requires_dataset_family mlm:DS-E .
+mlm:P-Series mlm:has_model mlm:P05 .
+mlm:P05 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P05 mlm:uses_formula_family mlm:Formula-P .
+mlm:P05 mlm:requires_dataset_family mlm:DS-P .
+mlm:P05 mlm:requires_dataset_family mlm:DS-E .
+mlm:P-Series mlm:has_model mlm:P06 .
+mlm:P06 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P06 mlm:uses_formula_family mlm:Formula-P .
+mlm:P06 mlm:requires_dataset_family mlm:DS-P .
+mlm:P06 mlm:requires_dataset_family mlm:DS-E .
+mlm:P-Series mlm:has_model mlm:P07 .
+mlm:P07 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P07 mlm:uses_formula_family mlm:Formula-P .
+mlm:P07 mlm:requires_dataset_family mlm:DS-P .
+mlm:P07 mlm:requires_dataset_family mlm:DS-E .
+mlm:P07 mlm:implements_rd mlm:RD-Map .
+mlm:P-Series mlm:has_model mlm:P08 .
+mlm:P08 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:P08 mlm:uses_formula_family mlm:Formula-P .
+mlm:P08 mlm:requires_dataset_family mlm:DS-P .
+mlm:P08 mlm:requires_dataset_family mlm:DS-E .
+mlm:P08 mlm:feeds_into mlm:P03 .
+mlm:P08 mlm:feeds_into mlm:G12 .
+mlm:K-Series mlm:has_model mlm:K01 .
+mlm:K01 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:K01 mlm:uses_formula_family mlm:Formula-K .
+mlm:K01 mlm:requires_dataset_family mlm:DS-P .
+mlm:K01 mlm:feeds_into mlm:K04 .
+mlm:K01 mlm:feeds_into mlm:K03 .
+mlm:K-Series mlm:has_model mlm:K02 .
+mlm:K02 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:K02 mlm:uses_formula_family mlm:Formula-K .
+mlm:K02 mlm:requires_dataset_family mlm:DS-P .
+mlm:K-Series mlm:has_model mlm:K03 .
+mlm:K03 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:K03 mlm:uses_formula_family mlm:Formula-K .
+mlm:K03 mlm:requires_dataset_family mlm:DS-P .
+mlm:K-Series mlm:has_model mlm:K04 .
+mlm:K04 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:K04 mlm:uses_formula_family mlm:Formula-K .
+mlm:K04 mlm:requires_dataset_family mlm:DS-P .
+mlm:K04 mlm:feeds_into mlm:C01 .
+mlm:K-Series mlm:has_model mlm:K05 .
+mlm:K05 mlm:belongs_to_layer mlm:RL_Q_Learning .
+mlm:K05 mlm:uses_formula_family mlm:Formula-K .
+mlm:K05 mlm:requires_dataset_family mlm:DS-P .
+mlm:F-Series mlm:has_model mlm:F01 .
+mlm:F01 mlm:belongs_to_layer mlm:AI_ML .
+mlm:F01 mlm:uses_formula_family mlm:Formula-F .
+mlm:F01 mlm:requires_dataset_family mlm:DS-A .
+mlm:F01 mlm:feeds_into mlm:B09 .
+mlm:F01 mlm:feeds_into mlm:O01 .
+mlm:F01 mlm:feeds_into mlm:L10 .
+mlm:F-Series mlm:has_model mlm:F02 .
+mlm:F02 mlm:belongs_to_layer mlm:AI_ML .
+mlm:F02 mlm:uses_formula_family mlm:Formula-F .
+mlm:F02 mlm:requires_dataset_family mlm:DS-A .
+mlm:F-Series mlm:has_model mlm:F03 .
+mlm:F03 mlm:belongs_to_layer mlm:AI_ML .
+mlm:F03 mlm:uses_formula_family mlm:Formula-F .
+mlm:F03 mlm:requires_dataset_family mlm:DS-A .
+mlm:F03 mlm:feeds_into mlm:F01 .
+mlm:F-Series mlm:has_model mlm:F04 .
+mlm:F04 mlm:belongs_to_layer mlm:AI_ML .
+mlm:F04 mlm:uses_formula_family mlm:Formula-F .
+mlm:F04 mlm:requires_dataset_family mlm:DS-A .
+mlm:F-Series mlm:has_model mlm:F05 .
+mlm:F05 mlm:belongs_to_layer mlm:AI_ML .
+mlm:F05 mlm:uses_formula_family mlm:Formula-F .
+mlm:F05 mlm:requires_dataset_family mlm:DS-A .
+mlm:F-Series mlm:has_model mlm:F06 .
+mlm:F06 mlm:belongs_to_layer mlm:AI_ML .
+mlm:F06 mlm:uses_formula_family mlm:Formula-F .
+mlm:F06 mlm:requires_dataset_family mlm:DS-A .
+mlm:W-Series mlm:feeds_series mlm:T-Series .
+mlm:W-Series mlm:feeds_series mlm:R-Series .
+mlm:W-Series mlm:feeds_series mlm:L-Series .
+mlm:W-Series mlm:feeds_series mlm:G-Series .
+mlm:W-Series mlm:feeds_series mlm:C-Series .
+mlm:O-Series mlm:feeds_series mlm:T-Series .
+mlm:O-Series mlm:feeds_series mlm:L-Series .
+mlm:O-Series mlm:feeds_series mlm:C-Series .
+mlm:O-Series mlm:feeds_series mlm:B-Series .
+mlm:M-Series mlm:feeds_series mlm:C-Series .
+mlm:M-Series mlm:feeds_series mlm:P-Series .
+mlm:M-Series mlm:feeds_series mlm:K-Series .
+mlm:L-Series mlm:feeds_series mlm:C-Series .
+mlm:L-Series mlm:feeds_series mlm:G-Series .
+mlm:L-Series mlm:feeds_series mlm:P-Series .
+mlm:R-Series mlm:feeds_series mlm:L-Series .
+mlm:R-Series mlm:feeds_series mlm:B-Series .
+mlm:R-Series mlm:feeds_series mlm:G-Series .
+mlm:R-Series mlm:feeds_series mlm:C-Series .
+mlm:R-Series mlm:feeds_series mlm:K-Series .
+mlm:T-Series mlm:feeds_series mlm:C-Series .
+mlm:T-Series mlm:feeds_series mlm:L-Series .
+mlm:T-Series mlm:feeds_series mlm:K-Series .
+mlm:B-Series mlm:feeds_series mlm:C-Series .
+mlm:B-Series mlm:feeds_series mlm:G-Series .
+mlm:B-Series mlm:feeds_series mlm:P-Series .
+mlm:G-Series mlm:feeds_series mlm:C-Series .
+mlm:G-Series mlm:feeds_series mlm:P-Series .
+mlm:C-Series mlm:feeds_series mlm:P-Series .
+mlm:C-Series mlm:feeds_series mlm:K-Series .
+mlm:C-Series mlm:feeds_series mlm:B-Series .
+mlm:C-Series mlm:feeds_series mlm:T-Series .
+mlm:D-Series mlm:feeds_series mlm:W-Series .
+mlm:D-Series mlm:feeds_series mlm:O-Series .
+mlm:D-Series mlm:feeds_series mlm:L-Series .
+mlm:D-Series mlm:feeds_series mlm:T-Series .
+mlm:D-Series mlm:feeds_series mlm:B-Series .
+mlm:P-Series mlm:feeds_series mlm:C-Series .
+mlm:P-Series mlm:feeds_series mlm:K-Series .
+mlm:K-Series mlm:feeds_series mlm:C-Series .
+mlm:K-Series mlm:feeds_series mlm:P-Series .
+mlm:F-Series mlm:feeds_series mlm:B-Series .
+mlm:F-Series mlm:feeds_series mlm:O-Series .
+mlm:F-Series mlm:feeds_series mlm:T-Series .
+mlm:F-Series mlm:feeds_series mlm:D-Series .
+mlm:Asset-Temperature-sensors-room-flow-return mlm:measured_by_or_feeds mlm:T01 .
+mlm:T01 mlm:uses_asset mlm:Asset-Temperature-sensors-room-flow-return .
+mlm:Asset-Temperature-sensors-room-flow-return mlm:measured_by_or_feeds mlm:W02 .
+mlm:W02 mlm:uses_asset mlm:Asset-Temperature-sensors-room-flow-return .
+mlm:Asset-Temperature-sensors-room-flow-return mlm:measured_by_or_feeds mlm:D01 .
+mlm:D01 mlm:uses_asset mlm:Asset-Temperature-sensors-room-flow-return .
+mlm:Asset-Relative-humidity-sensors mlm:measured_by_or_feeds mlm:W06 .
+mlm:W06 mlm:uses_asset mlm:Asset-Relative-humidity-sensors .
+mlm:Asset-Relative-humidity-sensors mlm:measured_by_or_feeds mlm:O09 .
+mlm:O09 mlm:uses_asset mlm:Asset-Relative-humidity-sensors .
+mlm:Asset-Relative-humidity-sensors mlm:measured_by_or_feeds mlm:D01 .
+mlm:D01 mlm:uses_asset mlm:Asset-Relative-humidity-sensors .
+mlm:Asset-CO-sensors mlm:measured_by_or_feeds mlm:O01 .
+mlm:O01 mlm:uses_asset mlm:Asset-CO-sensors .
+mlm:Asset-CO-sensors mlm:measured_by_or_feeds mlm:D04 .
+mlm:D04 mlm:uses_asset mlm:Asset-CO-sensors .
+mlm:Asset-Whole-house-smart-meter mlm:measured_by_or_feeds mlm:L01 .
+mlm:L01 mlm:uses_asset mlm:Asset-Whole-house-smart-meter .
+mlm:Asset-Whole-house-smart-meter mlm:measured_by_or_feeds mlm:L02 .
+mlm:L02 mlm:uses_asset mlm:Asset-Whole-house-smart-meter .
+mlm:Asset-Whole-house-smart-meter mlm:measured_by_or_feeds mlm:D05 .
+mlm:D05 mlm:uses_asset mlm:Asset-Whole-house-smart-meter .
+mlm:Asset-Electrical-submeters mlm:measured_by_or_feeds mlm:L02 .
+mlm:L02 mlm:uses_asset mlm:Asset-Electrical-submeters .
+mlm:Asset-Electrical-submeters mlm:measured_by_or_feeds mlm:L04 .
+mlm:L04 mlm:uses_asset mlm:Asset-Electrical-submeters .
+mlm:Asset-Electrical-submeters mlm:measured_by_or_feeds mlm:D05 .
+mlm:D05 mlm:uses_asset mlm:Asset-Electrical-submeters .
+mlm:Asset-PV-inverter mlm:measured_by_or_feeds mlm:R01 .
+mlm:R01 mlm:uses_asset mlm:Asset-PV-inverter .
+mlm:Asset-PV-inverter mlm:measured_by_or_feeds mlm:R05 .
+mlm:R05 mlm:uses_asset mlm:Asset-PV-inverter .
+mlm:Asset-PV-inverter mlm:measured_by_or_feeds mlm:G05 .
+mlm:G05 mlm:uses_asset mlm:Asset-PV-inverter .
+mlm:Asset-Battery-storage mlm:measured_by_or_feeds mlm:B01 .
+mlm:B01 mlm:uses_asset mlm:Asset-Battery-storage .
+mlm:Asset-Battery-storage mlm:measured_by_or_feeds mlm:B02 .
+mlm:B02 mlm:uses_asset mlm:Asset-Battery-storage .
+mlm:Asset-Battery-storage mlm:measured_by_or_feeds mlm:B07 .
+mlm:B07 mlm:uses_asset mlm:Asset-Battery-storage .
+mlm:Asset-Battery-storage mlm:measured_by_or_feeds mlm:B08 .
+mlm:B08 mlm:uses_asset mlm:Asset-Battery-storage .
+mlm:Asset-EV-charger-smart-V2G mlm:measured_by_or_feeds mlm:B03 .
+mlm:B03 mlm:uses_asset mlm:Asset-EV-charger-smart-V2G .
+mlm:Asset-EV-charger-smart-V2G mlm:measured_by_or_feeds mlm:B04 .
+mlm:B04 mlm:uses_asset mlm:Asset-EV-charger-smart-V2G .
+mlm:Asset-EV-charger-smart-V2G mlm:measured_by_or_feeds mlm:B05 .
+mlm:B05 mlm:uses_asset mlm:Asset-EV-charger-smart-V2G .
+mlm:Asset-EV-charger-smart-V2G mlm:measured_by_or_feeds mlm:L07 .
+mlm:L07 mlm:uses_asset mlm:Asset-EV-charger-smart-V2G .
+mlm:Asset-Heat-pump-ASHP-GSHP mlm:measured_by_or_feeds mlm:T02 .
+mlm:T02 mlm:uses_asset mlm:Asset-Heat-pump-ASHP-GSHP .
+mlm:Asset-Heat-pump-ASHP-GSHP mlm:measured_by_or_feeds mlm:T03 .
+mlm:T03 mlm:uses_asset mlm:Asset-Heat-pump-ASHP-GSHP .
+mlm:Asset-Heat-pump-ASHP-GSHP mlm:measured_by_or_feeds mlm:L03 .
+mlm:L03 mlm:uses_asset mlm:Asset-Heat-pump-ASHP-GSHP .
+mlm:Asset-PCM-storage-small-scale mlm:measured_by_or_feeds mlm:T07 .
+mlm:T07 mlm:uses_asset mlm:Asset-PCM-storage-small-scale .
+mlm:Asset-PCM-storage-small-scale mlm:measured_by_or_feeds mlm:B10 .
+mlm:B10 mlm:uses_asset mlm:Asset-PCM-storage-small-scale .
+mlm:Asset-Weather-nowcast-ensemble-forecasts mlm:measured_by_or_feeds mlm:W14 .
+mlm:W14 mlm:uses_asset mlm:Asset-Weather-nowcast-ensemble-forecasts .
+mlm:Asset-Weather-nowcast-ensemble-forecasts mlm:measured_by_or_feeds mlm:W15 .
+mlm:W15 mlm:uses_asset mlm:Asset-Weather-nowcast-ensemble-forecasts .
+mlm:Asset-Weather-nowcast-ensemble-forecasts mlm:measured_by_or_feeds mlm:W16 .
+mlm:W16 mlm:uses_asset mlm:Asset-Weather-nowcast-ensemble-forecasts .
+mlm:Asset-Occupant-preferences-override-app mlm:measured_by_or_feeds mlm:O15 .
+mlm:O15 mlm:uses_asset mlm:Asset-Occupant-preferences-override-app .
+mlm:Asset-Occupant-preferences-override-app mlm:measured_by_or_feeds mlm:O03 .
+mlm:O03 mlm:uses_asset mlm:Asset-Occupant-preferences-override-app .
+mlm:Asset-Occupant-preferences-override-app mlm:measured_by_or_feeds mlm:C10 .
+mlm:C10 mlm:uses_asset mlm:Asset-Occupant-preferences-override-app .
+mlm:Asset-Dynamic-tariff-grid-signals mlm:measured_by_or_feeds mlm:M04 .
+mlm:M04 mlm:uses_asset mlm:Asset-Dynamic-tariff-grid-signals .
+mlm:Asset-Dynamic-tariff-grid-signals mlm:measured_by_or_feeds mlm:M05 .
+mlm:M05 mlm:uses_asset mlm:Asset-Dynamic-tariff-grid-signals .
+mlm:Asset-Dynamic-tariff-grid-signals mlm:measured_by_or_feeds mlm:O10 .
+mlm:O10 mlm:uses_asset mlm:Asset-Dynamic-tariff-grid-signals .
+mlm:Asset-Carbon-intensity-signals mlm:measured_by_or_feeds mlm:M08 .
+mlm:M08 mlm:uses_asset mlm:Asset-Carbon-intensity-signals .
+mlm:Asset-Carbon-intensity-signals mlm:measured_by_or_feeds mlm:K01 .
+mlm:K01 mlm:uses_asset mlm:Asset-Carbon-intensity-signals .
+mlm:Asset-Carbon-intensity-signals mlm:measured_by_or_feeds mlm:K04 .
+mlm:K04 mlm:uses_asset mlm:Asset-Carbon-intensity-signals .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-physical .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-01 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-02 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-03 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-04 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-05 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-06 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-07 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-08 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-09 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-10 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-11 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-12 .
+mlm:BAND-physical mlm:contains_catalogue mlm:CAT-13 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-actors .
+mlm:BAND-actors mlm:contains_catalogue mlm:CAT-14 .
+mlm:BAND-actors mlm:contains_catalogue mlm:CAT-15 .
+mlm:BAND-actors mlm:contains_catalogue mlm:CAT-16 .
+mlm:BAND-actors mlm:contains_catalogue mlm:CAT-17 .
+mlm:BAND-actors mlm:contains_catalogue mlm:CAT-18 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-markets .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-19 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-20 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-21 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-22 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-23 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-24 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-25 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-26 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-27 .
+mlm:BAND-markets mlm:contains_catalogue mlm:CAT-28 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-flexibility .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-29 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-30 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-31 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-32 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-33 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-34 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-35 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-36 .
+mlm:BAND-flexibility mlm:contains_catalogue mlm:CAT-37 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-data .
+mlm:BAND-data mlm:contains_catalogue mlm:CAT-38 .
+mlm:BAND-data mlm:contains_catalogue mlm:CAT-39 .
+mlm:BAND-data mlm:contains_catalogue mlm:CAT-40 .
+mlm:BAND-data mlm:contains_catalogue mlm:CAT-41 .
+mlm:BAND-data mlm:contains_catalogue mlm:CAT-42 .
+mlm:BAND-data mlm:contains_catalogue mlm:CAT-43 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-models .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-44 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-45 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-46 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-47 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-48 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-49 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-50 .
+mlm:BAND-models mlm:contains_catalogue mlm:CAT-51 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-response_derivative .
+mlm:BAND-response_derivative mlm:contains_catalogue mlm:CAT-52 .
+mlm:BAND-response_derivative mlm:contains_catalogue mlm:CAT-53 .
+mlm:BAND-response_derivative mlm:contains_catalogue mlm:CAT-54 .
+mlm:BAND-response_derivative mlm:contains_catalogue mlm:CAT-55 .
+mlm:BAND-response_derivative mlm:contains_catalogue mlm:CAT-56 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-decision .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-57 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-58 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-59 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-60 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-61 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-62 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-63 .
+mlm:BAND-decision mlm:contains_catalogue mlm:CAT-64 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-rl_agents .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-65 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-66 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-67 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-68 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-69 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-70 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-71 .
+mlm:BAND-rl_agents mlm:contains_catalogue mlm:CAT-72 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-applications .
+mlm:BAND-applications mlm:contains_catalogue mlm:CAT-73 .
+mlm:BAND-applications mlm:contains_catalogue mlm:CAT-74 .
+mlm:BAND-applications mlm:contains_catalogue mlm:CAT-75 .
+mlm:BAND-applications mlm:contains_catalogue mlm:CAT-76 .
+mlm:BAND-applications mlm:contains_catalogue mlm:CAT-77 .
+mlm:BAND-applications mlm:contains_catalogue mlm:CAT-78 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-semantics .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-79 .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-80 .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-81 .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-82 .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-83 .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-84 .
+mlm:BAND-semantics mlm:contains_catalogue mlm:CAT-85 .
+mlm:MLM mlm:has_catalogue_band mlm:BAND-governance .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-86 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-87 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-88 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-89 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-90 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-91 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-92 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-93 .
+mlm:BAND-governance mlm:contains_catalogue mlm:CAT-94 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-04 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-05 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-07 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-10 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-33 mlm:depends_on mlm:CAT-32 .
+mlm:CAT-33 mlm:used_by mlm:CAT-32 .
+mlm:CAT-33 mlm:used_by mlm:CAT-35 .
+mlm:CAT-33 mlm:used_by mlm:CAT-37 .
+mlm:CAT-33 mlm:used_by mlm:CAT-43 .
+mlm:CAT-33 mlm:used_by mlm:CAT-44 .
+mlm:CAT-33 mlm:used_by mlm:CAT-57 .
+mlm:CAT-33 mlm:used_by mlm:CAT-73 .
+mlm:CAT-34 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-34 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-34 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-34 mlm:depends_on mlm:CAT-29 .
+mlm:CAT-34 mlm:depends_on mlm:CAT-31 .
+mlm:CAT-34 mlm:depends_on mlm:CAT-32 .
+mlm:CAT-34 mlm:used_by mlm:CAT-35 .
+mlm:CAT-34 mlm:used_by mlm:CAT-36 .
+mlm:CAT-34 mlm:used_by mlm:CAT-37 .
+mlm:CAT-34 mlm:used_by mlm:CAT-73 .
+mlm:CAT-34 mlm:used_by mlm:CAT-76 .
+mlm:CAT-35 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-35 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-35 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-35 mlm:depends_on mlm:CAT-31 .
+mlm:CAT-35 mlm:depends_on mlm:CAT-32 .
+mlm:CAT-35 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-35 mlm:used_by mlm:CAT-36 .
+mlm:CAT-35 mlm:used_by mlm:CAT-44 .
+mlm:CAT-35 mlm:used_by mlm:CAT-50 .
+mlm:CAT-35 mlm:used_by mlm:CAT-60 .
+mlm:CAT-35 mlm:used_by mlm:CAT-63 .
+mlm:CAT-35 mlm:used_by mlm:CAT-73 .
+mlm:CAT-36 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-36 mlm:depends_on mlm:CAT-04 .
+mlm:CAT-36 mlm:depends_on mlm:CAT-10 .
+mlm:CAT-36 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-36 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-36 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-36 mlm:used_by mlm:CAT-37 .
+mlm:CAT-36 mlm:used_by mlm:CAT-38 .
+mlm:CAT-36 mlm:used_by mlm:CAT-40 .
+mlm:CAT-36 mlm:used_by mlm:CAT-52 .
+mlm:CAT-36 mlm:used_by mlm:CAT-60 .
+mlm:CAT-36 mlm:used_by mlm:CAT-63 .
+mlm:CAT-36 mlm:used_by mlm:CAT-76 .
+mlm:CAT-37 mlm:depends_on mlm:CAT-09 .
+mlm:CAT-37 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-37 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-37 mlm:depends_on mlm:CAT-20 .
+mlm:CAT-37 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-37 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-37 mlm:used_by mlm:CAT-38 .
+mlm:CAT-37 mlm:used_by mlm:CAT-39 .
+mlm:CAT-37 mlm:used_by mlm:CAT-40 .
+mlm:CAT-37 mlm:used_by mlm:CAT-42 .
+mlm:CAT-37 mlm:used_by mlm:CAT-43 .
+mlm:CAT-38 mlm:depends_on mlm:CAT-09 .
+mlm:CAT-38 mlm:depends_on mlm:CAT-19 .
+mlm:CAT-38 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-38 mlm:depends_on mlm:CAT-37 .
+mlm:CAT-38 mlm:used_by mlm:CAT-39 .
+mlm:CAT-38 mlm:used_by mlm:CAT-40 .
+mlm:CAT-38 mlm:used_by mlm:CAT-41 .
+mlm:CAT-38 mlm:used_by mlm:CAT-43 .
+mlm:CAT-38 mlm:used_by mlm:CAT-44 .
+mlm:CAT-39 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-39 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-39 mlm:depends_on mlm:CAT-37 .
+mlm:CAT-39 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-39 mlm:used_by mlm:CAT-40 .
+mlm:CAT-39 mlm:used_by mlm:CAT-41 .
+mlm:CAT-39 mlm:used_by mlm:CAT-42 .
+mlm:CAT-39 mlm:used_by mlm:CAT-43 .
+mlm:CAT-39 mlm:used_by mlm:CAT-44 .
+mlm:CAT-39 mlm:used_by mlm:CAT-79 .
+mlm:CAT-39 mlm:used_by mlm:CAT-80 .
+mlm:CAT-40 mlm:depends_on mlm:CAT-09 .
+mlm:CAT-40 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-40 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-40 mlm:depends_on mlm:CAT-37 .
+mlm:CAT-40 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-40 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-40 mlm:used_by mlm:CAT-41 .
+mlm:CAT-40 mlm:used_by mlm:CAT-43 .
+mlm:CAT-40 mlm:used_by mlm:CAT-44 .
+mlm:CAT-40 mlm:used_by mlm:CAT-47 .
+mlm:CAT-40 mlm:used_by mlm:CAT-50 .
+mlm:CAT-40 mlm:used_by mlm:CAT-52 .
+mlm:CAT-40 mlm:used_by mlm:CAT-57 .
+mlm:CAT-41 mlm:depends_on mlm:CAT-09 .
+mlm:CAT-41 mlm:depends_on mlm:CAT-21 .
+mlm:CAT-41 mlm:depends_on mlm:CAT-28 .
+mlm:CAT-41 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-41 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-41 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-41 mlm:used_by mlm:CAT-44 .
+mlm:CAT-41 mlm:used_by mlm:CAT-46 .
+mlm:CAT-41 mlm:used_by mlm:CAT-50 .
+mlm:CAT-41 mlm:used_by mlm:CAT-52 .
+mlm:CAT-41 mlm:used_by mlm:CAT-66 .
+mlm:CAT-41 mlm:used_by mlm:CAT-70 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-07 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-09 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-20 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-37 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-42 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-42 mlm:used_by mlm:CAT-20 .
+mlm:CAT-42 mlm:used_by mlm:CAT-31 .
+mlm:CAT-42 mlm:used_by mlm:CAT-43 .
+mlm:CAT-42 mlm:used_by mlm:CAT-44 .
+mlm:CAT-42 mlm:used_by mlm:CAT-47 .
+mlm:CAT-42 mlm:used_by mlm:CAT-50 .
+mlm:CAT-42 mlm:used_by mlm:CAT-89 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-37 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-43 mlm:depends_on mlm:CAT-42 .
+mlm:CAT-43 mlm:used_by mlm:CAT-44 .
+mlm:CAT-43 mlm:used_by mlm:CAT-46 .
+mlm:CAT-43 mlm:used_by mlm:CAT-47 .
+mlm:CAT-43 mlm:used_by mlm:CAT-50 .
+mlm:CAT-43 mlm:used_by mlm:CAT-52 .
+mlm:CAT-43 mlm:used_by mlm:CAT-75 .
+mlm:CAT-43 mlm:used_by mlm:CAT-77 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-42 .
+mlm:CAT-44 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-44 mlm:used_by mlm:CAT-45 .
+mlm:CAT-44 mlm:used_by mlm:CAT-46 .
+mlm:CAT-44 mlm:used_by mlm:CAT-47 .
+mlm:CAT-44 mlm:used_by mlm:CAT-48 .
+mlm:CAT-44 mlm:used_by mlm:CAT-49 .
+mlm:CAT-44 mlm:used_by mlm:CAT-50 .
+mlm:CAT-44 mlm:used_by mlm:CAT-51 .
+mlm:CAT-44 mlm:used_by mlm:CAT-52 .
+mlm:CAT-44 mlm:used_by mlm:CAT-60 .
+mlm:CAT-44 mlm:used_by mlm:CAT-66 .
+mlm:CAT-44 mlm:used_by mlm:CAT-70 .
+mlm:CAT-45 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-45 mlm:used_by mlm:CAT-44 .
+mlm:CAT-45 mlm:used_by mlm:CAT-46 .
+mlm:CAT-45 mlm:used_by mlm:CAT-48 .
+mlm:CAT-45 mlm:used_by mlm:CAT-49 .
+mlm:CAT-45 mlm:used_by mlm:CAT-50 .
+mlm:CAT-45 mlm:used_by mlm:CAT-66 .
+mlm:CAT-45 mlm:used_by mlm:CAT-70 .
+mlm:CAT-46 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-46 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-46 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-46 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-46 mlm:used_by mlm:CAT-22 .
+mlm:CAT-46 mlm:used_by mlm:CAT-25 .
+mlm:CAT-46 mlm:used_by mlm:CAT-27 .
+mlm:CAT-46 mlm:used_by mlm:CAT-52 .
+mlm:CAT-46 mlm:used_by mlm:CAT-57 .
+mlm:CAT-46 mlm:used_by mlm:CAT-60 .
+mlm:CAT-46 mlm:used_by mlm:CAT-75 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-42 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-47 mlm:depends_on mlm:CAT-46 .
+mlm:CAT-47 mlm:used_by mlm:CAT-32 .
+mlm:CAT-47 mlm:used_by mlm:CAT-44 .
+mlm:CAT-47 mlm:used_by mlm:CAT-50 .
+mlm:CAT-47 mlm:used_by mlm:CAT-51 .
+mlm:CAT-47 mlm:used_by mlm:CAT-52 .
+mlm:CAT-47 mlm:used_by mlm:CAT-60 .
+mlm:CAT-48 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-48 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-48 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-48 mlm:used_by mlm:CAT-44 .
+mlm:CAT-48 mlm:used_by mlm:CAT-47 .
+mlm:CAT-48 mlm:used_by mlm:CAT-50 .
+mlm:CAT-48 mlm:used_by mlm:CAT-51 .
+mlm:CAT-49 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-49 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-49 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-49 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-49 mlm:used_by mlm:CAT-60 .
+mlm:CAT-49 mlm:used_by mlm:CAT-70 .
+mlm:CAT-49 mlm:used_by mlm:CAT-75 .
+mlm:CAT-49 mlm:used_by mlm:CAT-77 .
+mlm:CAT-49 mlm:used_by mlm:CAT-93 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-31 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-42 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-50 mlm:depends_on mlm:CAT-48 .
+mlm:CAT-50 mlm:used_by mlm:CAT-44 .
+mlm:CAT-50 mlm:used_by mlm:CAT-47 .
+mlm:CAT-50 mlm:used_by mlm:CAT-51 .
+mlm:CAT-50 mlm:used_by mlm:CAT-66 .
+mlm:CAT-51 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-51 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-51 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-51 mlm:depends_on mlm:CAT-48 .
+mlm:CAT-51 mlm:depends_on mlm:CAT-50 .
+mlm:CAT-51 mlm:used_by mlm:CAT-44 .
+mlm:CAT-51 mlm:used_by mlm:CAT-45 .
+mlm:CAT-51 mlm:used_by mlm:CAT-46 .
+mlm:CAT-51 mlm:used_by mlm:CAT-70 .
+mlm:CAT-51 mlm:used_by mlm:CAT-77 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-03 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-05 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-07 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-30 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-51 .
+mlm:CAT-52 mlm:depends_on mlm:CAT-56 .
+mlm:CAT-52 mlm:used_by mlm:CAT-22 .
+mlm:CAT-52 mlm:used_by mlm:CAT-25 .
+mlm:CAT-52 mlm:used_by mlm:CAT-27 .
+mlm:CAT-52 mlm:used_by mlm:CAT-29 .
+mlm:CAT-52 mlm:used_by mlm:CAT-53 .
+mlm:CAT-52 mlm:used_by mlm:CAT-55 .
+mlm:CAT-52 mlm:used_by mlm:CAT-60 .
+mlm:CAT-52 mlm:used_by mlm:CAT-66 .
+mlm:CAT-53 mlm:depends_on mlm:CAT-03 .
+mlm:CAT-53 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-53 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-53 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-53 mlm:depends_on mlm:CAT-56 .
+mlm:CAT-53 mlm:used_by mlm:CAT-47 .
+mlm:CAT-53 mlm:used_by mlm:CAT-52 .
+mlm:CAT-53 mlm:used_by mlm:CAT-55 .
+mlm:CAT-53 mlm:used_by mlm:CAT-66 .
+mlm:CAT-53 mlm:used_by mlm:CAT-70 .
+mlm:CAT-54 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-54 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-54 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-54 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-54 mlm:used_by mlm:CAT-44 .
+mlm:CAT-54 mlm:used_by mlm:CAT-49 .
+mlm:CAT-54 mlm:used_by mlm:CAT-52 .
+mlm:CAT-54 mlm:used_by mlm:CAT-58 .
+mlm:CAT-54 mlm:used_by mlm:CAT-60 .
+mlm:CAT-54 mlm:used_by mlm:CAT-70 .
+mlm:CAT-54 mlm:used_by mlm:CAT-89 .
+mlm:CAT-55 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-55 mlm:depends_on mlm:CAT-30 .
+mlm:CAT-55 mlm:depends_on mlm:CAT-52 .
+mlm:CAT-55 mlm:depends_on mlm:CAT-53 .
+mlm:CAT-55 mlm:used_by mlm:CAT-22 .
+mlm:CAT-55 mlm:used_by mlm:CAT-25 .
+mlm:CAT-55 mlm:used_by mlm:CAT-29 .
+mlm:CAT-55 mlm:used_by mlm:CAT-60 .
+mlm:CAT-55 mlm:used_by mlm:CAT-66 .
+mlm:CAT-55 mlm:used_by mlm:CAT-70 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-23 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-24 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-26 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-29 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-30 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-56 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-56 mlm:used_by mlm:CAT-27 .
+mlm:CAT-56 mlm:used_by mlm:CAT-52 .
+mlm:CAT-56 mlm:used_by mlm:CAT-53 .
+mlm:CAT-56 mlm:used_by mlm:CAT-55 .
+mlm:CAT-56 mlm:used_by mlm:CAT-66 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-06 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-12 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-41 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-51 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-52 .
+mlm:CAT-57 mlm:depends_on mlm:CAT-65 .
+mlm:CAT-57 mlm:used_by mlm:CAT-58 .
+mlm:CAT-57 mlm:used_by mlm:CAT-60 .
+mlm:CAT-57 mlm:used_by mlm:CAT-67 .
+mlm:CAT-57 mlm:used_by mlm:CAT-75 .
+mlm:CAT-57 mlm:used_by mlm:CAT-77 .
+mlm:CAT-57 mlm:used_by mlm:CAT-91 .
+mlm:CAT-58 mlm:depends_on mlm:CAT-21 .
+mlm:CAT-58 mlm:depends_on mlm:CAT-28 .
+mlm:CAT-58 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-58 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-58 mlm:used_by mlm:CAT-12 .
+mlm:CAT-58 mlm:used_by mlm:CAT-44 .
+mlm:CAT-58 mlm:used_by mlm:CAT-60 .
+mlm:CAT-58 mlm:used_by mlm:CAT-62 .
+mlm:CAT-58 mlm:used_by mlm:CAT-66 .
+mlm:CAT-58 mlm:used_by mlm:CAT-67 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-04 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-20 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-23 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-29 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-30 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-59 mlm:depends_on mlm:CAT-92 .
+mlm:CAT-59 mlm:used_by mlm:CAT-12 .
+mlm:CAT-59 mlm:used_by mlm:CAT-44 .
+mlm:CAT-59 mlm:used_by mlm:CAT-58 .
+mlm:CAT-59 mlm:used_by mlm:CAT-60 .
+mlm:CAT-59 mlm:used_by mlm:CAT-61 .
+mlm:CAT-59 mlm:used_by mlm:CAT-62 .
+mlm:CAT-59 mlm:used_by mlm:CAT-66 .
+mlm:CAT-59 mlm:used_by mlm:CAT-68 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-46 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-49 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-52 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-55 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-60 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-60 mlm:used_by mlm:CAT-61 .
+mlm:CAT-60 mlm:used_by mlm:CAT-62 .
+mlm:CAT-60 mlm:used_by mlm:CAT-63 .
+mlm:CAT-60 mlm:used_by mlm:CAT-64 .
+mlm:CAT-60 mlm:used_by mlm:CAT-66 .
+mlm:CAT-60 mlm:used_by mlm:CAT-70 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-04 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-36 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-61 mlm:depends_on mlm:CAT-60 .
+mlm:CAT-61 mlm:used_by mlm:CAT-53 .
+mlm:CAT-61 mlm:used_by mlm:CAT-56 .
+mlm:CAT-61 mlm:used_by mlm:CAT-62 .
+mlm:CAT-61 mlm:used_by mlm:CAT-63 .
+mlm:CAT-61 mlm:used_by mlm:CAT-64 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-24 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-60 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-61 .
+mlm:CAT-62 mlm:depends_on mlm:CAT-66 .
+mlm:CAT-62 mlm:used_by mlm:CAT-32 .
+mlm:CAT-62 mlm:used_by mlm:CAT-53 .
+mlm:CAT-62 mlm:used_by mlm:CAT-63 .
+mlm:CAT-62 mlm:used_by mlm:CAT-70 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-37 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-40 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-60 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-61 .
+mlm:CAT-63 mlm:depends_on mlm:CAT-62 .
+mlm:CAT-63 mlm:used_by mlm:CAT-56 .
+mlm:CAT-63 mlm:used_by mlm:CAT-64 .
+mlm:CAT-63 mlm:used_by mlm:CAT-70 .
+mlm:CAT-63 mlm:used_by mlm:CAT-76 .
+mlm:CAT-64 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-64 mlm:depends_on mlm:CAT-17 .
+mlm:CAT-64 mlm:depends_on mlm:CAT-60 .
+mlm:CAT-64 mlm:depends_on mlm:CAT-61 .
+mlm:CAT-64 mlm:depends_on mlm:CAT-63 .
+mlm:CAT-64 mlm:used_by mlm:CAT-27 .
+mlm:CAT-64 mlm:used_by mlm:CAT-47 .
+mlm:CAT-64 mlm:used_by mlm:CAT-75 .
+mlm:CAT-64 mlm:used_by mlm:CAT-76 .
+mlm:CAT-64 mlm:used_by mlm:CAT-93 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-06 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-08 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-12 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-51 .
+mlm:CAT-65 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-65 mlm:used_by mlm:CAT-57 .
+mlm:CAT-65 mlm:used_by mlm:CAT-60 .
+mlm:CAT-65 mlm:used_by mlm:CAT-75 .
+mlm:CAT-65 mlm:used_by mlm:CAT-77 .
+mlm:CAT-65 mlm:used_by mlm:CAT-89 .
+mlm:CAT-65 mlm:used_by mlm:CAT-91 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-32 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-42 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-50 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-56 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-67 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-68 .
+mlm:CAT-66 mlm:depends_on mlm:CAT-69 .
+mlm:CAT-66 mlm:used_by mlm:CAT-60 .
+mlm:CAT-66 mlm:used_by mlm:CAT-62 .
+mlm:CAT-66 mlm:used_by mlm:CAT-71 .
+mlm:CAT-66 mlm:used_by mlm:CAT-72 .
+mlm:CAT-67 mlm:depends_on mlm:CAT-21 .
+mlm:CAT-67 mlm:depends_on mlm:CAT-27 .
+mlm:CAT-67 mlm:depends_on mlm:CAT-28 .
+mlm:CAT-67 mlm:depends_on mlm:CAT-53 .
+mlm:CAT-67 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-67 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-67 mlm:used_by mlm:CAT-60 .
+mlm:CAT-67 mlm:used_by mlm:CAT-66 .
+mlm:CAT-67 mlm:used_by mlm:CAT-68 .
+mlm:CAT-67 mlm:used_by mlm:CAT-71 .
+mlm:CAT-67 mlm:used_by mlm:CAT-72 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-23 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-27 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-53 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-68 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-68 mlm:used_by mlm:CAT-60 .
+mlm:CAT-68 mlm:used_by mlm:CAT-63 .
+mlm:CAT-68 mlm:used_by mlm:CAT-66 .
+mlm:CAT-68 mlm:used_by mlm:CAT-71 .
+mlm:CAT-68 mlm:used_by mlm:CAT-72 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-03 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-09 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-20 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-21 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-69 mlm:depends_on mlm:CAT-52 .
+mlm:CAT-69 mlm:used_by mlm:CAT-44 .
+mlm:CAT-69 mlm:used_by mlm:CAT-46 .
+mlm:CAT-69 mlm:used_by mlm:CAT-55 .
+mlm:CAT-69 mlm:used_by mlm:CAT-58 .
+mlm:CAT-69 mlm:used_by mlm:CAT-60 .
+mlm:CAT-69 mlm:used_by mlm:CAT-62 .
+mlm:CAT-69 mlm:used_by mlm:CAT-66 .
+mlm:CAT-69 mlm:used_by mlm:CAT-70 .
+mlm:CAT-69 mlm:used_by mlm:CAT-71 .
+mlm:CAT-69 mlm:used_by mlm:CAT-72 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-45 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-46 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-51 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-55 .
+mlm:CAT-70 mlm:depends_on mlm:CAT-69 .
+mlm:CAT-70 mlm:used_by mlm:CAT-44 .
+mlm:CAT-70 mlm:used_by mlm:CAT-46 .
+mlm:CAT-70 mlm:used_by mlm:CAT-60 .
+mlm:CAT-70 mlm:used_by mlm:CAT-62 .
+mlm:CAT-70 mlm:used_by mlm:CAT-66 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-47 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-50 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-51 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-66 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-67 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-68 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-69 .
+mlm:CAT-71 mlm:depends_on mlm:CAT-72 .
+mlm:CAT-71 mlm:used_by mlm:CAT-60 .
+mlm:CAT-71 mlm:used_by mlm:CAT-62 .
+mlm:CAT-71 mlm:used_by mlm:CAT-70 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-17 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-61 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-66 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-69 .
+mlm:CAT-72 mlm:depends_on mlm:CAT-71 .
+mlm:CAT-72 mlm:used_by mlm:CAT-60 .
+mlm:CAT-72 mlm:used_by mlm:CAT-62 .
+mlm:CAT-72 mlm:used_by mlm:CAT-66 .
+mlm:CAT-72 mlm:used_by mlm:CAT-71 .
+mlm:CAT-73 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-73 mlm:depends_on mlm:CAT-17 .
+mlm:CAT-73 mlm:depends_on mlm:CAT-31 .
+mlm:CAT-73 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-73 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-73 mlm:depends_on mlm:CAT-60 .
+mlm:CAT-73 mlm:used_by mlm:CAT-74 .
+mlm:CAT-73 mlm:used_by mlm:CAT-75 .
+mlm:CAT-73 mlm:used_by mlm:CAT-76 .
+mlm:CAT-73 mlm:used_by mlm:CAT-77 .
+mlm:CAT-73 mlm:used_by mlm:CAT-78 .
+mlm:CAT-74 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-74 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-74 mlm:depends_on mlm:CAT-23 .
+mlm:CAT-74 mlm:depends_on mlm:CAT-31 .
+mlm:CAT-74 mlm:depends_on mlm:CAT-64 .
+mlm:CAT-74 mlm:depends_on mlm:CAT-73 .
+mlm:CAT-74 mlm:used_by mlm:CAT-27 .
+mlm:CAT-74 mlm:used_by mlm:CAT-57 .
+mlm:CAT-74 mlm:used_by mlm:CAT-77 .
+mlm:CAT-74 mlm:used_by mlm:CAT-93 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-38 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-46 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-65 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-69 .
+mlm:CAT-75 mlm:depends_on mlm:CAT-73 .
+mlm:CAT-75 mlm:used_by mlm:CAT-18 .
+mlm:CAT-75 mlm:used_by mlm:CAT-74 .
+mlm:CAT-75 mlm:used_by mlm:CAT-77 .
+mlm:CAT-76 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-76 mlm:depends_on mlm:CAT-17 .
+mlm:CAT-76 mlm:depends_on mlm:CAT-34 .
+mlm:CAT-76 mlm:depends_on mlm:CAT-63 .
+mlm:CAT-76 mlm:depends_on mlm:CAT-64 .
+mlm:CAT-76 mlm:used_by mlm:CAT-40 .
+mlm:CAT-76 mlm:used_by mlm:CAT-41 .
+mlm:CAT-76 mlm:used_by mlm:CAT-52 .
+mlm:CAT-76 mlm:used_by mlm:CAT-56 .
+mlm:CAT-76 mlm:used_by mlm:CAT-73 .
+mlm:CAT-76 mlm:used_by mlm:CAT-74 .
+mlm:CAT-76 mlm:used_by mlm:CAT-75 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-65 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-75 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-92 .
+mlm:CAT-77 mlm:depends_on mlm:CAT-93 .
+mlm:CAT-77 mlm:used_by mlm:CAT-18 .
+mlm:CAT-77 mlm:used_by mlm:CAT-74 .
+mlm:CAT-77 mlm:used_by mlm:CAT-91 .
+mlm:CAT-77 mlm:used_by mlm:CAT-93 .
+mlm:CAT-78 mlm:depends_on mlm:CAT-14 .
+mlm:CAT-78 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-78 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-78 mlm:depends_on mlm:CAT-60 .
+mlm:CAT-78 mlm:depends_on mlm:CAT-73 .
+mlm:CAT-78 mlm:used_by mlm:CAT-47 .
+mlm:CAT-78 mlm:used_by mlm:CAT-64 .
+mlm:CAT-78 mlm:used_by mlm:CAT-73 .
+mlm:CAT-78 mlm:used_by mlm:CAT-89 .
+mlm:CAT-78 mlm:used_by mlm:CAT-90 .
+mlm:CAT-79 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-79 mlm:depends_on mlm:CAT-17 .
+mlm:CAT-79 mlm:depends_on mlm:CAT-78 .
+mlm:CAT-79 mlm:used_by mlm:CAT-80 .
+mlm:CAT-79 mlm:used_by mlm:CAT-81 .
+mlm:CAT-79 mlm:used_by mlm:CAT-84 .
+mlm:CAT-79 mlm:used_by mlm:CAT-85 .
+mlm:CAT-80 mlm:depends_on mlm:CAT-18 .
+mlm:CAT-80 mlm:depends_on mlm:CAT-39 .
+mlm:CAT-80 mlm:depends_on mlm:CAT-79 .
+mlm:CAT-80 mlm:used_by mlm:CAT-01 .
+mlm:CAT-80 mlm:used_by mlm:CAT-75 .
+mlm:CAT-80 mlm:used_by mlm:CAT-78 .
+mlm:CAT-80 mlm:used_by mlm:CAT-84 .
+mlm:CAT-80 mlm:used_by mlm:CAT-85 .
+mlm:CAT-81 mlm:depends_on mlm:CAT-79 .
+mlm:CAT-81 mlm:depends_on mlm:CAT-82 .
+mlm:CAT-81 mlm:used_by mlm:CAT-34 .
+mlm:CAT-81 mlm:used_by mlm:CAT-43 .
+mlm:CAT-81 mlm:used_by mlm:CAT-77 .
+mlm:CAT-81 mlm:used_by mlm:CAT-79 .
+mlm:CAT-81 mlm:used_by mlm:CAT-80 .
+mlm:CAT-82 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-82 mlm:depends_on mlm:CAT-06 .
+mlm:CAT-82 mlm:depends_on mlm:CAT-78 .
+mlm:CAT-82 mlm:used_by mlm:CAT-75 .
+mlm:CAT-82 mlm:used_by mlm:CAT-77 .
+mlm:CAT-82 mlm:used_by mlm:CAT-79 .
+mlm:CAT-82 mlm:used_by mlm:CAT-80 .
+mlm:CAT-82 mlm:used_by mlm:CAT-81 .
+mlm:CAT-82 mlm:used_by mlm:CAT-83 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-01 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-03 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-04 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-10 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-83 mlm:depends_on mlm:CAT-82 .
+mlm:CAT-83 mlm:used_by mlm:CAT-65 .
+mlm:CAT-83 mlm:used_by mlm:CAT-73 .
+mlm:CAT-83 mlm:used_by mlm:CAT-75 .
+mlm:CAT-83 mlm:used_by mlm:CAT-79 .
+mlm:CAT-83 mlm:used_by mlm:CAT-80 .
+mlm:CAT-84 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-84 mlm:depends_on mlm:CAT-79 .
+mlm:CAT-84 mlm:depends_on mlm:CAT-80 .
+mlm:CAT-84 mlm:used_by mlm:CAT-03 .
+mlm:CAT-84 mlm:used_by mlm:CAT-39 .
+mlm:CAT-84 mlm:used_by mlm:CAT-40 .
+mlm:CAT-84 mlm:used_by mlm:CAT-52 .
+mlm:CAT-84 mlm:used_by mlm:CAT-75 .
+mlm:CAT-84 mlm:used_by mlm:CAT-79 .
+mlm:CAT-84 mlm:used_by mlm:CAT-80 .
+mlm:CAT-85 mlm:depends_on mlm:CAT-79 .
+mlm:CAT-85 mlm:depends_on mlm:CAT-80 .
+mlm:CAT-85 mlm:depends_on mlm:CAT-84 .
+mlm:CAT-85 mlm:used_by mlm:CAT-79 .
+mlm:CAT-85 mlm:used_by mlm:CAT-80 .
+mlm:CAT-85 mlm:used_by mlm:CAT-84 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-14 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-20 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-21 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-23 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-27 .
+mlm:CAT-86 mlm:depends_on mlm:CAT-30 .
+mlm:CAT-86 mlm:used_by mlm:CAT-19 .
+mlm:CAT-86 mlm:used_by mlm:CAT-25 .
+mlm:CAT-86 mlm:used_by mlm:CAT-30 .
+mlm:CAT-86 mlm:used_by mlm:CAT-55 .
+mlm:CAT-86 mlm:used_by mlm:CAT-73 .
+mlm:CAT-86 mlm:used_by mlm:CAT-87 .
+mlm:CAT-86 mlm:used_by mlm:CAT-91 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-08 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-19 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-28 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-87 mlm:depends_on mlm:CAT-86 .
+mlm:CAT-87 mlm:used_by mlm:CAT-32 .
+mlm:CAT-87 mlm:used_by mlm:CAT-73 .
+mlm:CAT-87 mlm:used_by mlm:CAT-89 .
+mlm:CAT-87 mlm:used_by mlm:CAT-90 .
+mlm:CAT-87 mlm:used_by mlm:CAT-91 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-02 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-04 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-08 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-11 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-13 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-88 mlm:depends_on mlm:CAT-35 .
+mlm:CAT-88 mlm:used_by mlm:CAT-30 .
+mlm:CAT-88 mlm:used_by mlm:CAT-32 .
+mlm:CAT-88 mlm:used_by mlm:CAT-62 .
+mlm:CAT-88 mlm:used_by mlm:CAT-86 .
+mlm:CAT-88 mlm:used_by mlm:CAT-87 .
+mlm:CAT-88 mlm:used_by mlm:CAT-90 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-32 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-42 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-54 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-65 .
+mlm:CAT-89 mlm:depends_on mlm:CAT-87 .
+mlm:CAT-89 mlm:used_by mlm:CAT-66 .
+mlm:CAT-89 mlm:used_by mlm:CAT-77 .
+mlm:CAT-89 mlm:used_by mlm:CAT-90 .
+mlm:CAT-89 mlm:used_by mlm:CAT-91 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-43 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-44 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-57 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-77 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-78 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-88 .
+mlm:CAT-90 mlm:depends_on mlm:CAT-89 .
+mlm:CAT-90 mlm:used_by mlm:CAT-73 .
+mlm:CAT-90 mlm:used_by mlm:CAT-74 .
+mlm:CAT-90 mlm:used_by mlm:CAT-77 .
+mlm:CAT-90 mlm:used_by mlm:CAT-79 .
+mlm:CAT-90 mlm:used_by mlm:CAT-85 .
+mlm:CAT-91 mlm:depends_on mlm:CAT-58 .
+mlm:CAT-91 mlm:depends_on mlm:CAT-86 .
+mlm:CAT-91 mlm:depends_on mlm:CAT-87 .
+mlm:CAT-91 mlm:depends_on mlm:CAT-92 .
+mlm:CAT-91 mlm:used_by mlm:CAT-57 .
+mlm:CAT-91 mlm:used_by mlm:CAT-65 .
+mlm:CAT-91 mlm:used_by mlm:CAT-77 .
+mlm:CAT-91 mlm:used_by mlm:CAT-89 .
+mlm:CAT-91 mlm:used_by mlm:CAT-90 .
+mlm:CAT-91 mlm:used_by mlm:CAT-93 .
+mlm:CAT-92 mlm:depends_on mlm:CAT-15 .
+mlm:CAT-92 mlm:depends_on mlm:CAT-91 .
+mlm:CAT-92 mlm:used_by mlm:CAT-20 .
+mlm:CAT-92 mlm:used_by mlm:CAT-27 .
+mlm:CAT-92 mlm:used_by mlm:CAT-35 .
+mlm:CAT-92 mlm:used_by mlm:CAT-36 .
+mlm:CAT-92 mlm:used_by mlm:CAT-37 .
+mlm:CAT-92 mlm:used_by mlm:CAT-38 .
+mlm:CAT-92 mlm:used_by mlm:CAT-59 .
+mlm:CAT-92 mlm:used_by mlm:CAT-77 .
+mlm:CAT-92 mlm:used_by mlm:CAT-86 .
+mlm:CAT-92 mlm:used_by mlm:CAT-93 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-16 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-49 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-59 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-64 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-77 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-91 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-92 .
+mlm:CAT-93 mlm:depends_on mlm:CAT-94 .
+mlm:CAT-93 mlm:used_by mlm:CAT-75 .
+mlm:CAT-93 mlm:used_by mlm:CAT-76 .
+mlm:CAT-93 mlm:used_by mlm:CAT-77 .
+mlm:CAT-93 mlm:used_by mlm:CAT-90 .
+mlm:CAT-94 mlm:depends_on mlm:CAT-17 .
+mlm:CAT-94 mlm:depends_on mlm:CAT-79 .
+mlm:CAT-94 mlm:depends_on mlm:CAT-81 .
+mlm:CAT-94 mlm:depends_on mlm:CAT-92 .
+mlm:CAT-94 mlm:depends_on mlm:CAT-93 .
+mlm:CAT-94 mlm:used_by mlm:CAT-34 .
+mlm:CAT-94 mlm:used_by mlm:CAT-38 .
+mlm:CAT-94 mlm:used_by mlm:CAT-39 .
+mlm:CAT-94 mlm:used_by mlm:CAT-79 .
+mlm:CAT-94 mlm:used_by mlm:CAT-81 .
+mlm:CAT-94 mlm:used_by mlm:CAT-92 .
+mlm:CAT-94 mlm:used_by mlm:CAT-93 .
+mlm:W-Series mlm:governed_by_catalogue mlm:CAT-09 .
+mlm:W-Series mlm:governed_by_catalogue mlm:CAT-08 .
+mlm:T-Series mlm:governed_by_catalogue mlm:CAT-05 .
+mlm:T-Series mlm:governed_by_catalogue mlm:CAT-02 .
+mlm:T-Series mlm:governed_by_catalogue mlm:CAT-04 .
+mlm:O-Series mlm:governed_by_catalogue mlm:CAT-03 .
+mlm:O-Series mlm:governed_by_catalogue mlm:CAT-17 .
+mlm:M-Series mlm:governed_by_catalogue mlm:CAT-20 .
+mlm:M-Series mlm:governed_by_catalogue mlm:CAT-21 .
+mlm:M-Series mlm:governed_by_catalogue mlm:CAT-28 .
+mlm:L-Series mlm:governed_by_catalogue mlm:CAT-38 .
+mlm:L-Series mlm:governed_by_catalogue mlm:CAT-40 .
+mlm:L-Series mlm:governed_by_catalogue mlm:CAT-41 .
+mlm:R-Series mlm:governed_by_catalogue mlm:CAT-11 .
+mlm:R-Series mlm:governed_by_catalogue mlm:CAT-10 .
+mlm:R-Series mlm:governed_by_catalogue mlm:CAT-30 .
+mlm:B-Series mlm:governed_by_catalogue mlm:CAT-11 .
+mlm:B-Series mlm:governed_by_catalogue mlm:CAT-30 .
+mlm:G-Series mlm:governed_by_catalogue mlm:CAT-13 .
+mlm:G-Series mlm:governed_by_catalogue mlm:CAT-19 .
+mlm:G-Series mlm:governed_by_catalogue mlm:CAT-87 .
+mlm:C-Series mlm:governed_by_catalogue mlm:CAT-60 .
+mlm:C-Series mlm:governed_by_catalogue mlm:CAT-62 .
+mlm:C-Series mlm:governed_by_catalogue mlm:CAT-59 .
+mlm:C-Series mlm:governed_by_catalogue mlm:CAT-58 .
+mlm:D-Series mlm:governed_by_catalogue mlm:CAT-40 .
+mlm:D-Series mlm:governed_by_catalogue mlm:CAT-39 .
+mlm:D-Series mlm:governed_by_catalogue mlm:CAT-47 .
+mlm:P-Series mlm:governed_by_catalogue mlm:CAT-57 .
+mlm:P-Series mlm:governed_by_catalogue mlm:CAT-25 .
+mlm:P-Series mlm:governed_by_catalogue mlm:CAT-22 .
+mlm:CAT-52 mlm:realised_by mlm:C08 .
+mlm:CAT-53 mlm:realised_by mlm:C08 .
+mlm:CAT-54 mlm:realised_by mlm:C08 .
+mlm:CAT-55 mlm:realised_by mlm:C08 .
+mlm:CAT-56 mlm:realised_by mlm:C08 .
+mlm:RD-Map mlm:specified_by_catalogue mlm:CAT-52 .
+mlm:RD-Map mlm:specified_by_catalogue mlm:CAT-53 .
+mlm:RD-Map mlm:specified_by_catalogue mlm:CAT-54 .
+mlm:RD-Map mlm:specified_by_catalogue mlm:CAT-55 .
+mlm:RD-Map mlm:specified_by_catalogue mlm:CAT-56 .
+mlm:DS-F mlm:specified_by_catalogue mlm:CAT-43 .
+mlm:DS-F mlm:specified_by_catalogue mlm:CAT-38 .
+mlm:DS-E mlm:specified_by_catalogue mlm:CAT-43 .
+mlm:DS-E mlm:specified_by_catalogue mlm:CAT-38 .
+mlm:DS-O mlm:specified_by_catalogue mlm:CAT-43 .
+mlm:DS-O mlm:specified_by_catalogue mlm:CAT-38 .
+mlm:DS-A mlm:specified_by_catalogue mlm:CAT-43 .
+mlm:DS-A mlm:specified_by_catalogue mlm:CAT-38 .
+mlm:DS-P mlm:specified_by_catalogue mlm:CAT-43 .
+mlm:DS-P mlm:specified_by_catalogue mlm:CAT-38 .
+mlm:CAT-11 mlm:classifies mlm:Asset-Temperature-sensors-room-flow-return .
+mlm:CAT-11 mlm:classifies mlm:Asset-Relative-humidity-sensors .
+mlm:CAT-11 mlm:classifies mlm:Asset-CO-sensors .
+mlm:CAT-11 mlm:classifies mlm:Asset-VOC-PM-sensors .
+mlm:CAT-11 mlm:classifies mlm:Asset-Window-Door-open-closed-sensors .
+mlm:CAT-11 mlm:classifies mlm:Asset-Radiator-UFH-flow-sensors .
+mlm:CAT-11 mlm:classifies mlm:Asset-Whole-house-smart-meter .
+mlm:CAT-11 mlm:classifies mlm:Asset-Electrical-submeters .
+mlm:CAT-11 mlm:classifies mlm:Asset-Heat-meters-heating-cooling-loops .
+mlm:CAT-11 mlm:classifies mlm:Asset-PV-inverter .
+mlm:CAT-11 mlm:classifies mlm:Asset-Battery-storage .
+mlm:CAT-11 mlm:classifies mlm:Asset-EV-charger-smart-V2G .
+mlm:CAT-11 mlm:classifies mlm:Asset-Heat-pump-ASHP-GSHP .
+mlm:CAT-11 mlm:classifies mlm:Asset-PCM-storage-small-scale .
+mlm:CAT-11 mlm:classifies mlm:Asset-Buffer-tanks-thermal-storage .
+mlm:CAT-11 mlm:classifies mlm:Asset-ERV-HRV .
+mlm:CAT-11 mlm:classifies mlm:Asset-Mixing-3-way-valves .
+mlm:CAT-11 mlm:classifies mlm:Asset-Shading-blinds-actuators .
+mlm:CAT-11 mlm:classifies mlm:Asset-ATS-STS-crossover-switches .
+mlm:CAT-11 mlm:classifies mlm:Asset-Dynamic-tariff-grid-signals .
+mlm:CAT-11 mlm:classifies mlm:Asset-Carbon-intensity-signals .
+mlm:CAT-11 mlm:classifies mlm:Asset-Weather-nowcast-ensemble-forecasts .
+mlm:CAT-11 mlm:classifies mlm:Asset-Occupant-preferences-override-app .

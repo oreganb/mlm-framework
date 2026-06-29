@@ -1,0 +1,340 @@
+id,label,type,band,catalogue_id
+MLM,Multi-Layered Modelling Knowledge Graph,KnowledgeGraph,,
+Deterministic,Deterministic,Layer,,
+Stochastic,Stochastic,Layer,,
+AI_ML,AI/ML,Layer,,
+RL_Q_Learning,RL/Q-Learning,Layer,,
+DS-F,Foundational,DatasetFamily,,
+DS-E,Energy,DatasetFamily,,
+DS-O,Occupancy,DatasetFamily,,
+DS-A,Advanced,DatasetFamily,,
+DS-P,Predictive,DatasetFamily,,
+DS-NWP,DS-NWP,Dataset,,
+DS-MARINE,DS-MARINE,Dataset,,
+DS-ASTRONOMY,DS-ASTRONOMY,Dataset,,
+DS-RADAR,DS-RADAR,Dataset,,
+DS-LOCAL-SENSOR,DS-LOCAL-SENSOR,Dataset,,
+DS-CALENDAR,DS-CALENDAR,Dataset,,
+DS-WEATHER,DS-WEATHER,Dataset,,
+DS-BUILDING,DS-BUILDING,Dataset,,
+DS-OCCUPANCY,DS-OCCUPANCY,Dataset,,
+DS-ENERGY,DS-ENERGY,Dataset,,
+DS-PV,DS-PV,Dataset,,
+DS-INVERTER,DS-INVERTER,Dataset,,
+DS-BATTERY,DS-BATTERY,Dataset,,
+DS-EV,DS-EV,Dataset,,
+DS-HVAC,DS-HVAC,Dataset,,
+DS-SENSOR,DS-SENSOR,Dataset,,
+DS-SMART-METER,DS-SMART-METER,Dataset,,
+DS-MARKET,DS-MARKET,Dataset,,
+DS-CARBON,DS-CARBON,Dataset,,
+DS-GRID,DS-GRID,Dataset,,
+DS-TARIFF,DS-TARIFF,Dataset,,
+Asset-Temperature-sensors-room-flow-return,Temperature sensors room flow return,Asset,,
+Asset-Relative-humidity-sensors,Relative humidity sensors,Asset,,
+Asset-CO-sensors,CO sensors,Asset,,
+Asset-VOC-PM-sensors,VOC PM sensors,Asset,,
+Asset-Window-Door-open-closed-sensors,Window Door open closed sensors,Asset,,
+Asset-Radiator-UFH-flow-sensors,Radiator UFH flow sensors,Asset,,
+Asset-Whole-house-smart-meter,Whole house smart meter,Asset,,
+Asset-Electrical-submeters,Electrical submeters,Asset,,
+Asset-Heat-meters-heating-cooling-loops,Heat meters heating cooling loops,Asset,,
+Asset-PV-inverter,PV inverter,Asset,,
+Asset-Battery-storage,Battery storage,Asset,,
+Asset-EV-charger-smart-V2G,EV charger smart V2G,Asset,,
+Asset-Heat-pump-ASHP-GSHP,Heat pump ASHP GSHP,Asset,,
+Asset-PCM-storage-small-scale,PCM storage small scale,Asset,,
+Asset-Buffer-tanks-thermal-storage,Buffer tanks thermal storage,Asset,,
+Asset-ERV-HRV,ERV HRV,Asset,,
+Asset-Mixing-3-way-valves,Mixing 3 way valves,Asset,,
+Asset-Shading-blinds-actuators,Shading blinds actuators,Asset,,
+Asset-ATS-STS-crossover-switches,ATS STS crossover switches,Asset,,
+Asset-Dynamic-tariff-grid-signals,Dynamic tariff grid signals,Asset,,
+Asset-Carbon-intensity-signals,Carbon intensity signals,Asset,,
+Asset-Weather-nowcast-ensemble-forecasts,Weather nowcast ensemble forecasts,Asset,,
+Asset-Occupant-preferences-override-app,Occupant preferences override app,Asset,,
+Formula-B,Formula family for B-Series,FormulaFamily,,
+Formula-C,Formula family for C-Series,FormulaFamily,,
+Formula-D,Formula family for D-Series,FormulaFamily,,
+Formula-F,Formula family for F-Series,FormulaFamily,,
+Formula-L,Formula family for L-Series,FormulaFamily,,
+Formula-M,Formula family for M-Series,FormulaFamily,,
+Formula-O,Formula family for O-Series,FormulaFamily,,
+Formula-P,Formula family for P-Series,FormulaFamily,,
+Formula-R,Formula family for R-Series,FormulaFamily,,
+Formula-T,Formula family for T-Series,FormulaFamily,,
+Formula-G,Formula family for G-Series,FormulaFamily,,
+Formula-K,Formula family for K-Series,FormulaFamily,,
+Formula-W,Formula family for W-Series,FormulaFamily,,
+ODEON,ODEON,Application,,
+FLEXUS,FLEXUS,Application,,
+ARC-Tool,ARC-Tool,Application,,
+RD-Map,Response Derivative Map,ResponseDerivative,,
+W-Series,Weather & Exogenous,Series,,
+O-Series,"Occupancy, Behaviour & DHW",Series,,
+M-Series,"Market, Tariff & Carbon Pricing",Series,,
+L-Series,Load & End-Use Decomposition,Series,,
+R-Series,Renewables & DER,Series,,
+T-Series,Thermal Envelope & HVAC/Plant,Series,,
+B-Series,"Battery, EV & Storage",Series,,
+G-Series,"Grid, Microgrid & Protection",Series,,
+C-Series,Optimisation & Control,Series,,
+D-Series,Data Quality & Imputation,Series,,
+P-Series,"Trading, Revenue & KPIs",Series,,
+K-Series,"Carbon, Compliance & Policy",Series,,
+F-Series,"Meta-Learning, Transfer & Privacy",Series,,
+W01,Solar Irradiance Model,Model,,
+W02,Ambient Temperature Model,Model,,
+W03,Wind Speed & Direction Model,Model,,
+W04,Rainfall & Precipitation Model,Model,,
+W05,Cloud Cover Model (OKTAS),Model,,
+W06,Humidity & Dew Point Model,Model,,
+W07,Atmospheric Pressure Model,Model,,
+W08,Solar Geometry Model,Model,,
+W09,Coastal & Marine Conditions Model,Model,,
+W10,Extreme Weather Event Model,Model,,
+W11,Fog & Visibility Model,Model,,
+W12,UV Index Model,Model,,
+W13,Seasonal Pattern Model,Model,,
+W14,Weather Ensemble Generator,Model,,
+W15,Nowcasting Model (T+0 to T+60min),Model,,
+W16,Day-Ahead Forecast Model (T+24h),Model,,
+W17,Microclimate Correction Model,Model,,
+W18,Grid-Stress Weather Indicator,Model,,
+W19,Islanding Condition Weather Model,Model,,
+W20,OKTAS-to-PV Availability Mapping Model,Model,,
+O01,Occupancy Probability Model,Model,,
+O02,Occupant Schedule Model,Model,,
+O03,Thermal Comfort Feedback Model,Model,,
+O04,DHW Demand Model,Model,,
+O05,Appliance Use Model,Model,,
+O06,Lighting Demand Model,Model,,
+O07,EV Departure/Return Model,Model,,
+O08,Occupant Heat Gain Model,Model,,
+O09,Natural Ventilation Model,Model,,
+O10,Smart Appliance Price Response Model,Model,,
+O11,Behavioural Flexibility Willingness Model,Model,,
+O12,Holiday & Event Pattern Model,Model,,
+O13,Household Archetype Classification Model,Model,,
+O14,Income-Energy Consumption Correlation Model,Model,,
+O15,Occupant Override & HMI Signal Model,Model,,
+M01,Day-Ahead Price Forecast Model,Model,,
+M02,Intraday Price Model,Model,,
+M03,System Marginal Price Model,Model,,
+M04,Distribution Network Tariff Model,Model,,
+M05,Time-of-Use Tariff Model,Model,,
+M06,Demand Response Incentive Model,Model,,
+M07,P2P Energy Price Mechanism Model,Model,,
+M08,Carbon Intensity Forecast Model,Model,,
+M09,Carbon Price Model,Model,,
+M10,Flexibility Market Price Model,Model,,
+M11,Feed-in Tariff Model,Model,,
+M12,Market Ensemble Generator,Model,,
+L01,Net Load Model,Model,,
+L02,NILM Disaggregation Model,Model,,
+L03,HVAC Load Decomposition Model,Model,,
+L04,Appliance Load Model,Model,,
+L05,Lighting Load Model,Model,,
+L06,DHW Load Model,Model,,
+L07,EV Charging Load Model,Model,,
+L08,Base Load Model (Non-Controllable),Model,,
+L09,Flexible Load Identification Model,Model,,
+L10,Load Forecasting Model,Model,,
+L11,Peak Load Detection & Forecasting Model,Model,,
+L12,Load Profile Clustering Model,Model,,
+L13,Demand Response Adjusted Load Model,Model,,
+R01,PV Generation Model,Model,,
+R02,Wind Generation Model,Model,,
+R03,PV Degradation & Soiling Model,Model,,
+R04,MPPT Model,Model,,
+R05,Inverter Efficiency Model,Model,,
+R06,PV Curtailment Model,Model,,
+R07,Micro-Wind Turbine Model,Model,,
+R08,Hybrid PV + Battery Combined Output Model,Model,,
+R09,DER Availability Stochastic Model,Model,,
+R10,Self-Consumption Optimisation Model,Model,,
+T01,Building Thermal RC Model,Model,,
+T02,HVAC COP Model,Model,,
+T03,Heat Pump Thermal Model,Model,,
+T04,Solar Thermal Gain Model,Model,,
+T05,Infiltration & Ventilation Heat Loss Model,Model,,
+T06,Radiator Hydronic Circuit Model,Model,,
+T07,PCM Thermal Storage Model,Model,,
+T08,Hot Water Cylinder (DHW) Model,Model,,
+T09,Underfloor Heating Model,Model,,
+T10,Thermal Comfort Index Model (PMV/PPD),Model,,
+T11,Building Fabric Archetype Lookup Model,Model,,
+T12,Multi-Zone Heat Transfer Model,Model,,
+T13,High-Temperature Heat Pump (HTHP) Model,Model,,
+T14,Chiller Thermal Model,Model,,
+T15,Gas/Oil Boiler Thermal Model,Model,,
+T16,Heat Exchanger NTU-ε Model,Model,,
+T17,Thermal Inertia & Lag Model,Model,,
+T18,Thermal Setpoint Optimisation Model,Model,,
+T19,Building EPC Classification Model,Model,,
+T20,Surrogate Thermal Model (Fast ANN),Model,,
+B01,Battery SoC Prediction Model,Model,,
+B02,Battery State of Health Degradation Model,Model,,
+B03,EV Arrival/Departure Markov Model,Model,,
+B04,EV Charging Demand Prediction Model,Model,,
+B05,V2G Availability Model,Model,,
+B06,Battery Lifetime Monte Carlo Model,Model,,
+B07,Multi-Battery Coordination Model,Model,,
+B08,Battery Thermal Limit Model,Model,,
+B09,Federated Battery Learning Model,Model,,
+B10,Battery Revenue Optimisation Model,Model,,
+G01,Feeder Power Flow Model,Model,,
+G02,Grid Import/Export Limits Model,Model,,
+G03,Frequency Deviation Model,Model,,
+G04,Voltage Stability Model,Model,,
+G05,Power Factor Model,Model,,
+G06,Network Loss Model,Model,,
+G07,Microgrid Islanding Detection Model,Model,,
+G08,Fragmented Islanding Segment Model,Model,,
+G09,Protection Scheme & Recloser Model,Model,,
+G10,EV Grid Impact Model,Model,,
+G11,DER Hosting Capacity Model,Model,,
+G12,Community Energy Balance Model,Model,,
+C01,MILP Flexibility Engine,Model,,
+C02,MPC Controller,Model,,
+C03,Determinization Bridge,Model,,
+C04,Q-Table Dispatch Policy,Model,,
+C05,DQN Controller,Model,,
+C06,Actor-Critic HVAC Controller,Model,,
+C07,Multi-Agent RL Community Coordinator,Model,,
+C08,Response Derivative Engine,Model,,
+C09,Fragmented Islanding Controller,Model,,
+C10,Governance & Safety Layer,Model,,
+D01,Weather Data QA Gate,Model,,
+D02,PV Data Plausibility Validator,Model,,
+D03,Battery Data Consistency Validator,Model,,
+D04,Sensor Fault Detection Model,Model,,
+D05,Smart Meter Data QA Model,Model,,
+D06,Missing Data Imputation Model,Model,,
+D07,Outlier Detection Model,Model,,
+D08,Model Drift Detection & Retraining Trigger,Model,,
+P01,P2P Energy Trading Revenue Model,Model,,
+P02,Intraday Trading Model,Model,,
+P03,Flexibility Market Bidding Model,Model,,
+P04,Self-Consumption KPI Model,Model,,
+P05,Bill Savings KPI Model,Model,,
+P06,PED Performance KPI Model,Model,,
+P07,Response Derivative KPI Model,Model,,
+P08,Portfolio Aggregation & Market Bid Model,Model,,
+K01,Avoided Carbon Model,Model,,
+K02,EPC Compliance Model,Model,,
+K03,EU ETS Reporting Model,Model,,
+K04,Carbon Budget Tracker,Model,,
+K05,Policy Alignment & Incentive Eligibility Model,Model,,
+F01,Federated Averaging Model,Model,,
+F02,Transfer Learning Adapter,Model,,
+F03,Differential Privacy Layer,Model,,
+F04,Cross-Site Calibration Model,Model,,
+F05,Model Versioning & Rollback Controller,Model,,
+F06,Data Residency Controller,Model,,
+CAT-01,01 building_classification,Catalogue,physical,EIG-CAT-001
+CAT-02,02 building,Catalogue,physical,EIG-CAT-002
+CAT-03,03 occupancy,Catalogue,physical,EIG-CAT-003
+CAT-04,04 space,Catalogue,physical,EIG-CAT-004
+CAT-05,05 building_fabric,Catalogue,physical,EIG-CAT-005
+CAT-06,06 building_benchmark,Catalogue,physical,EIG-CAT-006
+CAT-07,07 building_archetype,Catalogue,physical,EIG-CAT-007
+CAT-08,08 geographic,Catalogue,physical,EIG-CAT-008
+CAT-09,09 weather_climate,Catalogue,physical,EIG-CAT-009
+CAT-10,10 asset_classification,Catalogue,physical,EIG-CAT-010
+CAT-11,11 asset,Catalogue,physical,EIG-CAT-011
+CAT-12,12 asset_benchmark,Catalogue,physical,EIG-CAT-012
+CAT-13,13 utility_network,Catalogue,physical,EIG-CAT-013
+CAT-14,14 actor,Catalogue,actors,EIG-CAT-014
+CAT-15,15 organisation,Catalogue,actors,EIG-CAT-015
+CAT-16,16 role,Catalogue,actors,EIG-CAT-016
+CAT-17,17 user,Catalogue,actors,EIG-CAT-017
+CAT-18,18 stakeholder,Catalogue,actors,EIG-CAT-018
+CAT-19,19 energy_carrier,Catalogue,markets,EIG-CAT-019
+CAT-20,20 market,Catalogue,markets,EIG-CAT-020
+CAT-21,21 tariff,Catalogue,markets,EIG-CAT-021
+CAT-22,22 product,Catalogue,markets,EIG-CAT-022
+CAT-23,23 contract,Catalogue,markets,EIG-CAT-023
+CAT-24,24 schedule,Catalogue,markets,EIG-CAT-024
+CAT-25,25 trade,Catalogue,markets,EIG-CAT-025
+CAT-26,26 trade_window,Catalogue,markets,EIG-CAT-026
+CAT-27,27 settlement,Catalogue,markets,EIG-CAT-027
+CAT-28,28 carbon,Catalogue,markets,EIG-CAT-028
+CAT-29,29 flexibility_service,Catalogue,flexibility,EIG-CAT-029
+CAT-30,30 flexibility,Catalogue,flexibility,EIG-CAT-030
+CAT-31,31 platform,Catalogue,flexibility,EIG-CAT-031
+CAT-32,32 digital_twin,Catalogue,flexibility,EIG-CAT-032
+CAT-33,33 digital_twin_template,Catalogue,flexibility,EIG-CAT-033
+CAT-34,34 communication,Catalogue,flexibility,EIG-CAT-034
+CAT-35,35 edge_infrastructure,Catalogue,flexibility,EIG-CAT-035
+CAT-36,36 device,Catalogue,flexibility,EIG-CAT-036
+CAT-37,37 data_source,Catalogue,flexibility,EIG-CAT-037
+CAT-38,38 data,Catalogue,data,EIG-CAT-038
+CAT-39,39 metadata,Catalogue,data,EIG-CAT-039
+CAT-40,40 data_quality,Catalogue,data,EIG-CAT-040
+CAT-41,41 feature,Catalogue,data,EIG-CAT-041
+CAT-42,42 synthetic_data,Catalogue,data,EIG-CAT-042
+CAT-43,43 dataset,Catalogue,data,EIG-CAT-043
+CAT-44,44 model,Catalogue,models,EIG-CAT-044
+CAT-45,45 algorithm,Catalogue,models,EIG-CAT-045
+CAT-46,46 forecast,Catalogue,models,EIG-CAT-046
+CAT-47,47 validation,Catalogue,models,EIG-CAT-047
+CAT-48,48 hyperparameter,Catalogue,models,EIG-CAT-048
+CAT-49,49 explainability,Catalogue,models,EIG-CAT-049
+CAT-50,50 training,Catalogue,models,EIG-CAT-050
+CAT-51,51 model_benchmark,Catalogue,models,EIG-CAT-051
+CAT-52,52 response_derivative,Catalogue,response_derivative,EIG-CAT-052
+CAT-53,53 response_behaviour,Catalogue,response_derivative,EIG-CAT-053
+CAT-54,54 sensitivity,Catalogue,response_derivative,EIG-CAT-054
+CAT-55,55 response_profile,Catalogue,response_derivative,EIG-CAT-055
+CAT-56,56 response_event,Catalogue,response_derivative,EIG-CAT-056
+CAT-57,57 kpi,Catalogue,decision,EIG-CAT-057
+CAT-58,58 objective,Catalogue,decision,EIG-CAT-058
+CAT-59,59 constraint,Catalogue,decision,EIG-CAT-059
+CAT-60,60 decision_intelligence,Catalogue,decision,EIG-CAT-060
+CAT-61,61 action,Catalogue,decision,EIG-CAT-061
+CAT-62,62 control_strategy,Catalogue,decision,EIG-CAT-062
+CAT-63,63 event,Catalogue,decision,EIG-CAT-063
+CAT-64,64 workflow,Catalogue,decision,EIG-CAT-064
+CAT-65,65 benchmark,Catalogue,rl_agents,EIG-CAT-065
+CAT-66,66 reinforcement_learning,Catalogue,rl_agents,EIG-CAT-066
+CAT-67,67 reward,Catalogue,rl_agents,EIG-CAT-067
+CAT-68,68 penalty,Catalogue,rl_agents,EIG-CAT-068
+CAT-69,69 context,Catalogue,rl_agents,EIG-CAT-069
+CAT-70,70 model_selection,Catalogue,rl_agents,EIG-CAT-070
+CAT-71,71 learning_policy,Catalogue,rl_agents,EIG-CAT-071
+CAT-72,72 agent,Catalogue,rl_agents,EIG-CAT-072
+CAT-73,73 application,Catalogue,applications,EIG-CAT-073
+CAT-74,74 service,Catalogue,applications,EIG-CAT-074
+CAT-75,75 dashboard,Catalogue,applications,EIG-CAT-075
+CAT-76,76 alert,Catalogue,applications,EIG-CAT-076
+CAT-77,77 report,Catalogue,applications,EIG-CAT-077
+CAT-78,78 use_case,Catalogue,applications,EIG-CAT-078
+CAT-79,79 ontology,Catalogue,semantics,EIG-CAT-079
+CAT-80,80 knowledge_graph,Catalogue,semantics,EIG-CAT-080
+CAT-81,81 semantic_mapping,Catalogue,semantics,EIG-CAT-081
+CAT-82,82 vocabulary,Catalogue,semantics,EIG-CAT-082
+CAT-83,83 taxonomy,Catalogue,semantics,EIG-CAT-083
+CAT-84,84 reasoning_rule,Catalogue,semantics,EIG-CAT-084
+CAT-85,85 semantic_pattern,Catalogue,semantics,EIG-CAT-085
+CAT-86,86 community,Catalogue,governance,EIG-CAT-086
+CAT-87,87 district,Catalogue,governance,EIG-CAT-087
+CAT-88,88 site,Catalogue,governance,EIG-CAT-088
+CAT-89,89 scenario,Catalogue,governance,EIG-CAT-089
+CAT-90,90 project,Catalogue,governance,EIG-CAT-090
+CAT-91,91 policy,Catalogue,governance,EIG-CAT-091
+CAT-92,92 regulation,Catalogue,governance,EIG-CAT-092
+CAT-93,93 compliance,Catalogue,governance,EIG-CAT-093
+CAT-94,94 standard,Catalogue,governance,EIG-CAT-094
+BAND-physical,physical,CatalogueBand,,
+BAND-actors,actors,CatalogueBand,,
+BAND-markets,markets,CatalogueBand,,
+BAND-flexibility,flexibility,CatalogueBand,,
+BAND-data,data,CatalogueBand,,
+BAND-models,models,CatalogueBand,,
+BAND-response_derivative,response_derivative,CatalogueBand,,
+BAND-decision,decision,CatalogueBand,,
+BAND-rl_agents,rl_agents,CatalogueBand,,
+BAND-applications,applications,CatalogueBand,,
+BAND-semantics,semantics,CatalogueBand,,
+BAND-governance,governance,CatalogueBand,,

@@ -1,0 +1,234 @@
+id,label,type,layer,series
+MLM,Multi-Layered Modelling Knowledge Graph,KnowledgeGraph,,
+Deterministic,Deterministic,Layer,,
+Stochastic,Stochastic,Layer,,
+AI_ML,AI/ML,Layer,,
+RL_Q_Learning,RL/Q-Learning,Layer,,
+DS-F,Foundational,DatasetFamily,,
+DS-E,Energy,DatasetFamily,,
+DS-O,Occupancy,DatasetFamily,,
+DS-A,Advanced,DatasetFamily,,
+DS-P,Predictive,DatasetFamily,,
+DS-NWP,DS-NWP,Dataset,,
+DS-MARINE,DS-MARINE,Dataset,,
+DS-ASTRONOMY,DS-ASTRONOMY,Dataset,,
+DS-RADAR,DS-RADAR,Dataset,,
+DS-LOCAL-SENSOR,DS-LOCAL-SENSOR,Dataset,,
+DS-CALENDAR,DS-CALENDAR,Dataset,,
+DS-WEATHER,DS-WEATHER,Dataset,,
+DS-BUILDING,DS-BUILDING,Dataset,,
+DS-OCCUPANCY,DS-OCCUPANCY,Dataset,,
+DS-ENERGY,DS-ENERGY,Dataset,,
+DS-PV,DS-PV,Dataset,,
+DS-INVERTER,DS-INVERTER,Dataset,,
+DS-BATTERY,DS-BATTERY,Dataset,,
+DS-EV,DS-EV,Dataset,,
+DS-HVAC,DS-HVAC,Dataset,,
+DS-SENSOR,DS-SENSOR,Dataset,,
+DS-SMART-METER,DS-SMART-METER,Dataset,,
+DS-MARKET,DS-MARKET,Dataset,,
+DS-CARBON,DS-CARBON,Dataset,,
+DS-GRID,DS-GRID,Dataset,,
+DS-TARIFF,DS-TARIFF,Dataset,,
+Asset-Temperature-sensors-room-flow-return,Temperature sensors room flow return,Asset,,
+Asset-Relative-humidity-sensors,Relative humidity sensors,Asset,,
+Asset-CO-sensors,CO sensors,Asset,,
+Asset-VOC-PM-sensors,VOC PM sensors,Asset,,
+Asset-Window-Door-open-closed-sensors,Window Door open closed sensors,Asset,,
+Asset-Radiator-UFH-flow-sensors,Radiator UFH flow sensors,Asset,,
+Asset-Whole-house-smart-meter,Whole house smart meter,Asset,,
+Asset-Electrical-submeters,Electrical submeters,Asset,,
+Asset-Heat-meters-heating-cooling-loops,Heat meters heating cooling loops,Asset,,
+Asset-PV-inverter,PV inverter,Asset,,
+Asset-Battery-storage,Battery storage,Asset,,
+Asset-EV-charger-smart-V2G,EV charger smart V2G,Asset,,
+Asset-Heat-pump-ASHP-GSHP,Heat pump ASHP GSHP,Asset,,
+Asset-PCM-storage-small-scale,PCM storage small scale,Asset,,
+Asset-Buffer-tanks-thermal-storage,Buffer tanks thermal storage,Asset,,
+Asset-ERV-HRV,ERV HRV,Asset,,
+Asset-Mixing-3-way-valves,Mixing 3 way valves,Asset,,
+Asset-Shading-blinds-actuators,Shading blinds actuators,Asset,,
+Asset-ATS-STS-crossover-switches,ATS STS crossover switches,Asset,,
+Asset-Dynamic-tariff-grid-signals,Dynamic tariff grid signals,Asset,,
+Asset-Carbon-intensity-signals,Carbon intensity signals,Asset,,
+Asset-Weather-nowcast-ensemble-forecasts,Weather nowcast ensemble forecasts,Asset,,
+Asset-Occupant-preferences-override-app,Occupant preferences override app,Asset,,
+Formula-B,Formula family for B-Series,FormulaFamily,,
+Formula-C,Formula family for C-Series,FormulaFamily,,
+Formula-D,Formula family for D-Series,FormulaFamily,,
+Formula-F,Formula family for F-Series,FormulaFamily,,
+Formula-L,Formula family for L-Series,FormulaFamily,,
+Formula-M,Formula family for M-Series,FormulaFamily,,
+Formula-O,Formula family for O-Series,FormulaFamily,,
+Formula-P,Formula family for P-Series,FormulaFamily,,
+Formula-R,Formula family for R-Series,FormulaFamily,,
+Formula-T,Formula family for T-Series,FormulaFamily,,
+Formula-G,Formula family for G-Series,FormulaFamily,,
+Formula-K,Formula family for K-Series,FormulaFamily,,
+Formula-W,Formula family for W-Series,FormulaFamily,,
+ODEON,ODEON,Application,,
+FLEXUS,FLEXUS,Application,,
+ARC-Tool,ARC-Tool,Application,,
+RD-Map,Response Derivative Map,ResponseDerivative,,
+W-Series,Weather & Exogenous,Series,Stochastic,
+O-Series,Occupancy, Behaviour & DHW,Series,Stochastic,
+M-Series,Market, Tariff & Carbon Pricing,Series,Stochastic,
+L-Series,Load & End-Use Decomposition,Series,Deterministic,
+R-Series,Renewables & DER,Series,Deterministic,
+T-Series,Thermal Envelope & HVAC/Plant,Series,Deterministic,
+B-Series,Battery, EV & Storage,Series,AI/ML,
+G-Series,Grid, Microgrid & Protection,Series,Deterministic,
+C-Series,Optimisation & Control,Series,RL/Q-Learning,
+D-Series,Data Quality & Imputation,Series,AI/ML,
+P-Series,Trading, Revenue & KPIs,Series,RL/Q-Learning,
+K-Series,Carbon, Compliance & Policy,Series,RL/Q-Learning,
+F-Series,Meta-Learning, Transfer & Privacy,Series,AI/ML,
+W01,Solar Irradiance Model,Model,Stochastic,W-Series
+W02,Ambient Temperature Model,Model,Stochastic,W-Series
+W03,Wind Speed & Direction Model,Model,Stochastic,W-Series
+W04,Rainfall & Precipitation Model,Model,Stochastic,W-Series
+W05,Cloud Cover Model (OKTAS),Model,Stochastic,W-Series
+W06,Humidity & Dew Point Model,Model,Stochastic,W-Series
+W07,Atmospheric Pressure Model,Model,Stochastic,W-Series
+W08,Solar Geometry Model,Model,Stochastic,W-Series
+W09,Coastal & Marine Conditions Model,Model,Stochastic,W-Series
+W10,Extreme Weather Event Model,Model,Stochastic,W-Series
+W11,Fog & Visibility Model,Model,Stochastic,W-Series
+W12,UV Index Model,Model,Stochastic,W-Series
+W13,Seasonal Pattern Model,Model,Stochastic,W-Series
+W14,Weather Ensemble Generator,Model,Stochastic,W-Series
+W15,Nowcasting Model (T+0 to T+60min),Model,Stochastic,W-Series
+W16,Day-Ahead Forecast Model (T+24h),Model,Stochastic,W-Series
+W17,Microclimate Correction Model,Model,Stochastic,W-Series
+W18,Grid-Stress Weather Indicator,Model,Stochastic,W-Series
+W19,Islanding Condition Weather Model,Model,Stochastic,W-Series
+W20,OKTAS-to-PV Availability Mapping Model,Model,Stochastic,W-Series
+O01,Occupancy Probability Model,Model,Stochastic,O-Series
+O02,Occupant Schedule Model,Model,Stochastic,O-Series
+O03,Thermal Comfort Feedback Model,Model,Stochastic,O-Series
+O04,DHW Demand Model,Model,Stochastic,O-Series
+O05,Appliance Use Model,Model,Stochastic,O-Series
+O06,Lighting Demand Model,Model,Stochastic,O-Series
+O07,EV Departure/Return Model,Model,Stochastic,O-Series
+O08,Occupant Heat Gain Model,Model,Stochastic,O-Series
+O09,Natural Ventilation Model,Model,Stochastic,O-Series
+O10,Smart Appliance Price Response Model,Model,Stochastic,O-Series
+O11,Behavioural Flexibility Willingness Model,Model,Stochastic,O-Series
+O12,Holiday & Event Pattern Model,Model,Stochastic,O-Series
+O13,Household Archetype Classification Model,Model,Stochastic,O-Series
+O14,Income-Energy Consumption Correlation Model,Model,Stochastic,O-Series
+O15,Occupant Override & HMI Signal Model,Model,Stochastic,O-Series
+M01,Day-Ahead Price Forecast Model,Model,Stochastic,M-Series
+M02,Intraday Price Model,Model,Stochastic,M-Series
+M03,System Marginal Price Model,Model,Stochastic,M-Series
+M04,Distribution Network Tariff Model,Model,Stochastic,M-Series
+M05,Time-of-Use Tariff Model,Model,Stochastic,M-Series
+M06,Demand Response Incentive Model,Model,Stochastic,M-Series
+M07,P2P Energy Price Mechanism Model,Model,Stochastic,M-Series
+M08,Carbon Intensity Forecast Model,Model,Stochastic,M-Series
+M09,Carbon Price Model,Model,Stochastic,M-Series
+M10,Flexibility Market Price Model,Model,Stochastic,M-Series
+M11,Feed-in Tariff Model,Model,Stochastic,M-Series
+M12,Market Ensemble Generator,Model,Stochastic,M-Series
+L01,Net Load Model,Model,Deterministic,L-Series
+L02,NILM Disaggregation Model,Model,Deterministic,L-Series
+L03,HVAC Load Decomposition Model,Model,Deterministic,L-Series
+L04,Appliance Load Model,Model,Deterministic,L-Series
+L05,Lighting Load Model,Model,Deterministic,L-Series
+L06,DHW Load Model,Model,Deterministic,L-Series
+L07,EV Charging Load Model,Model,Deterministic,L-Series
+L08,Base Load Model (Non-Controllable),Model,Deterministic,L-Series
+L09,Flexible Load Identification Model,Model,Deterministic,L-Series
+L10,Load Forecasting Model,Model,Deterministic,L-Series
+L11,Peak Load Detection & Forecasting Model,Model,Deterministic,L-Series
+L12,Load Profile Clustering Model,Model,Deterministic,L-Series
+L13,Demand Response Adjusted Load Model,Model,Deterministic,L-Series
+R01,PV Generation Model,Model,Deterministic,R-Series
+R02,Wind Generation Model,Model,Deterministic,R-Series
+R03,PV Degradation & Soiling Model,Model,Deterministic,R-Series
+R04,MPPT Model,Model,Deterministic,R-Series
+R05,Inverter Efficiency Model,Model,Deterministic,R-Series
+R06,PV Curtailment Model,Model,Deterministic,R-Series
+R07,Micro-Wind Turbine Model,Model,Deterministic,R-Series
+R08,Hybrid PV + Battery Combined Output Model,Model,Deterministic,R-Series
+R09,DER Availability Stochastic Model,Model,Deterministic,R-Series
+R10,Self-Consumption Optimisation Model,Model,Deterministic,R-Series
+T01,Building Thermal RC Model,Model,Deterministic,T-Series
+T02,HVAC COP Model,Model,Deterministic,T-Series
+T03,Heat Pump Thermal Model,Model,Deterministic,T-Series
+T04,Solar Thermal Gain Model,Model,Deterministic,T-Series
+T05,Infiltration & Ventilation Heat Loss Model,Model,Deterministic,T-Series
+T06,Radiator Hydronic Circuit Model,Model,Deterministic,T-Series
+T07,PCM Thermal Storage Model,Model,Deterministic,T-Series
+T08,Hot Water Cylinder (DHW) Model,Model,Deterministic,T-Series
+T09,Underfloor Heating Model,Model,Deterministic,T-Series
+T10,Thermal Comfort Index Model (PMV/PPD),Model,Deterministic,T-Series
+T11,Building Fabric Archetype Lookup Model,Model,Deterministic,T-Series
+T12,Multi-Zone Heat Transfer Model,Model,Deterministic,T-Series
+T13,High-Temperature Heat Pump (HTHP) Model,Model,Deterministic,T-Series
+T14,Chiller Thermal Model,Model,Deterministic,T-Series
+T15,Gas/Oil Boiler Thermal Model,Model,Deterministic,T-Series
+T16,Heat Exchanger NTU-ε Model,Model,Deterministic,T-Series
+T17,Thermal Inertia & Lag Model,Model,Deterministic,T-Series
+T18,Thermal Setpoint Optimisation Model,Model,Deterministic,T-Series
+T19,Building EPC Classification Model,Model,Deterministic,T-Series
+T20,Surrogate Thermal Model (Fast ANN),Model,AI/ML,T-Series
+B01,Battery SoC Prediction Model,Model,AI/ML,B-Series
+B02,Battery State of Health Degradation Model,Model,AI/ML,B-Series
+B03,EV Arrival/Departure Markov Model,Model,AI/ML,B-Series
+B04,EV Charging Demand Prediction Model,Model,AI/ML,B-Series
+B05,V2G Availability Model,Model,AI/ML,B-Series
+B06,Battery Lifetime Monte Carlo Model,Model,AI/ML,B-Series
+B07,Multi-Battery Coordination Model,Model,AI/ML,B-Series
+B08,Battery Thermal Limit Model,Model,AI/ML,B-Series
+B09,Federated Battery Learning Model,Model,AI/ML,B-Series
+B10,Battery Revenue Optimisation Model,Model,AI/ML,B-Series
+G01,Feeder Power Flow Model,Model,Deterministic,G-Series
+G02,Grid Import/Export Limits Model,Model,Deterministic,G-Series
+G03,Frequency Deviation Model,Model,Deterministic,G-Series
+G04,Voltage Stability Model,Model,Deterministic,G-Series
+G05,Power Factor Model,Model,Deterministic,G-Series
+G06,Network Loss Model,Model,Deterministic,G-Series
+G07,Microgrid Islanding Detection Model,Model,Deterministic,G-Series
+G08,Fragmented Islanding Segment Model,Model,Deterministic,G-Series
+G09,Protection Scheme & Recloser Model,Model,Deterministic,G-Series
+G10,EV Grid Impact Model,Model,Deterministic,G-Series
+G11,DER Hosting Capacity Model,Model,Deterministic,G-Series
+G12,Community Energy Balance Model,Model,Deterministic,G-Series
+C01,MILP Flexibility Engine,Model,RL/Q-Learning,C-Series
+C02,MPC Controller,Model,RL/Q-Learning,C-Series
+C03,Determinization Bridge,Model,RL/Q-Learning,C-Series
+C04,Q-Table Dispatch Policy,Model,RL/Q-Learning,C-Series
+C05,DQN Controller,Model,RL/Q-Learning,C-Series
+C06,Actor-Critic HVAC Controller,Model,RL/Q-Learning,C-Series
+C07,Multi-Agent RL Community Coordinator,Model,RL/Q-Learning,C-Series
+C08,Response Derivative Engine,Model,RL/Q-Learning,C-Series
+C09,Fragmented Islanding Controller,Model,RL/Q-Learning,C-Series
+C10,Governance & Safety Layer,Model,RL/Q-Learning,C-Series
+D01,Weather Data QA Gate,Model,AI/ML,D-Series
+D02,PV Data Plausibility Validator,Model,AI/ML,D-Series
+D03,Battery Data Consistency Validator,Model,AI/ML,D-Series
+D04,Sensor Fault Detection Model,Model,AI/ML,D-Series
+D05,Smart Meter Data QA Model,Model,AI/ML,D-Series
+D06,Missing Data Imputation Model,Model,AI/ML,D-Series
+D07,Outlier Detection Model,Model,AI/ML,D-Series
+D08,Model Drift Detection & Retraining Trigger,Model,AI/ML,D-Series
+P01,P2P Energy Trading Revenue Model,Model,RL/Q-Learning,P-Series
+P02,Intraday Trading Model,Model,RL/Q-Learning,P-Series
+P03,Flexibility Market Bidding Model,Model,RL/Q-Learning,P-Series
+P04,Self-Consumption KPI Model,Model,RL/Q-Learning,P-Series
+P05,Bill Savings KPI Model,Model,RL/Q-Learning,P-Series
+P06,PED Performance KPI Model,Model,RL/Q-Learning,P-Series
+P07,Response Derivative KPI Model,Model,RL/Q-Learning,P-Series
+P08,Portfolio Aggregation & Market Bid Model,Model,RL/Q-Learning,P-Series
+K01,Avoided Carbon Model,Model,RL/Q-Learning,K-Series
+K02,EPC Compliance Model,Model,RL/Q-Learning,K-Series
+K03,EU ETS Reporting Model,Model,RL/Q-Learning,K-Series
+K04,Carbon Budget Tracker,Model,RL/Q-Learning,K-Series
+K05,Policy Alignment & Incentive Eligibility Model,Model,RL/Q-Learning,K-Series
+F01,Federated Averaging Model,Model,AI/ML,F-Series
+F02,Transfer Learning Adapter,Model,AI/ML,F-Series
+F03,Differential Privacy Layer,Model,AI/ML,F-Series
+F04,Cross-Site Calibration Model,Model,AI/ML,F-Series
+F05,Model Versioning & Rollback Controller,Model,AI/ML,F-Series
+F06,Data Residency Controller,Model,AI/ML,F-Series
