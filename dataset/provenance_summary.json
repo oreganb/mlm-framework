@@ -1,0 +1,216 @@
+{
+  "generated_at_utc": "2026-06-23T09:26:48.719598+00:00",
+  "generator_version": "0.4.0",
+  "grand_total_data_class": {
+    "COMPUTED": 523237862,
+    "CALIBRATED": 129008,
+    "SYNTHETIC": 498816,
+    "REAL": 35037
+  },
+  "tables": [
+    {
+      "table": "asset_classification.parquet",
+      "path": "synthetic_world/asset_classification.parquet",
+      "catalogue_no": "10",
+      "catalogue_name": "asset_classification",
+      "layer": "entity",
+      "n_rows": 109008,
+      "size_mb": 1.43,
+      "data_class_breakdown": {
+        "COMPUTED": 109008
+      }
+    },
+    {
+      "table": "assets.parquet",
+      "path": "synthetic_world/assets.parquet",
+      "catalogue_no": "11",
+      "catalogue_name": "asset",
+      "layer": "entity",
+      "n_rows": 109008,
+      "size_mb": 1.24,
+      "data_class_breakdown": {
+        "CALIBRATED": 109008
+      }
+    },
+    {
+      "table": "ber_ratings.parquet",
+      "path": "synthetic_world/ber_ratings.parquet",
+      "catalogue_no": "06",
+      "catalogue_name": "building_benchmark",
+      "layer": "entity",
+      "n_rows": 5000,
+      "size_mb": 0.13,
+      "data_class_breakdown": {
+        "CALIBRATED": 5000
+      }
+    },
+    {
+      "table": "building_classification.parquet",
+      "path": "synthetic_world/building_classification.parquet",
+      "catalogue_no": "01",
+      "catalogue_name": "building_classification",
+      "layer": "entity",
+      "n_rows": 5000,
+      "size_mb": 0.08,
+      "data_class_breakdown": {
+        "COMPUTED": 5000
+      }
+    },
+    {
+      "table": "building_fabric.parquet",
+      "path": "synthetic_world/building_fabric.parquet",
+      "catalogue_no": "05",
+      "catalogue_name": "building_fabric",
+      "layer": "entity",
+      "n_rows": 5000,
+      "size_mb": 0.32,
+      "data_class_breakdown": {
+        "CALIBRATED": 5000
+      }
+    },
+    {
+      "table": "buildings.parquet",
+      "path": "synthetic_world/buildings.parquet",
+      "catalogue_no": "02",
+      "catalogue_name": "building",
+      "layer": "entity",
+      "n_rows": 5000,
+      "size_mb": 0.29,
+      "data_class_breakdown": {
+        "CALIBRATED": 5000
+      }
+    },
+    {
+      "table": "devices.parquet",
+      "path": "synthetic_world/devices.parquet",
+      "catalogue_no": "36",
+      "catalogue_name": "device",
+      "layer": "entity",
+      "n_rows": 109008,
+      "size_mb": 1.67,
+      "data_class_breakdown": {
+        "SYNTHETIC": 109008
+      }
+    },
+    {
+      "table": "features.parquet",
+      "path": "synthetic_world/features.parquet",
+      "catalogue_no": "41",
+      "catalogue_name": "feature",
+      "layer": "entity",
+      "n_rows": 30770,
+      "size_mb": 0.35,
+      "data_class_breakdown": {
+        "COMPUTED": 30770
+      }
+    },
+    {
+      "table": "occupancy.parquet",
+      "path": "synthetic_world/occupancy.parquet",
+      "catalogue_no": "03",
+      "catalogue_name": "occupancy",
+      "layer": "entity",
+      "n_rows": 5000,
+      "size_mb": 3.24,
+      "data_class_breakdown": {
+        "CALIBRATED": 5000
+      }
+    },
+    {
+      "table": "rd_profile.parquet",
+      "path": "synthetic_world/rd_profile.parquet",
+      "catalogue_no": "52/55",
+      "catalogue_name": "response_derivative / response_profile",
+      "layer": "entity",
+      "n_rows": 9242,
+      "size_mb": 0.33,
+      "data_class_breakdown": {
+        "COMPUTED": 9242
+      }
+    },
+    {
+      "table": "sensors.parquet",
+      "path": "synthetic_world/sensors.parquet",
+      "catalogue_no": "36",
+      "catalogue_name": "device",
+      "layer": "entity",
+      "n_rows": 304479,
+      "size_mb": 3.73,
+      "data_class_breakdown": {
+        "SYNTHETIC": 304479
+      }
+    },
+    {
+      "table": "spaces.parquet",
+      "path": "synthetic_world/spaces.parquet",
+      "catalogue_no": "04",
+      "catalogue_name": "space",
+      "layer": "entity",
+      "n_rows": 85329,
+      "size_mb": 1.51,
+      "data_class_breakdown": {
+        "SYNTHETIC": 85329
+      }
+    },
+    {
+      "table": "ts_building_energy.parquet",
+      "path": "timeseries/ts_building_energy.parquet",
+      "catalogue_no": "38",
+      "catalogue_name": "data",
+      "layer": "timeseries",
+      "n_rows": 174720000,
+      "size_mb": 7486.09,
+      "data_class_breakdown": {
+        "COMPUTED": 174720000
+      }
+    },
+    {
+      "table": "ts_high_freq.parquet",
+      "path": "timeseries/ts_high_freq.parquet",
+      "catalogue_no": "38",
+      "catalogue_name": "data",
+      "layer": "timeseries",
+      "n_rows": 186076800,
+      "size_mb": 2869.2,
+      "data_class_breakdown": {
+        "COMPUTED": 186076800
+      }
+    },
+    {
+      "table": "ts_price_signal.parquet",
+      "path": "timeseries/ts_price_signal.parquet",
+      "catalogue_no": "21/38",
+      "catalogue_name": "tariff / data",
+      "layer": "timeseries",
+      "n_rows": 35037,
+      "size_mb": 0.35,
+      "data_class_breakdown": {
+        "REAL": 35037
+      }
+    },
+    {
+      "table": "ts_pv_generation.parquet",
+      "path": "timeseries/ts_pv_generation.parquet",
+      "catalogue_no": "38",
+      "catalogue_name": "data",
+      "layer": "timeseries",
+      "n_rows": 13453440,
+      "size_mb": 83.87,
+      "data_class_breakdown": {
+        "COMPUTED": 13453440
+      }
+    },
+    {
+      "table": "ts_response_derivative.parquet",
+      "path": "timeseries/ts_response_derivative.parquet",
+      "catalogue_no": "52",
+      "catalogue_name": "response_derivative",
+      "layer": "timeseries",
+      "n_rows": 148833602,
+      "size_mb": 2872.95,
+      "data_class_breakdown": {
+        "COMPUTED": 148833602
+      }
+    }
+  ]
+}

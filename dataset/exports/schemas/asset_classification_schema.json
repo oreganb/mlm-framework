@@ -1,0 +1,48 @@
+{
+  "columns": [
+    {
+      "name": "asset_classification_id",
+      "dtype": "str"
+    },
+    {
+      "name": "asset_id",
+      "dtype": "str"
+    },
+    {
+      "name": "function",
+      "dtype": "str"
+    },
+    {
+      "name": "asset_class",
+      "dtype": "str"
+    },
+    {
+      "name": "asset_type",
+      "dtype": "str"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}

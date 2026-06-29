@@ -1,0 +1,64 @@
+{
+  "columns": [
+    {
+      "name": "fabric_id",
+      "dtype": "str"
+    },
+    {
+      "name": "building_id",
+      "dtype": "str"
+    },
+    {
+      "name": "construction_period",
+      "dtype": "str"
+    },
+    {
+      "name": "u_value_wall_wm2k",
+      "dtype": "float64"
+    },
+    {
+      "name": "u_value_roof_wm2k",
+      "dtype": "float64"
+    },
+    {
+      "name": "u_value_glazing_wm2k",
+      "dtype": "float64"
+    },
+    {
+      "name": "heat_loss_coefficient_wk",
+      "dtype": "float64"
+    },
+    {
+      "name": "wall_type",
+      "dtype": "str"
+    },
+    {
+      "name": "floor_area_m2",
+      "dtype": "float64"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}

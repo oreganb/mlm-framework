@@ -1,0 +1,60 @@
+{
+  "columns": [
+    {
+      "name": "asset_id",
+      "dtype": "str"
+    },
+    {
+      "name": "building_id",
+      "dtype": "str"
+    },
+    {
+      "name": "asset_index",
+      "dtype": "int64"
+    },
+    {
+      "name": "asset_class",
+      "dtype": "str"
+    },
+    {
+      "name": "rated_kw",
+      "dtype": "float64"
+    },
+    {
+      "name": "high_freq_instrumented",
+      "dtype": "bool"
+    },
+    {
+      "name": "manufacturer",
+      "dtype": "str"
+    },
+    {
+      "name": "install_year",
+      "dtype": "int64"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}

@@ -1,0 +1,671 @@
+{
+  "generated_at_utc": "2026-06-23T09:26:46.546171+00:00",
+  "generator_version": "0.4.0",
+  "total_catalogues": 94,
+  "summary": {
+    "POPULATED": 13,
+    "REFERENCED": 36,
+    "SPEC-ONLY": 39,
+    "NEEDS-EXTERNAL": 6
+  },
+  "catalogues": [
+    {
+      "catalogue_no": 1,
+      "catalogue_name": "building_classification",
+      "coverage_class": "POPULATED",
+      "generator_table": "building_classification.parquet",
+      "note": "Classification hierarchy nodes (sector/type/subtype); produced by world generator"
+    },
+    {
+      "catalogue_no": 2,
+      "catalogue_name": "building",
+      "coverage_class": "POPULATED",
+      "generator_table": "buildings.parquet",
+      "note": "Per-building entity records with geospatial, BER, and socioeconomic fields"
+    },
+    {
+      "catalogue_no": 3,
+      "catalogue_name": "occupancy",
+      "coverage_class": "POPULATED",
+      "generator_table": "occupancy.parquet",
+      "note": "Archetype-driven occupancy with weekday/weekend schedules"
+    },
+    {
+      "catalogue_no": 4,
+      "catalogue_name": "space",
+      "coverage_class": "POPULATED",
+      "generator_table": "spaces.parquet",
+      "note": "Thermal zones and room entities per building"
+    },
+    {
+      "catalogue_no": 5,
+      "catalogue_name": "building_fabric",
+      "coverage_class": "POPULATED",
+      "generator_table": "building_fabric.parquet",
+      "note": "Envelope components with RC-model thermal parameters"
+    },
+    {
+      "catalogue_no": 6,
+      "catalogue_name": "building_benchmark",
+      "coverage_class": "POPULATED",
+      "generator_table": "ber_ratings.parquet",
+      "note": "BER ratings table; BER is the benchmark scheme in scope for the Irish residential fleet"
+    },
+    {
+      "catalogue_no": 7,
+      "catalogue_name": "building_archetype",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Archetype codes encoded as 'archetype' column in occupancy; not a separate output table"
+    },
+    {
+      "catalogue_no": 8,
+      "catalogue_name": "geographic",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Lat/lon, county, small-area fields embedded in buildings; no separate geographic entity table"
+    },
+    {
+      "catalogue_no": 9,
+      "catalogue_name": "weather_climate",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Open-Meteo 2021 archive used as generation input; weather not stored as a catalogue output table"
+    },
+    {
+      "catalogue_no": 10,
+      "catalogue_name": "asset_classification",
+      "coverage_class": "POPULATED",
+      "generator_table": "asset_classification.parquet",
+      "note": "Asset-class taxonomy nodes (HVAC, PV, storage, EV, lighting, \u2026)"
+    },
+    {
+      "catalogue_no": 11,
+      "catalogue_name": "asset",
+      "coverage_class": "POPULATED",
+      "generator_table": "assets.parquet",
+      "note": "Per-asset records: type, capacity, install year, flex enrolment"
+    },
+    {
+      "catalogue_no": 12,
+      "catalogue_name": "asset_benchmark",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Technology efficiency specs used to size assets; no separate benchmark output table"
+    },
+    {
+      "catalogue_no": 13,
+      "catalogue_name": "utility_network",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "ESB/GNI networks referenced for DSO/TSO context; no network topology table produced"
+    },
+    {
+      "catalogue_no": 14,
+      "catalogue_name": "actor",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Actor types (prosumer, aggregator, DSO) referenced in building classification; no actor rows"
+    },
+    {
+      "catalogue_no": 15,
+      "catalogue_name": "organisation",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Organisation types referenced; no entity rows produced"
+    },
+    {
+      "catalogue_no": 16,
+      "catalogue_name": "role",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Role codes (owner, operator, occupant) used as field values; not instantiated"
+    },
+    {
+      "catalogue_no": 17,
+      "catalogue_name": "user",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Platform user types defined; not instantiated by the data generator"
+    },
+    {
+      "catalogue_no": 18,
+      "catalogue_name": "stakeholder",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Stakeholder types referenced; not instantiated"
+    },
+    {
+      "catalogue_no": 19,
+      "catalogue_name": "energy_carrier",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Carrier codes (EL, HT, GS, H2) used as field values throughout; not a separate table"
+    },
+    {
+      "catalogue_no": 20,
+      "catalogue_name": "market",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "I-SEM / DA / BM market IDs referenced in price signal; no EIG-MKT-* records produced"
+    },
+    {
+      "catalogue_no": 21,
+      "catalogue_name": "tariff",
+      "coverage_class": "REFERENCED",
+      "generator_table": "ts_price_signal.parquet (real I-SEM 2021 DA prices)",
+      "note": "v3.0: D7 closed \u2014 real ENTSO-E/SEMOpx I-SEM 2021 price feed wired; price data in ts_price_signal; tariff rate-structure records (EIG-TRF-*) not separately instantiated"
+    },
+    {
+      "catalogue_no": 22,
+      "catalogue_name": "product",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Flexibility product specs referenced; no EIG-PROD-* entity rows produced"
+    },
+    {
+      "catalogue_no": 23,
+      "catalogue_name": "contract",
+      "coverage_class": "NEEDS-EXTERNAL",
+      "generator_table": "\u2014",
+      "note": "Supply and flexibility contracts require real counter-party agreements; none present"
+    },
+    {
+      "catalogue_no": 24,
+      "catalogue_name": "schedule",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Occupancy schedules embedded as JSON columns in occupancy.parquet; not a separate EIG-SCH-* table"
+    },
+    {
+      "catalogue_no": 25,
+      "catalogue_name": "trade",
+      "coverage_class": "NEEDS-EXTERNAL",
+      "generator_table": "\u2014",
+      "note": "Market trade events require real transaction records; none present"
+    },
+    {
+      "catalogue_no": 26,
+      "catalogue_name": "trade_window",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "I-SEM trading windows implied by 15-min price index; no EIG-TW-* records produced"
+    },
+    {
+      "catalogue_no": 27,
+      "catalogue_name": "settlement",
+      "coverage_class": "NEEDS-EXTERNAL",
+      "generator_table": "\u2014",
+      "note": "Financial settlement requires real metered baselines + contract terms; none present"
+    },
+    {
+      "catalogue_no": 28,
+      "catalogue_name": "carbon",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "EPA 2021 carbon intensity loaded as input for embodied-carbon fields; no EIG-CO2-* entity table produced"
+    },
+    {
+      "catalogue_no": 29,
+      "catalogue_name": "flexibility_service",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "6 RD service specs (RDD-ELS/EXP/STO/THM/SHFT/PRC) referenced as string codes in ts_response_derivative; EIG-FS-* service entity records not separately instantiated"
+    },
+    {
+      "catalogue_no": 30,
+      "catalogue_name": "flexibility",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Flexibility capacity values are in ts_response_derivative + rd_profile; EIG-FLX-R-* resource entity records not separately instantiated"
+    },
+    {
+      "catalogue_no": 31,
+      "catalogue_name": "platform",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "FLEXUS/NEST/OPTICS platform definitions; not generated by the data pipeline"
+    },
+    {
+      "catalogue_no": 32,
+      "catalogue_name": "digital_twin",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Data substrate for DTs produced; EIG-DT-* instance records not generated"
+    },
+    {
+      "catalogue_no": 33,
+      "catalogue_name": "digital_twin_template",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "DT template specifications; not generated"
+    },
+    {
+      "catalogue_no": 34,
+      "catalogue_name": "communication",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Protocol and API specs referenced; not instantiated as rows"
+    },
+    {
+      "catalogue_no": 35,
+      "catalogue_name": "edge_infrastructure",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Edge compute resources referenced; sensors/devices represent the field layer but EIG-EI-* compute records not generated"
+    },
+    {
+      "catalogue_no": 36,
+      "catalogue_name": "device",
+      "coverage_class": "POPULATED",
+      "generator_table": "devices.parquet, sensors.parquet",
+      "note": "Smart-meter and sensor entity records per building"
+    },
+    {
+      "catalogue_no": 37,
+      "catalogue_name": "data_source",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "v3.0: ENTSO-E/SEMOpx, SEAI, Met \u00c9ireann registered as real sources; EIG-DS-* entity rows not produced in output (registered in provenance columns)"
+    },
+    {
+      "catalogue_no": 38,
+      "catalogue_name": "data",
+      "coverage_class": "POPULATED",
+      "generator_table": "ts_building_energy.parquet, ts_pv_generation.parquet, ts_high_freq.parquet, ts_price_signal.parquet",
+      "note": "15-min and 60-s timeseries data entities (VD-EL, VD-TH, VD-EV, VD-MK domains)"
+    },
+    {
+      "catalogue_no": 39,
+      "catalogue_name": "metadata",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Metadata standards applied via provenance columns (generator_version, seed, generated_at_utc, data_class, source_anchors_used); no EIG-MET-* rows produced"
+    },
+    {
+      "catalogue_no": 40,
+      "catalogue_name": "data_quality",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Quality flags (valid/suspect/missing/estimated) carried on ts_building_energy; no separate quality-rule entity table"
+    },
+    {
+      "catalogue_no": 41,
+      "catalogue_name": "feature",
+      "coverage_class": "POPULATED",
+      "generator_table": "features.parquet",
+      "note": "Engineered features per building (peak, load-factor, solar CF, EV-ratio, evening-ratio)"
+    },
+    {
+      "catalogue_no": 42,
+      "catalogue_name": "synthetic_data",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "This generator is EIG-SYN-GEN-001; the generated tables are the output; no EIG-SYN-GEN-* catalogue record row produced in the output dataset"
+    },
+    {
+      "catalogue_no": 43,
+      "catalogue_name": "dataset",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "This output directory IS a dataset (EIG-DSET); no EIG-DSET-* entity row produced inline"
+    },
+    {
+      "catalogue_no": 44,
+      "catalogue_name": "model",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Model definitions (SER-07 RD estimator, etc.); not instantiated by the data generator"
+    },
+    {
+      "catalogue_no": 45,
+      "catalogue_name": "algorithm",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Algorithm registry; not instantiated"
+    },
+    {
+      "catalogue_no": 46,
+      "catalogue_name": "forecast",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Forecast definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 47,
+      "catalogue_name": "validation",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Validation methods applied; gate report produced as validation_final.json; no EIG-VAL-MTH-* entity rows in output"
+    },
+    {
+      "catalogue_no": 48,
+      "catalogue_name": "hyperparameter",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Model hyperparameter surfaces; not instantiated"
+    },
+    {
+      "catalogue_no": 49,
+      "catalogue_name": "explainability",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "XAI configurations; not instantiated"
+    },
+    {
+      "catalogue_no": 50,
+      "catalogue_name": "training",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Training pipeline definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 51,
+      "catalogue_name": "model_benchmark",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Benchmark suites; not instantiated"
+    },
+    {
+      "catalogue_no": 52,
+      "catalogue_name": "response_derivative",
+      "coverage_class": "POPULATED",
+      "generator_table": "ts_response_derivative.parquet, rd_profile.parquet",
+      "note": "Per-subject \u00d7 per-spec RD timeseries (all 6 RDD services); plus per-building distribution summary (p10/p50/p90, confidence, discount)"
+    },
+    {
+      "catalogue_no": 53,
+      "catalogue_name": "response_behaviour",
+      "coverage_class": "NEEDS-EXTERNAL",
+      "generator_table": "\u2014",
+      "note": "Observed actual responses require real flex dispatch events; none present \u2014 awaiting live deployment"
+    },
+    {
+      "catalogue_no": 54,
+      "catalogue_name": "sensitivity",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Analytical dRD/dInput sensitivities; not generated (requires fitted estimator)"
+    },
+    {
+      "catalogue_no": 55,
+      "catalogue_name": "response_profile",
+      "coverage_class": "POPULATED",
+      "generator_table": "rd_profile.parquet",
+      "note": "Per-building flexibility fingerprint (p10/p50/p90 magnitude, confidence, discount) per RD spec; derived from 52 only \u2014 53 behaviour statistics absent (no live dispatch data)"
+    },
+    {
+      "catalogue_no": 56,
+      "catalogue_name": "response_event",
+      "coverage_class": "NEEDS-EXTERNAL",
+      "generator_table": "\u2014",
+      "note": "Real flex dispatch event records; require live deployment"
+    },
+    {
+      "catalogue_no": 57,
+      "catalogue_name": "kpi",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "KPI definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 58,
+      "catalogue_name": "objective",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Optimisation objective definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 59,
+      "catalogue_name": "constraint",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Operational constraint definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 60,
+      "catalogue_name": "decision_intelligence",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Decision mapping definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 61,
+      "catalogue_name": "action",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Action definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 62,
+      "catalogue_name": "control_strategy",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Control strategy definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 63,
+      "catalogue_name": "event",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Event type definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 64,
+      "catalogue_name": "workflow",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Workflow definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 65,
+      "catalogue_name": "benchmark",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Cross-domain benchmark definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 66,
+      "catalogue_name": "reinforcement_learning",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "RL problem definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 67,
+      "catalogue_name": "reward",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Reward component definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 68,
+      "catalogue_name": "penalty",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Penalty component definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 69,
+      "catalogue_name": "context",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Operating context definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 70,
+      "catalogue_name": "model_selection",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Model selection slot definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 71,
+      "catalogue_name": "learning_policy",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Learned policy artefacts; not instantiated"
+    },
+    {
+      "catalogue_no": 72,
+      "catalogue_name": "agent",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Agent type definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 73,
+      "catalogue_name": "application",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Application definitions (FLEXUS, NEST, OPTICS); not instantiated"
+    },
+    {
+      "catalogue_no": 74,
+      "catalogue_name": "service",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Business service definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 75,
+      "catalogue_name": "dashboard",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Dashboard widget definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 76,
+      "catalogue_name": "alert",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Alert definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 77,
+      "catalogue_name": "report",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Report definitions; not instantiated"
+    },
+    {
+      "catalogue_no": 78,
+      "catalogue_name": "use_case",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Use case specifications; not instantiated"
+    },
+    {
+      "catalogue_no": 79,
+      "catalogue_name": "ontology",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Formal OWL/SKOS ontology artefacts; not generated by data pipeline"
+    },
+    {
+      "catalogue_no": 80,
+      "catalogue_name": "knowledge_graph",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Operational KG instantiation; separate build process from this pipeline"
+    },
+    {
+      "catalogue_no": 81,
+      "catalogue_name": "semantic_mapping",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "External ontology correspondence sets; not instantiated"
+    },
+    {
+      "catalogue_no": 82,
+      "catalogue_name": "vocabulary",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Controlled vocabulary terms (dataClass, quality_flag, rd_spec codes, direction) used as field values throughout all tables"
+    },
+    {
+      "catalogue_no": 83,
+      "catalogue_name": "taxonomy",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Hierarchical classification trees (building_classification, asset_classification) instantiated as entity tables (cats 01/10); taxonomy catalogue itself is the defining spec"
+    },
+    {
+      "catalogue_no": 84,
+      "catalogue_name": "reasoning_rule",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Formal inference rules; not executed in the data generator"
+    },
+    {
+      "catalogue_no": 85,
+      "catalogue_name": "semantic_pattern",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Ontology design patterns; not instantiated"
+    },
+    {
+      "catalogue_no": 86,
+      "catalogue_name": "community",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Energy community types referenced; community-level aggregates not produced (5,000 buildings span multiple counties, not yet aggregated to REC/CEC level)"
+    },
+    {
+      "catalogue_no": 87,
+      "catalogue_name": "district",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "District / PED types referenced; district-level aggregates not produced"
+    },
+    {
+      "catalogue_no": 88,
+      "catalogue_name": "site",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Site/campus types referenced; multi-building campus records not produced"
+    },
+    {
+      "catalogue_no": 89,
+      "catalogue_name": "scenario",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "This run is the '2021 baseline' scenario; scenario entity record not produced inline"
+    },
+    {
+      "catalogue_no": 90,
+      "catalogue_name": "project",
+      "coverage_class": "REFERENCED",
+      "generator_table": "\u2014",
+      "note": "Project registrations referenced; not instantiated"
+    },
+    {
+      "catalogue_no": 91,
+      "catalogue_name": "policy",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Public policy instrument references; not instantiated"
+    },
+    {
+      "catalogue_no": 92,
+      "catalogue_name": "regulation",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Regulatory instrument references; not instantiated"
+    },
+    {
+      "catalogue_no": 93,
+      "catalogue_name": "compliance",
+      "coverage_class": "NEEDS-EXTERNAL",
+      "generator_table": "\u2014",
+      "note": "Compliance evidence records require real audit outputs; dataset is conformant to the generator's stated gates but no formal EIG-CMP-* records"
+    },
+    {
+      "catalogue_no": 94,
+      "catalogue_name": "standard",
+      "coverage_class": "SPEC-ONLY",
+      "generator_table": "\u2014",
+      "note": "Standards register (ISO 50001, CEN EN 15316, etc.); not instantiated"
+    }
+  ]
+}

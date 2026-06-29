@@ -1,0 +1,112 @@
+{
+  "columns": [
+    {
+      "name": "building_id",
+      "dtype": "str"
+    },
+    {
+      "name": "building_index",
+      "dtype": "int64"
+    },
+    {
+      "name": "sector",
+      "dtype": "str"
+    },
+    {
+      "name": "county_code",
+      "dtype": "str"
+    },
+    {
+      "name": "county_name",
+      "dtype": "str"
+    },
+    {
+      "name": "settlement_type",
+      "dtype": "str"
+    },
+    {
+      "name": "small_area_code",
+      "dtype": "str"
+    },
+    {
+      "name": "ed_id",
+      "dtype": "str"
+    },
+    {
+      "name": "lat_lon_data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "lat",
+      "dtype": "float64"
+    },
+    {
+      "name": "lon",
+      "dtype": "float64"
+    },
+    {
+      "name": "construction_period",
+      "dtype": "str"
+    },
+    {
+      "name": "floor_area_m2",
+      "dtype": "float64"
+    },
+    {
+      "name": "weather_station_id",
+      "dtype": "str"
+    },
+    {
+      "name": "expansion_weight",
+      "dtype": "float64"
+    },
+    {
+      "name": "deprivation_index",
+      "dtype": "float64"
+    },
+    {
+      "name": "urban_atlas_code",
+      "dtype": "str"
+    },
+    {
+      "name": "urban_atlas_label",
+      "dtype": "str"
+    },
+    {
+      "name": "land_cover_category",
+      "dtype": "str"
+    },
+    {
+      "name": "pv_shading_factor",
+      "dtype": "float64"
+    },
+    {
+      "name": "osm_landuse_class",
+      "dtype": "str"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}

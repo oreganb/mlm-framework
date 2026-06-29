@@ -1,0 +1,60 @@
+{
+  "columns": [
+    {
+      "name": "device_id",
+      "dtype": "str"
+    },
+    {
+      "name": "asset_id",
+      "dtype": "str"
+    },
+    {
+      "name": "building_id",
+      "dtype": "str"
+    },
+    {
+      "name": "asset_class",
+      "dtype": "str"
+    },
+    {
+      "name": "protocol",
+      "dtype": "str"
+    },
+    {
+      "name": "high_freq_enabled",
+      "dtype": "bool"
+    },
+    {
+      "name": "edge_node_id",
+      "dtype": "str"
+    },
+    {
+      "name": "firmware_version",
+      "dtype": "str"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}

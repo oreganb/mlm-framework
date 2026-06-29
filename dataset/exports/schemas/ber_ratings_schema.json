@@ -1,0 +1,52 @@
+{
+  "columns": [
+    {
+      "name": "ber_id",
+      "dtype": "str"
+    },
+    {
+      "name": "building_id",
+      "dtype": "str"
+    },
+    {
+      "name": "ber_band",
+      "dtype": "str"
+    },
+    {
+      "name": "annual_primary_energy_kwh_m2",
+      "dtype": "float64"
+    },
+    {
+      "name": "dwelling_type",
+      "dtype": "str"
+    },
+    {
+      "name": "construction_period",
+      "dtype": "str"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}

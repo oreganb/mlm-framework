@@ -1,0 +1,170 @@
+{
+  "generated_at_utc": "2026-06-23T09:26:02.316413+00:00",
+  "n_pass": 19,
+  "n_fail": 0,
+  "n_warn": 2,
+  "n_skip_n_a": 4,
+  "fail_gates": [],
+  "warn_gates": [
+    "G-DEMAND-SHAPE",
+    "G-DEMAND-SHAPE-RESIDENTIAL"
+  ],
+  "skip_n_a_gates": [
+    "G-QUALITY",
+    "G-DETERMINISM",
+    "G-WIND",
+    "G-CER-MATCH"
+  ],
+  "gates": {
+    "G-SCHEMA": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "",
+      "skip_n_a": false
+    },
+    "G-PROV": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "All tables carry 5 provenance columns",
+      "skip_n_a": false
+    },
+    "G-ORDER": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "Entity generation followed registry order",
+      "skip_n_a": false
+    },
+    "G-CARDINALITY": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "Max assets per building: 142",
+      "skip_n_a": false
+    },
+    "G-RESOLUTION": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "Volume guard enforced during TS generation",
+      "skip_n_a": false
+    },
+    "G-RECON": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "factor=0.9999, deviation=0.0%",
+      "skip_n_a": false
+    },
+    "G-PV": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "Solar CF=0.105 (target 0.1\u20130.11), no_night=True",
+      "skip_n_a": false
+    },
+    "G-ENERGY-SIGN": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "no_negative=True, ev_range_ok=True",
+      "skip_n_a": false
+    },
+    "G-THERMAL": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "RC model enforces anti-correlation by construction",
+      "skip_n_a": false
+    },
+    "G-TS-CONTINUITY": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "15-min continuity: True",
+      "skip_n_a": false
+    },
+    "G-QUALITY": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "quality_flag check skipped",
+      "skip_n_a": true
+    },
+    "G-BER": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "BER archetypes validated at generation time",
+      "skip_n_a": false
+    },
+    "G-GEO": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "Placement layer validated at generation time",
+      "skip_n_a": false
+    },
+    "G-SECTOR": {
+      "passed": true,
+      "severity": "WARN",
+      "detail": "Sector demand targets applied (SEAI 2021 REAL \u2014 D2 CLOSED)",
+      "skip_n_a": false
+    },
+    "G-DETERMINISM": {
+      "passed": true,
+      "severity": "WARN",
+      "detail": "Run with same seed to verify; not auto-checked",
+      "skip_n_a": true
+    },
+    "G-WIND": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "Wind not modelled at building level in v1",
+      "skip_n_a": true
+    },
+    "G-RD-REALISED": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "0 rows with magnitude/ceiling > 1.0 (strict ceiling breach)",
+      "skip_n_a": false
+    },
+    "G-RD-OCC-SENSITIVITY": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "matched-pair median delta=82.5% (threshold 25%, 10 pairs); population median: commuter=0.348 kW, retired=0.093 kW, delta=73.4%",
+      "skip_n_a": false
+    },
+    "G-RD-PERSIGNAL": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "6 specs, median range=4.077 kW",
+      "skip_n_a": false
+    },
+    "G-RD-PROV": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "0 rows with data_class != COMPUTED",
+      "skip_n_a": false
+    },
+    "G-RD-CONFIDENCE": {
+      "passed": true,
+      "severity": "WARN",
+      "detail": "confidence std=0.268, range=[0.020, 0.980]",
+      "skip_n_a": false
+    },
+    "G-PRICE-SIGNAL": {
+      "passed": true,
+      "severity": "FAIL",
+      "detail": "n_rows_15min=35037, n_hourly_equiv=8759, coverage=100.0%, data_class_REAL=True, gap_free=True; gap-free: 100.0% of 2021 annual hours. Source: SEMOpx_ISEM_2021_full_year.",
+      "skip_n_a": false
+    },
+    "G-CER-MATCH": {
+      "passed": false,
+      "severity": "FAIL",
+      "detail": "CER_DATA_ABSENT \u2014 all buildings SYNTHETIC-fallback (stub mode)",
+      "skip_n_a": true
+    },
+    "G-DEMAND-SHAPE": {
+      "passed": false,
+      "severity": "WARN",
+      "detail": "Pearson r=0.588 (threshold 0.85), n_points=16712, ref_res=30min; ENTSO-E A65 2021 (same-year, data_class=REAL)",
+      "skip_n_a": false
+    },
+    "G-DEMAND-SHAPE-RESIDENTIAL": {
+      "passed": false,
+      "severity": "WARN",
+      "detail": "Pearson r=-0.479 (threshold 0.85), residential gross demand (electricity_kw_raw, 16712 points), ref_res=30min; ENTSO-E A65 2021 (same-year, data_class=REAL)",
+      "skip_n_a": false
+    }
+  }
+}

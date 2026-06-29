@@ -1,0 +1,52 @@
+{
+  "columns": [
+    {
+      "name": "space_id",
+      "dtype": "str"
+    },
+    {
+      "name": "building_id",
+      "dtype": "str"
+    },
+    {
+      "name": "space_index",
+      "dtype": "int64"
+    },
+    {
+      "name": "space_type",
+      "dtype": "str"
+    },
+    {
+      "name": "area_m2",
+      "dtype": "float64"
+    },
+    {
+      "name": "thermal_zone",
+      "dtype": "str"
+    },
+    {
+      "name": "synthetic_flag",
+      "dtype": "bool"
+    },
+    {
+      "name": "data_class",
+      "dtype": "str"
+    },
+    {
+      "name": "seed",
+      "dtype": "int64"
+    },
+    {
+      "name": "source_anchors_used",
+      "dtype": "str"
+    },
+    {
+      "name": "generator_version",
+      "dtype": "str"
+    },
+    {
+      "name": "generated_at_utc",
+      "dtype": "str"
+    }
+  ]
+}
