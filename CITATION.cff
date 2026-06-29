@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "MLM Framework: Multi-Layer Modelling for unified energy system modelling"
+version: 0.4.0
+date-released: 2026-06-29
+license: LicenseRef-PolyForm-Noncommercial-1.0.0
+repository-code: "https://github.com/oreganb/mlm-framework"
+authors:
+  - family-names: O'Regan
+    given-names: Brian
+    affiliation: "Energy Informatics Group, Tyndall National Institute / IERC, UCC"
+  - family-names: Tahir
+    given-names: Farah
+    affiliation: "Energy Informatics Group, Tyndall National Institute / IERC, UCC"
+  - family-names: Mould
+    given-names: Karen
+    affiliation: "Energy Informatics Group, Tyndall National Institute / IERC, UCC"
+keywords:
+  - multi-layer modelling
+  - response derivative
+  - building energy
+  - demand flexibility
+  - synthetic data
+  - knowledge graph
+  - microgrid
+preferred-citation:
+  type: article
+  title: "A Multi-Layered Machine Learning Architecture for Unified Energy System Modelling: From Building Physics to Energy Trading"
+  authors:
+    - family-names: O'Regan
+      given-names: Brian
+    - family-names: Tahir
+      given-names: Farah
+    - family-names: Mould
+      given-names: Karen
+  journal: "Energy and AI"
+  year: 2026
+  status: submitted
