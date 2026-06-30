@@ -94,7 +94,7 @@ G = nx.from_pandas_edgelist(edges, source="source",
 ## Citing the Knowledge Graph
 
 ```
-O'Regan, B., Tahir, F., & Mould, K. (2026).
+O'Regan, B. (2026).
 MLM Knowledge Graph v7 [Data set].
 Zenodo. https://doi.org/10.5281/zenodo.[TO BE ASSIGNED]
 ```
