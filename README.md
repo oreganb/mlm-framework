@@ -21,7 +21,7 @@ The inter-layer currency is the **Response Derivative (RD)** — the partial der
 
 **CONTINUUM**, the occupant-facing pricing extension, translates RD signals into building-level dynamic price schedules without exposing occupants to wholesale market dynamics.
 
-The framework is validated against the **O-CEI Aran Islands deployment**: 20 buildings on a live island microgrid, 90 days of operational data, 96.8% RD computability.
+The framework will be validated against the **O-CEI Aran Islands deployment**: 20 buildings on a live island microgrid, 90 days of operational data, targetting 95%+ RD computability.
 
 ---
 
