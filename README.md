@@ -252,7 +252,7 @@ You may use, modify, and redistribute this software for non-commercial purposes,
 |------|------|-------------|
 | Brian O'Regan | Principal Investigator, lead developer | EIG, Tyndall National Institute / IERC, UCC |
 
-**Contact:** b.oregan@tyndall.ie
+**Contact:** brian.oregan@tyndall.ie
 
 **Energy Informatics Group (EIG)**
 International Energy Research Centre (IERC)
