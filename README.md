@@ -1,6 +1,6 @@
 # MLM Framework — Multi-Layer Modelling for Unified Energy System Modelling
 
-**Version:** 0.4.0 | **Licence:** PolyForm Noncommercial 1.0.0 | **DOI:** [to be assigned on Zenodo deposit]
+**Version:** 0.4.0 | **Licence:** PolyForm Noncommercial 1.0.0 | **DOI:** https://doi.org/10.5281/zenodo.21072467
 
 > Associated publication: *"A Multi-Layered Machine Learning Architecture for Unified Energy System Modelling: From Building Physics to Energy Trading"* — submitted to Energy and AI (Elsevier, Q1, IF 9.6)
 
@@ -213,7 +213,7 @@ If you use this framework in your research, please cite:
 
 **The paper (primary citation):**
 ```
-O'Regan, B., Tahir, F., Mould, K., & O'Leidhin, E. (2026).
+O'Regan, B. (2026).
 A Multi-Layered Machine Learning Architecture for Unified Energy System Modelling:
 From Building Physics to Energy Trading.
 Energy and AI. [under review]
@@ -222,16 +222,16 @@ Energy and AI. [under review]
 **This software:**
 ```
 O'Regan, B. (2026). MLM Framework v0.4.0 [Software].
-Zenodo. https://doi.org/10.5281/zenodo.[TO BE ASSIGNED]
+Zenodo. https://doi.org/10.5281/zenodo.21072467
 ```
 
 **The full technical specification:**
 ```
-O'Regan, B., Tahir, F., Mould, K., & O'Leidhin, E. (2026).
+O'Regan, B. (2026).
 Multi-Layer Modelling (MLM) Framework: Full Technical Specification v1.0.
 EIG Technical Report EIG-TR-2026-001.
 Tyndall National Institute / IERC, University College Cork.
-https://doi.org/10.5281/zenodo.[TO BE ASSIGNED]
+https://doi.org/10.5281/zenodo.21072467
 ```
 
 A `CITATION.cff` file is included for automated citation extraction by GitHub and Zenodo.
