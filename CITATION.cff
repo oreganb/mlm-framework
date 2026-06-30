@@ -10,12 +10,6 @@ authors:
   - family-names: O'Regan
     given-names: Brian
     affiliation: "Energy Informatics Group, Tyndall National Institute / IERC, UCC"
-  - family-names: Tahir
-    given-names: Farah
-    affiliation: "Energy Informatics Group, Tyndall National Institute / IERC, UCC"
-  - family-names: Mould
-    given-names: Karen
-    affiliation: "Energy Informatics Group, Tyndall National Institute / IERC, UCC"
 keywords:
   - multi-layer modelling
   - response derivative
@@ -30,10 +24,6 @@ preferred-citation:
   authors:
     - family-names: O'Regan
       given-names: Brian
-    - family-names: Tahir
-      given-names: Farah
-    - family-names: Mould
-      given-names: Karen
   journal: "Energy and AI"
   year: 2026
   status: submitted
