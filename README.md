@@ -251,8 +251,6 @@ You may use, modify, and redistribute this software for non-commercial purposes,
 | Name | Role | Affiliation |
 |------|------|-------------|
 | Brian O'Regan | Principal Investigator, lead developer | EIG, Tyndall National Institute / IERC, UCC |
-| Farah Tahir | AI/ML Lead | EIG, Tyndall National Institute / IERC, UCC |
-| Karen Mould | Data Management Lead | EIG, Tyndall National Institute / IERC, UCC |
 
 **Contact:** b.oregan@tyndall.ie
 
