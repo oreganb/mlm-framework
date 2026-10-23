@@ -2,39 +2,43 @@
 
 Branch `kg-sprint-2`, 2026-10-23. MLM SPECS2 V2R5: ML-KG-04 (B01, W01), KG-CR-07 to KG-CR-10, ML-KG-01. One commit per item. Nothing pushed; the MLM Library is untouched.
 
-**How to use.** Tick *Approve* or *Reject* per item, and per owner decision where you disagree. To reject an item: `git revert <commit>`. B01 and W01 are `status: draft-for-review`; I set them to `specified` only after you approve them.
+**How to use.** Tick *Approve* or *Reject* per item, and per owner decision where you disagree. To reject an item: `git revert <commit>`. B01 and W01 were approved by the owner on 2026-10-23 and are now `status: specified`.
 
 ## Owner decisions this sprint
 
 | # | Decision | Applied in |
 |---|---|---|
 | — | **SG-W01-2: OD-113 stands.** W01 ensemble members are **not** clamped; W14 clips its own G_POA at 0; library D-20 unchanged. `b896f84` first applied a clip at 0. That followed the answer recorded to my question during the sprint and the brief's wording; the owner corrected it on 2026-10-23 and `e555fec` reverts W01 to OD-113 | W01 `b896f84`, `e555fec` |
+| — | **B01 approved** (2026-10-23): B01-1 (a) power limiting before the step; B01-2, B01-3, B01-4 as written | B01 |
+| — | **W01 approved** (2026-10-23): W01-1 ρ_g = 0; W01-2 (a) cloud attenuation only in clear-sky mode, with k_cloud = 0.11 replaced by Kasten & Czeplak (1980), 1 − 0.75 (N/8)^3.4 (DOI 10.1016/0038-092X(80)90391-6 resolves and matches Crossref); TV-W01-6 recomputed | W01 |
 
 ---
 
 ## B01 — Battery SoC Prediction (ML-KG-04 review) · `6e5b4b2`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23. `status: specified`.
 
 **Found.** The note had formula, pseudocode, inputs, outputs and parameters, but no method, RD role, validity limits, test vectors or references. Three content problems: (1) SoC was clipped *after* the step, so energy disappears silently: a 4000 W charge into a 0.88-SoC battery is reported as delivered while only 842 W fits (TV-B01-4b); (2) the LSTM correction had no training target and fed back into the state, where it would accumulate; (3) the RD text "10 % SoC ≈ E_nom × 0.10/Δt W" omitted η_dis.
 **Changed.** Physics path, efficiencies and limits unchanged. Added the power-limiting rule with applied powers and a `limited` flag as outputs; the correction is trained on SoC_BMS − SoC_phys and applied to the reported SoC only, with the state re-anchored to the BMS; RD corrected to η_dis·E_nom/Δt = 38 000 W per unit SoC (matches C01 TV-C01-4). Method, RD role, validity limits, 12 test vectors, references.
 **Owner decisions.**
-1. **B01-1 SoC limits:** (a) *recommended* limit the power before the step and report it (energy conserved); (b) the literal clip after the step (library D-23 today).
+Decided 2026-10-23: B01-1 (a); B01-2, B01-3, B01-4 as written.
+1. **B01-1 SoC limits:** ✔ (a) limit the power before the step and report it (energy conserved); (b) the literal clip after the step (library D-23 today).
 2. **B01-2 state:** physics state re-anchored to the BMS; the correction applies to the reported SoC only.
 3. **B01-3:** simultaneous charge and discharge is refused (error), not netted.
 4. **B01-4 LSTM:** one layer, 32 units, MSE on the residual, ≥ 30 days of BMS data, retrained by F01; correction = 0 until trained.
-**Library impact.** D-23 (clip after the step) changes if B01-1 (a) is approved.
+**Library impact.** D-23 (clip after the step) must change to power limiting (B01-1 (a)).
 **Sources.** Ng et al. 2009; Hochreiter & Schmidhuber 1997; Chemali et al. 2018; IEC 62619 (by designation, not checked against a copy).
 
 ---
 
 ## W01 — Solar Irradiance (ML-KG-04 review; SG-W01-1, SG-W01-2) · `b896f84`, `e555fec`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23. `status: specified`.
 
 **Found.** The formula $G_{DNI}\cos\theta_z + G_{DHI}$ is horizontal irradiance, not plane-of-array; `G_reflected` was never defined (SG-W01-1). Members could be negative (SG-W01-2). k_cloud = 0.11 was attributed to Perez et al. (1990), which is a transposition model, not a cloud attenuation law; and applying a cloud factor to NWP irradiance counts cloud twice, because NWP irradiance is all-sky.
 **Changed.** Isotropic-sky transposition (angle of incidence from tilt and azimuth, sky-diffuse view factor, ground-reflected term), which reduces exactly to the old formula at β = 0. `G_reflected` = ρ_g·GHI·(1 − cos β)/2, with ρ_g = 0 by default (OD-112). Members not clamped (OD-113), and the note now says so; quantiles by type 7 from the raw members; G_POA_det = 0 at night. New inputs: solar azimuth (W08 `theta_az`), array tilt and azimuth (DS-PV, as R01). Method, RD role, validity limits, 9 test vectors (TV-W01-1 to -4 also reproduced exactly by pvlib 0.16.1), references.
 **Owner decisions.**
-1. **W01-1 albedo:** ρ_g = 0 (*recommended*, as OD-112) or 0.2 (adds 1.3 % at β = 35°, TV-W01-3).
-2. **W01-2 cloud factor:** (a) *recommended* apply k_cloud only to clear-sky input, never to all-sky NWP irradiance; (b) always apply it (the old note). If clear-sky mode is used, Kasten & Czeplak (1980) is a sourced law in place of the unsourced 0.11.
+Decided 2026-10-23: W01-1 ρ_g = 0; W01-2 (a) with Kasten & Czeplak.
+1. **W01-1 albedo:** ✔ ρ_g = 0 (as OD-112) or 0.2 (adds 1.3 % at β = 35°, TV-W01-3).
+2. **W01-2 cloud factor:** ✔ (a) apply cloud attenuation only to clear-sky input, never to all-sky NWP irradiance; (b) always apply it (the old note). ✔ In clear-sky mode, Kasten & Czeplak (1980), G/G_clear = 1 − 0.75 (N/8)^3.4, replaces the unsourced 0.11. TV-W01-6 recomputed: N = 8 → 167.628274 (was 596.756657), N = 4 → 622.873669, all-sky unchanged at 670.513098; the note's pseudocode reproduces them. Literature_Alignment.md row W-W01-KCLOUD replaced with W-W01-KCA/KCB.
 **Library impact.** D-20's clamp rule (none) and `G_reflected = 0` are unchanged. The transposition is new, though: the library computes horizontal irradiance, so it matches the note only for β = 0 (TV-W01-1) until it adds the transposition. W01 now needs `theta_az` from W08, whose note does not state its azimuth convention.
 **Sources.** Liu & Jordan 1960, 1963; Duffie & Beckman 2013; Perez et al. 1990; Loutzenhiser et al. 2007; Kasten & Czeplak 1980; Hyndman & Fan 1996.
 
@@ -72,9 +76,10 @@ All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitorin
 - **Test vectors** were produced by independent scratch scripts (Python 3, numpy 2.5.2, scipy 1.18.0), not by the MLM Library; the scripts are not in the repo. W01 transposition values were cross-checked against pvlib 0.16.1 (they match exactly). The notes' own pseudocode was then run and reproduces every B01 and W01 vector, including the seeded W01 statistical check.
 
 ## Follow-ups (open)
-- MLM Library: W01 transposition (D-20's no-clamp and `G_reflected = 0` stay), D-23 (B01 limits, if B01-1 (a) is approved); emit the KG-CR-10 monitoring fields in ModelSpecs; re-pin to this branch once merged.
+- MLM Library: W01 transposition and the Kasten & Czeplak clear-sky factor (D-20's no-clamp and `G_reflected = 0` stay), D-23 (B01 power limiting, B01-1 (a)); emit the KG-CR-10 monitoring fields in ModelSpecs; re-pin to this branch once merged.
 - W08: state its azimuth convention (W01 assumes 180° = south, as DS-PV).
-- MLM SPECS2 §5.4 and ML-KG-04's status sentence: add B01 and W01 once they are specified.
+- MLM SPECS2 §5.4 and ML-KG-04's status sentence: add B01 and W01 (now specified).
+- W20: W-W20-KCLOUD still says k_cloud = 0.11 "same as W01, Perez model"; align with W01-2 (outside this sprint's scope).
 
 ---
 
