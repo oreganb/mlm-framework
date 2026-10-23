@@ -10,7 +10,7 @@
 
 The MLM (Multi-Layer Modelling) framework is a four-layer, thirteen-series architecture for unified energy system modelling, developed by the [Energy Informatics Group (EIG)](https://www.tyndall.ie) at Tyndall National Institute / IERC, University College Cork.
 
-The framework organises 129 sub-models across four epistemically distinct layers:
+The framework organises 149 sub-models across four epistemically distinct layers:
 
 - **Deterministic layer** — physical laws, RC thermal models, power flow, engineering constraints
 - **Stochastic layer** — probabilistic forecasting for weather, occupancy, and market conditions
@@ -41,7 +41,7 @@ mlm-framework/
 │
 ├── catalogue/
 │   ├── series/                      ← one .md per series (W, O, M, L, R, T, B, G, C, D, P, K, F)
-│   └── submodels/                   ← 129 JSON schema files (inputs, outputs, validation rules)
+│   └── submodels/                   ← 149 JSON schema files (inputs, outputs, validation rules)
 │
 ├── knowledge_graph/
 │   ├── mlm_v7.ttl                   ← OWL 2 Turtle export (339 nodes, 1,993 edges)
@@ -78,7 +78,7 @@ mlm-framework/
 | K | Carbon, Compliance & Policy | Q-Learning/RL | CO₂_avoided = (E_ref − E_use) × EF_marginal |
 | F | Meta-Learning, Transfer & Privacy | AI/ML | θ_global = (1/N) · Σᵢ θᵢ [FedAvg] |
 
-**Total sub-models: 129** (W: 20, O: 15, M: 12, L: 13, R: 10, T: 20, B: 10, G: 12, C: 10, D: 8, P: 8, K: 5, F: 6)
+**Total sub-models: 149** (W: 20, O: 15, M: 12, L: 13, R: 10, T: 20, B: 10, G: 12, C: 10, D: 8, P: 8, K: 5, F: 6)
 
 Execution order per 15-minute settlement period: `D → W → O → M → L → R → T → B → G → C → P → K → F`
 
@@ -150,7 +150,7 @@ The full 5,000-building dataset is not distributed here due to size. Summary sta
 
 The MLM Knowledge Graph (KG) is a 339-node, 1,993-edge semantic network connecting every component of the framework.
 
-**Node types:** Model Series (13), Sub-Models (129), Datasets (47), Concepts (62), EU Directives and National Regulations (23), Deployment Artefacts (18), Publications (27), Platform Components (20)
+**Node types:** Model Series (13), Sub-Models (149), Datasets (47), Concepts (62), EU Directives and National Regulations (23), Deployment Artefacts (18), Publications (27), Platform Components (20)
 
 **Edge types:** FEEDS, VALIDATES, IMPLEMENTS, REFERENCES, COMPLIES_WITH, EXTENDS
 

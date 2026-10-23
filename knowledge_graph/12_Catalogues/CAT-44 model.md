@@ -34,7 +34,7 @@ aliases: ["EIG-CAT-044", "Catalogue 44", "model"]
 
 The **Model Catalogue** is the single register of all MLM models: every analytic, simulation, forecasting, learning, and control model in the framework — the full MLM/FLEXGPT cognitive stack. A **model definition** (`EIG-MDL-*`) declares identity, layer, series, inputs (feature sets, 41), outputs (variables, 38), execution frequency, assumptions, dependencies, validation obligations (47), and lifecycle status. A **model release** (`EIG-MDL-*@semver`) is a trained/parameterised, immutable, deployable artefact of a definition with full lineage metadata (39 EIG-MET-STD-MDL).
 
-The register is organised by the **four-layer MLM cognitive stack** and **thirteen series**; the 139 sub-models of the MLM/FLEXGPT framework map onto this register exhaustively (V10). No model executes in any pipeline, dashboard, twin, or decision path unless registered here (A1).
+The register is organised by the **four-layer MLM cognitive stack** and **thirteen series**; the 149 sub-models of the MLM/FLEXGPT framework map onto this register exhaustively (V10). No model executes in any pipeline, dashboard, twin, or decision path unless registered here (A1).
 
 ## 2. Scope
 
@@ -55,7 +55,7 @@ The register is organised by the **four-layer MLM cognitive stack** and **thirte
 
 Layer discipline: L1 outputs may feed any layer; L4 consumes L1–L3 outputs as state; cross-layer hybrid models declare a primary layer plus `hybridLayers`.
 
-### 3.2 Model series (`EIG-MDL-SER-*`) — thirteen series, 139 sub-models
+### 3.2 Model series (`EIG-MDL-SER-*`) — thirteen series, 149 sub-models
 
 | Series | Name | Layers | Sub-models | Representative sub-models |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ Layer discipline: L1 outputs may feed any layer; L4 consumes L1–L3 outputs as 
 | SER-12 | Optimisation & scheduling | L1/L3 | 9 | MILP dispatch, schedule optimiser, retrofit option ranking, portfolio bid construction |
 | SER-13 | RL control & trading agents | L4 | 8 | zone-control Q-learning, HP dispatch DQN, bidding agent, contextual-bandit model selector (70 hook) |
 
-Σ = 139. The sub-model register (machine table, one row per sub-model with definitionID) is normative; series totals change only by catalogue version bump (V10).
+Σ = 149 (MLM SPECS2 ML-KG-01; 149 model notes in the KG). *The per-series counts in this table sum to 139 and use this catalogue's SER taxonomy, not the 13 KG series (W, T, O, …); they must be re-mapped to the 149-note register (open).* The sub-model register (machine table, one row per sub-model with definitionID) is normative; series totals change only by catalogue version bump (V10).
 
 ### 3.3 Execution profiles (`executionProfile`)
 
@@ -93,7 +93,7 @@ DRAFT → CANDIDATE (validation 47 running) → ACTIVE (promoted) → DEPRECATED
 ```
 Layer (MLM-L1..L4)
   └── Series (EIG-MDL-SER-01..13)
-        └── Model definition (EIG-MDL-*)          ← sub-model of the 139 register
+        └── Model definition (EIG-MDL-*)          ← sub-model of the 149 register
               └── Release (@MAJOR.MINOR.PATCH)    ← immutable trained artefact
                     └── Deployment binding        ← →31 platform / →35 edge (EIG-EDGE-DEP-*)
 ```
@@ -173,7 +173,7 @@ layer (§3.1), series register (§3.2 — closed; sub-model additions are MINOR 
 - **V7:** decisionCoupling=automated_within_envelope requires: envelope refs resolvable (30/11), comfort floors (29 A7), override honoured (29 A4), and 47 closed-loop validation evidence.
 - **V8:** model card present and current (regenerated per release).
 - **V9:** DEPRECATED definitions cannot receive new deployments; RETIRED releases blocked from execution but retained ≥7 y where settlement/RD-cited.
-- **V10:** sub-model census: Σ definitions per series equals the §3.2 register (139 total); drift ⇒ catalogue version bump with register update.
+- **V10:** sub-model census: Σ definitions per series equals the §3.2 register (149 total); drift ⇒ catalogue version bump with register update.
 
 ## 9. Relationships to Other Catalogues
 
@@ -193,7 +193,7 @@ layer (§3.1), series register (§3.2 — closed; sub-model additions are MINOR 
 | 01 | applicability matrix slices |
 
 ## 10. Benchmarking Requirements
-Every ACTIVE forecasting/estimation definition holds a current 51 entry vs declared baselines (persistence, climatology, prior release); re-releases must not regress beyond tolerance (51 gates). Census KPI: register coverage 139/139, % ACTIVE with passing validation ≤90 d old.
+Every ACTIVE forecasting/estimation definition holds a current 51 entry vs declared baselines (persistence, climatology, prior release); re-releases must not regress beyond tolerance (51 gates). Census KPI: register coverage 149/149, % ACTIVE with passing validation ≤90 d old.
 
 ## 11. Dataset Requirements
 Releases cite RELEASED datasets only (43 §13); training-data quality envelopes recorded (40 §13); drift monitors compare live vs training distributions.
@@ -202,7 +202,7 @@ Releases cite RELEASED datasets only (43 §13); training-data quality envelopes 
 All inputs via EIG-FT-SET contracts; new feature needs route through 41 registration, never inline (41 A1).
 
 ## 13. Model Requirements
-(Self) — the 139-sub-model register is the normative census; every MLM/FLEXGPT sub-model has exactly one definition row; hybrids declare layers honestly; paper-facing descriptions ("A Multi-Layered Machine Learning Architecture…") cite register IDs.
+(Self) — the 149-sub-model register is the normative census; every MLM/FLEXGPT sub-model has exactly one definition row; hybrids declare layers honestly; paper-facing descriptions ("A Multi-Layered Machine Learning Architecture…") cite register IDs.
 
 ## 14. KPI Requirements
 Model-health KPIs (57): accuracy vs obligation thresholds, drift incidents, assumption violations, availability of EX-ON services. KPI computation uses registered output variables only.
@@ -226,7 +226,7 @@ Twin templates (33) declare required model sets per fidelity class (e.g. F3 resi
 Owner: EIG AI/ML Lead. Series stewardship may be delegated per domain. Promotion approvals follow SoD; automated-coupling promotions additionally reviewed by the platform owner (31). Register census audited quarterly (V10).
 
 ## 21. Versioning
-Definitions semver (MAJOR: input/output contract or purpose change; MINOR: assumption/applicability change; PATCH: documentation). Releases immutable. Catalogue 1.0.0 fixes the 13×139 register.
+Definitions semver (MAJOR: input/output contract or purpose change; MINOR: assumption/applicability change; PATCH: documentation). Releases immutable. Catalogue 1.0.0 fixes the 13×149 register.
 
 ## 22. Example Records
 
@@ -248,4 +248,4 @@ Definitions semver (MAJOR: input/output contract or purpose change; MINOR: assum
 - consumers: SER-06 envelope, SER-07 thermal-shed RD estimator, 32 F3 twin gates
 
 ## 23. Completion Criteria
-☑ Four-layer stack + thirteen-series register with 139 sub-model census (V10) ☑ Definition/release split with immutability + lineage ☑ Input/output contracts bound to 41/38 registers ☑ Promotion gates (47/39/51, SoD) ☑ Dependency-graph notifications ☑ RD evidence bar ☑ Edge/sandbox discipline ☑ Examples resolve EIG-MDL-FLEXENV-01@1.4.2, EIG-MDL-LOADFC-RES-01, EIG-MDL-SPEC-THERM-R2C2, EIG-MDL-CAL-RES-01 refs from 32/33/39/41/43.
+☑ Four-layer stack + thirteen-series register with 149 sub-model census (V10) ☑ Definition/release split with immutability + lineage ☑ Input/output contracts bound to 41/38 registers ☑ Promotion gates (47/39/51, SoD) ☑ Dependency-graph notifications ☑ RD evidence bar ☑ Edge/sandbox discipline ☑ Examples resolve EIG-MDL-FLEXENV-01@1.4.2, EIG-MDL-LOADFC-RES-01, EIG-MDL-SPEC-THERM-R2C2, EIG-MDL-CAL-RES-01 refs from 32/33/39/41/43.

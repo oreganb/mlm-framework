@@ -6,7 +6,7 @@ tags: [mlm, index, all-models]
 aliases: [Model Index, MLM Index]
 ---
 
-# MLM Model Index — All 139 Sub-Models
+# MLM Model Index — All 149 Sub-Models
 
 This index ensures all model wikilinks resolve correctly in Obsidian.
 Every model ID links to its file in 02_Models/.
@@ -67,6 +67,6 @@ Every model ID links to its file in 02_Models/.
 [[02_Models/F_Models/F01|F01]] · [[02_Models/F_Models/F02|F02]] · [[02_Models/F_Models/F03|F03]] · [[02_Models/F_Models/F04|F04]] · [[02_Models/F_Models/F05|F05]] · [[02_Models/F_Models/F06|F06]]
 
 ---
-Total: **139 sub-models** across **13 series** and **4 cognitive layers**
+Total: **149 sub-models** across **13 series** and **4 cognitive layers**
 
 See [[MLM Knowledge Graph]] for full architecture.

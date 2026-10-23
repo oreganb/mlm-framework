@@ -39,7 +39,7 @@
 | Type | Count |
 |------|-------|
 | Model Series | 13 |
-| Sub-Models | 129 |
+| Sub-Models | 149 |
 | Datasets | 47 |
 | Concepts | 62 |
 | EU Directives and National Regulations | 23 |
@@ -47,6 +47,8 @@
 | Publications | 27 |
 | Platform Components | 20 |
 | **Total** | **339** |
+
+*Model count corrected from 129 to 149 (MLM SPECS2 ML-KG-01, 2026-10-23). The other rows of this table do not reconcile with the v7 export, which has 339 nodes typed as Model 149, Catalogue 94, Asset 23, Dataset 21, FormulaFamily 13, Series 13, CatalogueBand 12, DatasetFamily 5, Layer 4, Application 3, KnowledgeGraph 1, ResponseDerivative 1; they are not corrected here.*
 
 ---
 

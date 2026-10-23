@@ -180,7 +180,7 @@ Feature tables materialised for release ship as L3 entities (38) inside datasets
 (Self) — register completeness: every model input in 44 resolves to an ACTIVE EIG-FT; no orphan formulas.
 
 ## 13. Model Requirements
-Models declare input contracts as EIG-FT-SET refs; retraining against a changed set hash ⇒ new model version (44/50). MLM/FLEXGPT sub-models (139) map their inputs onto this register — series-level shared sets encouraged.
+Models declare input contracts as EIG-FT-SET refs; retraining against a changed set hash ⇒ new model version (44/50). MLM/FLEXGPT sub-models (149) map their inputs onto this register — series-level shared sets encouraged.
 
 ## 14. KPI Requirements
 KPI formulas (57) that reuse engineered quantities reference EIG-FT IDs to guarantee identical computation between dashboards (75) and models.

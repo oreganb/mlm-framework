@@ -1,11 +1,11 @@
 # MLM Knowledge Graph — v7
 
-**End-to-end knowledge graph: 339 nodes, 1993 edges.** Merges the MLM model layer (139 sub-models, datasets, assets, formulas, Response Derivative map, applications) with the 94 EIG MLM specification catalogues into one connected graph.
+**End-to-end knowledge graph: 339 nodes, 1993 edges.** Merges the MLM model layer (149 sub-models, datasets, assets, formulas, Response Derivative map, applications) with the 94 EIG MLM specification catalogues into one connected graph.
 
 ## Start here
 1. `MLM Knowledge Graph v7.md` — root navigation (read this first)
 2. `12_Catalogues/00_Catalogue_Index.md` — the 94 catalogues by domain band
-3. `00_Model_Index.md` — the 139 models by series
+3. `00_Model_Index.md` — the 149 models by series
 4. `08_Response_Derivative/Response Derivative Map v4.md` — RD theory, now bridged to CAT-52..56
 5. `99_Exports/mlm_kg_v7.json` — the full merged graph
 
@@ -31,7 +31,7 @@ Generated 2026-05-13. **233 nodes, 1076 edges** across model, series, dataset, a
 
 | Layer | v2 | v3 | v4 |
 |---|---|---|---|
-| Model nodes (139) | Deep: LaTeX, weights, input/output tables | Generic template | Deep + semantic role + validation |
+| Model nodes (149) | Deep: LaTeX, weights, input/output tables | Generic template | Deep + semantic role + validation |
 | Formula nodes | Inline in model nodes | 13 series-level stubs | Both: inline detail + series families |
 | Weight Registry | Full coefficients (0.295, 0.95, etc.) | Semantic types only | Full coefficients + semantic types |
 | Dataset nodes | 19 specific datasets (DS-WEATHER etc.) | 5 families only | 19 specific + 5 families |
@@ -43,7 +43,7 @@ Generated 2026-05-13. **233 nodes, 1076 edges** across model, series, dataset, a
 
 ## Start here
 1. `MLM Knowledge Graph v4.md` — root navigation
-2. `00_Model_Index.md` — all 139 models with folder paths
+2. `00_Model_Index.md` — all 149 models with folder paths
 3. `08_Response_Derivative/Response Derivative Map v4.md` — RD theory and governance
 
 ## Machine-readable
