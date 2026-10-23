@@ -9,7 +9,7 @@ aliases: [MLM Knowledge Graph v7, MLM v7]
 
 # MLM Knowledge Graph — v7 (end-to-end)
 
-Generated 2026-06-18. **339 nodes, 1968 edges** — a single connected graph spanning the **model layer** (139 sub-models in 13 series, datasets, assets, formulas, the Response Derivative map and applications) and the **specification layer** (the 94 EIG MLM catalogues), bridged so that every model series resolves to the catalogues that govern it and the Response Derivative map resolves to the RD-family catalogues that specify it.
+Generated 2026-06-18. **339 nodes, 1968 edges** — a single connected graph spanning the **model layer** (149 sub-models in 13 series, datasets, assets, formulas, the Response Derivative map and applications) and the **specification layer** (the 94 EIG MLM catalogues), bridged so that every model series resolves to the catalogues that govern it and the Response Derivative map resolves to the RD-family catalogues that specify it.
 
 ## What v7 adds over v4
 
@@ -24,7 +24,7 @@ Generated 2026-06-18. **339 nodes, 1968 edges** — a single connected graph spa
 
 ## Start here
 1. **[[00_Catalogue_Index]]** — the 94 catalogues by domain band (in `12_Catalogues/`)
-2. [[00_Model_Index]] — the 139 models by series
+2. [[00_Model_Index]] — the 149 models by series
 3. [[Response Derivative Map v4]] — RD theory; now linked to [[CAT-52 response_derivative]]
 4. `99_Exports/mlm_kg_v7.json` — the full merged graph
 

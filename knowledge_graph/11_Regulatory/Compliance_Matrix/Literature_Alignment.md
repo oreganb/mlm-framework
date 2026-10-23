@@ -18,7 +18,7 @@ Maps every formula coefficient in the Weight Registry to its peer-reviewed or au
 | W-R01-TNOCT | 45 °C | Nominal Operating Cell Temp | IEC 61215 | IEC 61215-2:2021 Test conditions |
 | W-R01-ETA | 0.20 | STC panel efficiency | IEA PVPS | IEA PVPS Task 1, 2023 Snapshot |
 | W-R01-ETAINV | 0.96 | Inverter efficiency | Manufacturer data | Fronius/SMA datasheet consensus |
-| W-W01-KCLOUD | 0.11 | Cloud attenuation | Perez et al. 1990 | Perez R. et al. (1990) Solar Energy 44(5) |
+| W-W01-KCA, W-W01-KCB | 0.75, 3.4 | Cloud attenuation, clear-sky mode only (replaces k_cloud = 0.11; owner decision W01-2) | Kasten & Czeplak 1980 | Kasten F., Czeplak G. (1980) Solar Energy 24(2), 177–189. https://doi.org/10.1016/0038-092X(80)90391-6 |
 | W-B01-ETCH | 0.95 | Charge efficiency | IEC 62619 | IEC 62619:2022 §6.3 |
 | W-B01-SOCMIN | 0.10 | Min SoC | Battery manufacturer spec | Degradation studies: Barré et al. (2013) J. Power Sources |
 | W-B02-ARRH | 6000 K | Arrhenius E_a/R | Bernardi et al. 2002 | Bernardi et al. (2002) J. Electrochem. Soc. 149(5) |
