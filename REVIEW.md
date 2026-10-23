@@ -79,7 +79,7 @@ All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitorin
 - MLM Library: W01 transposition and the Kasten & Czeplak clear-sky factor (D-20's no-clamp and `G_reflected = 0` stay), D-23 (B01 power limiting, B01-1 (a)); emit the KG-CR-10 monitoring fields in ModelSpecs; re-pin to this branch once merged.
 - W08: state its azimuth convention (W01 assumes 180° = south, as DS-PV).
 - MLM SPECS2 §5.4 and ML-KG-04's status sentence: add B01 and W01 (now specified).
-- W20: W-W20-KCLOUD still says k_cloud = 0.11 "same as W01, Perez model"; align with W01-2 (outside this sprint's scope).
+- W20: cloud factor aligned with W01-2 (Kasten & Czeplak) on branch `kg-w20-cloud`. Still open in W20: the output is named PV_avail_fraction (0–1) but the formula gives W/m²·η, and the input `clear_sky_estimate` is not a W01 output.
 
 ---
 
