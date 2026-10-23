@@ -1,3 +1,84 @@
+# KG sprint 2 — review checklist
+
+Branch `kg-sprint-2`, 2026-10-23. MLM SPECS2 V2R5: ML-KG-04 (B01, W01), KG-CR-07 to KG-CR-10, ML-KG-01. One commit per item. Nothing pushed; the MLM Library is untouched.
+
+**How to use.** Tick *Approve* or *Reject* per item, and per owner decision where you disagree. To reject an item: `git revert <commit>`. B01 and W01 are `status: draft-for-review`; I set them to `specified` only after you approve them.
+
+## Owner decision recorded this sprint
+
+| # | Decision | Applied in |
+|---|---|---|
+| 8 | **SG-W01-2: W01 clips ensemble members at 0** (consistent with W14). Owner instruction of 2026-10-23, confirmed when asked; **supersedes OD-113** ("members not clamped", library D-20). So KG-CR-09's W01 wording "ensemble not clamped" no longer applies, and library D-20 must change | W01 `b896f84` |
+
+---
+
+## B01 — Battery SoC Prediction (ML-KG-04 review) · `6e5b4b2`
+☐ Approve ☐ Reject
+
+**Found.** The note had formula, pseudocode, inputs, outputs and parameters, but no method, RD role, validity limits, test vectors or references. Three content problems: (1) SoC was clipped *after* the step, so energy disappears silently: a 4000 W charge into a 0.88-SoC battery is reported as delivered while only 842 W fits (TV-B01-4b); (2) the LSTM correction had no training target and fed back into the state, where it would accumulate; (3) the RD text "10 % SoC ≈ E_nom × 0.10/Δt W" omitted η_dis.
+**Changed.** Physics path, efficiencies and limits unchanged. Added the power-limiting rule with applied powers and a `limited` flag as outputs; the correction is trained on SoC_BMS − SoC_phys and applied to the reported SoC only, with the state re-anchored to the BMS; RD corrected to η_dis·E_nom/Δt = 38 000 W per unit SoC (matches C01 TV-C01-4). Method, RD role, validity limits, 12 test vectors, references.
+**Owner decisions.**
+1. **B01-1 SoC limits:** (a) *recommended* limit the power before the step and report it (energy conserved); (b) the literal clip after the step (library D-23 today).
+2. **B01-2 state:** physics state re-anchored to the BMS; the correction applies to the reported SoC only.
+3. **B01-3:** simultaneous charge and discharge is refused (error), not netted.
+4. **B01-4 LSTM:** one layer, 32 units, MSE on the residual, ≥ 30 days of BMS data, retrained by F01; correction = 0 until trained.
+**Library impact.** D-23 (clip after the step) changes if B01-1 (a) is approved.
+**Sources.** Ng et al. 2009; Hochreiter & Schmidhuber 1997; Chemali et al. 2018; IEC 62619 (by designation, not checked against a copy).
+
+---
+
+## W01 — Solar Irradiance (ML-KG-04 review; SG-W01-1, SG-W01-2) · `b896f84`
+☐ Approve ☐ Reject
+
+**Found.** The formula $G_{DNI}\cos\theta_z + G_{DHI}$ is horizontal irradiance, not plane-of-array; `G_reflected` was never defined (SG-W01-1). Members could be negative (SG-W01-2). k_cloud = 0.11 was attributed to Perez et al. (1990), which is a transposition model, not a cloud attenuation law; and applying a cloud factor to NWP irradiance counts cloud twice, because NWP irradiance is all-sky.
+**Changed.** Isotropic-sky transposition (angle of incidence from tilt and azimuth, sky-diffuse view factor, ground-reflected term), which reduces exactly to the old formula at β = 0. `G_reflected` = ρ_g·GHI·(1 − cos β)/2, with ρ_g = 0 by default (OD-112). Members clipped at 0 (decision 8); quantiles by type 7 from the clipped members; night gives zero. New inputs: solar azimuth (W08 `theta_az`), array tilt and azimuth (DS-PV, as R01). Method, RD role, validity limits, 9 test vectors (TV-W01-1 to -4 also reproduced exactly by pvlib 0.16.1), references.
+**Owner decisions.**
+1. **W01-1 albedo:** ρ_g = 0 (*recommended*, as OD-112) or 0.2 (adds 1.3 % at β = 35°, TV-W01-3).
+2. **W01-2 cloud factor:** (a) *recommended* apply k_cloud only to clear-sky input, never to all-sky NWP irradiance; (b) always apply it (the old note). If clear-sky mode is used, Kasten & Czeplak (1980) is a sourced law in place of the unsourced 0.11.
+**Library impact.** D-20 changes: clip at 0 (decision 8), and transposition instead of horizontal irradiance. W01 now needs `theta_az` from W08, whose note does not state its azimuth convention.
+**Sources.** Liu & Jordan 1960, 1963; Duffie & Beckman 2013; Perez et al. 1990; Loutzenhiser et al. 2007; Kasten & Czeplak 1980; Hyndman & Fan 1996.
+
+---
+
+## KG-CR-07 — M09 outputs P_ETS · `c92fd1e`
+☐ Approve ☐ Reject
+
+M09 now lists `P_ETS[k]` (EUR/tCO₂, median and quantiles) as an output to C03 → C01 (`p_CO2` = `P_ETS`/1000). The AI Context line saying ETS "does not directly enter C01" is corrected. C01's SG-C01-8 dependency sentence now says the output exists. The rest of M09 is still a generic template (not RD-path; ML-KG-04 not attempted).
+
+## KG-CR-08 — T01 clamp line removed · `e8c4b11`
+☐ Approve ☐ Reject
+
+The line "T_in[k+1] clamp applied before returning" is replaced by the D-22 rule: T_in is returned unclamped and `comfort_ok` is reported (OD-107). The neighbouring line "T_in must stay within [T_min, T_max] at all times" implied a clamp too, so it now says that keeping the band is C01's job. AI Context updated to match. This closes SG-T01-1.
+
+## KG-CR-09 — P07, C08 (and W01) · `cb35711`, `9b12412`
+☐ Approve ☐ Reject
+
+- **P07:** RD-7 tolerance = 1 % of the median |d_i| over the window (OD-110); RD-10 = 1 − Var(RD_i)/mean(RD_i²), in [0, 1] (OD-111); 3 new test vectors (TV-P07-8 to -10). SG-KPI-7 and SG-KPI-10 closed.
+- **C08:** SG-C08-3 closed (confidence stays caller-supplied; the six notes' own confidence outputs are used, OD-108). SG-C08-6 closed (RDObject checks the nine §7.2 fields; the 11-field check is dropped, OD-120).
+- **W01:** `G_reflected = 0` applied (OD-112). "Ensemble not clamped" (OD-113) is **not** applied, per decision 8.
+
+## KG-CR-10 — DOPAMINE monitoring sections · `d146d3c`
+☐ Approve ☐ Reject
+
+All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitoring (DOPAMINE)" section: monitored quantities and metrics, regimes, and the FLEXUS O-08 ladder (≥ 0.80 → 0; 0.60–0.79 → 1; 0.40–0.59 → 2; < 0.40, quarantine or retraining → 3) on the note's own confidence or the caller-supplied one. **Proposal for you to check:** the per-series regimes (W, R: weather regime; O: occupancy class; T: weather × occupancy; B, P: tariff period; C: tariff × weather; D: weather regime), because OD-114 fixed the thresholds but not the regimes. Weather regimes fall back to season × clear/overcast until W10/W18 define classes (KG-CR-02). The 17 specified notes keep `status: specified`, because OD-114 decided the change.
+
+## ML-KG-01 — model count 149 · `c387fcd`
+☐ Approve ☐ Reject
+
+129/139 corrected to 149 in the seven documents: README.md, `mlm_v7_summary.md`, `knowledge_graph/README.md`, `00_Model_Index.md`, `MLM Knowledge Graph v7.md`, CAT-41, CAT-44 (149 notes counted in `02_Models`; README's series breakdown already summed to 149). Two things are flagged in the text rather than fixed: CAT-44 §3.2's per-series table uses the catalogue's own SER taxonomy and still sums to 139; the summary's other node-type rows do not match the v7 export. Still outside the seven: `MLM Knowledge Graph.md` and `MLM Knowledge Graph v4.md` state the old counts, the demo's deployment JSON is not in this repo, and the exporter count check (second half of ML-KG-01) is not implemented.
+
+## Verification
+- **DOIs.** All 10 DOIs in B01 and W01 were re-resolved after the last edit (each redirects, 302). Title, authors, journal, volume and pages were checked against Crossref.
+- **Test vectors** were produced by independent scratch scripts (Python 3, numpy 2.5.2, scipy 1.18.0), not by the MLM Library; the scripts are not in the repo. W01 transposition values were cross-checked against pvlib 0.16.1 (they match exactly). The notes' own pseudocode was then run and reproduces every B01 and W01 vector, including the seeded W01 statistical check.
+
+## Follow-ups (open)
+- MLM Library: D-20 (W01 clip and transposition), D-23 (B01 limits, if B01-1 (a) is approved); emit the KG-CR-10 monitoring fields in ModelSpecs; re-pin to this branch once merged.
+- W08: state its azimuth convention (W01 assumes 180° = south, as DS-PV).
+- OWNER_DECISIONS.md and TRACKING.md (outside this repo) still record OD-113 as "not clamped"; update them for decision 8.
+- MLM SPECS2 §5.4 and ML-KG-04's status sentence: add B01 and W01 once they are specified.
+
+---
+
 # KG sprint 1 — review checklist
 
 Branch `kg-sprint-1`, 2026-10-23. MLM SPECS2 LO-10, SG-KG-1.
