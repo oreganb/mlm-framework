@@ -4,11 +4,11 @@ Branch `kg-sprint-2`, 2026-10-23. MLM SPECS2 V2R5: ML-KG-04 (B01, W01), KG-CR-07
 
 **How to use.** Tick *Approve* or *Reject* per item, and per owner decision where you disagree. To reject an item: `git revert <commit>`. B01 and W01 are `status: draft-for-review`; I set them to `specified` only after you approve them.
 
-## Owner decision recorded this sprint
+## Owner decisions this sprint
 
 | # | Decision | Applied in |
 |---|---|---|
-| 8 | **SG-W01-2: W01 clips ensemble members at 0** (consistent with W14). Owner instruction of 2026-10-23, confirmed when asked; **supersedes OD-113** ("members not clamped", library D-20). So KG-CR-09's W01 wording "ensemble not clamped" no longer applies, and library D-20 must change | W01 `b896f84` |
+| — | **SG-W01-2: OD-113 stands.** W01 ensemble members are **not** clamped; W14 clips its own G_POA at 0; library D-20 unchanged. `b896f84` first applied a clip at 0. That followed the answer recorded to my question during the sprint and the brief's wording; the owner corrected it on 2026-10-23 and `e555fec` reverts W01 to OD-113 | W01 `b896f84`, `e555fec` |
 
 ---
 
@@ -27,15 +27,15 @@ Branch `kg-sprint-2`, 2026-10-23. MLM SPECS2 V2R5: ML-KG-04 (B01, W01), KG-CR-07
 
 ---
 
-## W01 — Solar Irradiance (ML-KG-04 review; SG-W01-1, SG-W01-2) · `b896f84`
+## W01 — Solar Irradiance (ML-KG-04 review; SG-W01-1, SG-W01-2) · `b896f84`, `e555fec`
 ☐ Approve ☐ Reject
 
 **Found.** The formula $G_{DNI}\cos\theta_z + G_{DHI}$ is horizontal irradiance, not plane-of-array; `G_reflected` was never defined (SG-W01-1). Members could be negative (SG-W01-2). k_cloud = 0.11 was attributed to Perez et al. (1990), which is a transposition model, not a cloud attenuation law; and applying a cloud factor to NWP irradiance counts cloud twice, because NWP irradiance is all-sky.
-**Changed.** Isotropic-sky transposition (angle of incidence from tilt and azimuth, sky-diffuse view factor, ground-reflected term), which reduces exactly to the old formula at β = 0. `G_reflected` = ρ_g·GHI·(1 − cos β)/2, with ρ_g = 0 by default (OD-112). Members clipped at 0 (decision 8); quantiles by type 7 from the clipped members; night gives zero. New inputs: solar azimuth (W08 `theta_az`), array tilt and azimuth (DS-PV, as R01). Method, RD role, validity limits, 9 test vectors (TV-W01-1 to -4 also reproduced exactly by pvlib 0.16.1), references.
+**Changed.** Isotropic-sky transposition (angle of incidence from tilt and azimuth, sky-diffuse view factor, ground-reflected term), which reduces exactly to the old formula at β = 0. `G_reflected` = ρ_g·GHI·(1 − cos β)/2, with ρ_g = 0 by default (OD-112). Members not clamped (OD-113), and the note now says so; quantiles by type 7 from the raw members; G_POA_det = 0 at night. New inputs: solar azimuth (W08 `theta_az`), array tilt and azimuth (DS-PV, as R01). Method, RD role, validity limits, 9 test vectors (TV-W01-1 to -4 also reproduced exactly by pvlib 0.16.1), references.
 **Owner decisions.**
 1. **W01-1 albedo:** ρ_g = 0 (*recommended*, as OD-112) or 0.2 (adds 1.3 % at β = 35°, TV-W01-3).
 2. **W01-2 cloud factor:** (a) *recommended* apply k_cloud only to clear-sky input, never to all-sky NWP irradiance; (b) always apply it (the old note). If clear-sky mode is used, Kasten & Czeplak (1980) is a sourced law in place of the unsourced 0.11.
-**Library impact.** D-20 changes: clip at 0 (decision 8), and transposition instead of horizontal irradiance. W01 now needs `theta_az` from W08, whose note does not state its azimuth convention.
+**Library impact.** D-20's clamp rule (none) and `G_reflected = 0` are unchanged. The transposition is new, though: the library computes horizontal irradiance, so it matches the note only for β = 0 (TV-W01-1) until it adds the transposition. W01 now needs `theta_az` from W08, whose note does not state its azimuth convention.
 **Sources.** Liu & Jordan 1960, 1963; Duffie & Beckman 2013; Perez et al. 1990; Loutzenhiser et al. 2007; Kasten & Czeplak 1980; Hyndman & Fan 1996.
 
 ---
@@ -55,7 +55,7 @@ The line "T_in[k+1] clamp applied before returning" is replaced by the D-22 rule
 
 - **P07:** RD-7 tolerance = 1 % of the median |d_i| over the window (OD-110); RD-10 = 1 − Var(RD_i)/mean(RD_i²), in [0, 1] (OD-111); 3 new test vectors (TV-P07-8 to -10). SG-KPI-7 and SG-KPI-10 closed.
 - **C08:** SG-C08-3 closed (confidence stays caller-supplied; the six notes' own confidence outputs are used, OD-108). SG-C08-6 closed (RDObject checks the nine §7.2 fields; the 11-field check is dropped, OD-120).
-- **W01:** `G_reflected = 0` applied (OD-112). "Ensemble not clamped" (OD-113) is **not** applied, per decision 8.
+- **W01:** `G_reflected = 0` (OD-112) and ensemble not clamped (OD-113), both applied.
 
 ## KG-CR-10 — DOPAMINE monitoring sections · `d146d3c`
 ☐ Approve ☐ Reject
@@ -72,9 +72,8 @@ All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitorin
 - **Test vectors** were produced by independent scratch scripts (Python 3, numpy 2.5.2, scipy 1.18.0), not by the MLM Library; the scripts are not in the repo. W01 transposition values were cross-checked against pvlib 0.16.1 (they match exactly). The notes' own pseudocode was then run and reproduces every B01 and W01 vector, including the seeded W01 statistical check.
 
 ## Follow-ups (open)
-- MLM Library: D-20 (W01 clip and transposition), D-23 (B01 limits, if B01-1 (a) is approved); emit the KG-CR-10 monitoring fields in ModelSpecs; re-pin to this branch once merged.
+- MLM Library: W01 transposition (D-20's no-clamp and `G_reflected = 0` stay), D-23 (B01 limits, if B01-1 (a) is approved); emit the KG-CR-10 monitoring fields in ModelSpecs; re-pin to this branch once merged.
 - W08: state its azimuth convention (W01 assumes 180° = south, as DS-PV).
-- OWNER_DECISIONS.md and TRACKING.md (outside this repo) still record OD-113 as "not clamped"; update them for decision 8.
 - MLM SPECS2 §5.4 and ML-KG-04's status sentence: add B01 and W01 once they are specified.
 
 ---
