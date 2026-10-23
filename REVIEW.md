@@ -15,7 +15,7 @@ Branch `kg-sprint-1`, 2026-10-23. MLM SPECS2 LO-10, SG-KG-1.
 | 7 | ISO 7730 quoted values marked "to verify against the standard" (owner to check a copy) | T10 `1f4f6cc` |
 | — | All other notes and owner decisions approved as drafted (the recommended option where a choice was offered) | status `b3d84a8` |
 
-**Status now:** C01, R01 and the 14 sprint notes are `status: specified` (`b3d84a8`). T01 was edited per decision 6 but was not part of the reviewed set, so it keeps `status: active`. T10 is specified with three values flagged "to verify against the standard".
+**Status now:** C01, R01 and the 14 sprint notes are `status: specified` (`b3d84a8`). T01 was edited per decision 6 and confirmed by the owner on 2026-10-23, so it is also `status: specified`. Its one open point is SG-T01-1: the Validation Checks line "T_in[k+1] clamp applied before returning" does not say what to clamp to (library D-22 reads it as no clamp, with `comfort_ok` reported instead). T10 is specified with three values flagged "to verify against the standard".
 
 **New gaps found while applying the decisions.**
 - `00_shared/registers/signal_types.csv` has no ramp column. The per-product ramp exists only in FLEXUS's product catalogue (FX-FLX-01). Until a ramp field is added, C10 applies the asset ramp alone.
@@ -202,5 +202,5 @@ One commit per note (16), plus this file. Nothing pushed.
 - Add a ramp field to `signal_types.csv`, or point C10 at the FLEXUS product catalogue.
 - Make the M09 note output its `P_ETS` forecast.
 - ISO 7730 values in T10: owner to verify against the standard.
-- T01: decide whether to take it through review to `specified`.
+- T01 SG-T01-1: define or remove the "clamp applied before returning" check (library D-22: no clamp, report `comfort_ok`).
 - SG-DOP-1 (monitored quantities, regimes and demotion thresholds per model) is not covered by ML-KG-04 and was not attempted.
