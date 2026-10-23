@@ -45,26 +45,26 @@ Decided 2026-10-23: W01-1 ρ_g = 0; W01-2 (a) with Kasten & Czeplak.
 ---
 
 ## KG-CR-07 — M09 outputs P_ETS · `c92fd1e`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23.
 
 M09 now lists `P_ETS[k]` (EUR/tCO₂, median and quantiles) as an output to C03 → C01 (`p_CO2` = `P_ETS`/1000). The AI Context line saying ETS "does not directly enter C01" is corrected. C01's SG-C01-8 dependency sentence now says the output exists. The rest of M09 is still a generic template (not RD-path; ML-KG-04 not attempted).
 
 ## KG-CR-08 — T01 clamp line removed · `e8c4b11`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23.
 
 The line "T_in[k+1] clamp applied before returning" is replaced by the D-22 rule: T_in is returned unclamped and `comfort_ok` is reported (OD-107). The neighbouring line "T_in must stay within [T_min, T_max] at all times" implied a clamp too, so it now says that keeping the band is C01's job. AI Context updated to match. This closes SG-T01-1.
 
 ## KG-CR-09 — P07, C08 (and W01) · `cb35711`, `9b12412`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23.
 
 - **P07:** RD-7 tolerance = 1 % of the median |d_i| over the window (OD-110); RD-10 = 1 − Var(RD_i)/mean(RD_i²), in [0, 1] (OD-111); 3 new test vectors (TV-P07-8 to -10). SG-KPI-7 and SG-KPI-10 closed.
 - **C08:** SG-C08-3 closed (confidence stays caller-supplied; the six notes' own confidence outputs are used, OD-108). SG-C08-6 closed (RDObject checks the nine §7.2 fields; the 11-field check is dropped, OD-120).
 - **W01:** `G_reflected = 0` (OD-112) and ensemble not clamped (OD-113), both applied.
 
 ## KG-CR-10 — DOPAMINE monitoring sections · `d146d3c`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23.
 
-All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitoring (DOPAMINE)" section: monitored quantities and metrics, regimes, and the FLEXUS O-08 ladder (≥ 0.80 → 0; 0.60–0.79 → 1; 0.40–0.59 → 2; < 0.40, quarantine or retraining → 3) on the note's own confidence or the caller-supplied one. **Proposal for you to check:** the per-series regimes (W, R: weather regime; O: occupancy class; T: weather × occupancy; B, P: tariff period; C: tariff × weather; D: weather regime), because OD-114 fixed the thresholds but not the regimes. Weather regimes fall back to season × clear/overcast until W10/W18 define classes (KG-CR-02). The 17 specified notes keep `status: specified`, because OD-114 decided the change.
+All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitoring (DOPAMINE)" section: monitored quantities and metrics, regimes, and the FLEXUS O-08 ladder (≥ 0.80 → 0; 0.60–0.79 → 1; 0.40–0.59 → 2; < 0.40, quarantine or retraining → 3) on the note's own confidence or the caller-supplied one. **Per-series regimes (approved with KG-CR-10, 2026-10-23):** (W, R: weather regime; O: occupancy class; T: weather × occupancy; B, P: tariff period; C: tariff × weather; D: weather regime), because OD-114 fixed the thresholds but not the regimes. Weather regimes fall back to season × clear/overcast until W10/W18 define classes (KG-CR-02). The 17 specified notes keep `status: specified`, because OD-114 decided the change.
 
 ## ML-KG-01 — model count 149 · `c387fcd`
 ☐ Approve ☐ Reject
