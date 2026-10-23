@@ -67,7 +67,7 @@ The line "T_in[k+1] clamp applied before returning" is replaced by the D-22 rule
 All 19 RD-path notes (the 17 specified notes plus B01 and W01) gain a "Monitoring (DOPAMINE)" section: monitored quantities and metrics, regimes, and the FLEXUS O-08 ladder (≥ 0.80 → 0; 0.60–0.79 → 1; 0.40–0.59 → 2; < 0.40, quarantine or retraining → 3) on the note's own confidence or the caller-supplied one. **Per-series regimes (approved with KG-CR-10, 2026-10-23):** (W, R: weather regime; O: occupancy class; T: weather × occupancy; B, P: tariff period; C: tariff × weather; D: weather regime), because OD-114 fixed the thresholds but not the regimes. Weather regimes fall back to season × clear/overcast until W10/W18 define classes (KG-CR-02). The 17 specified notes keep `status: specified`, because OD-114 decided the change.
 
 ## ML-KG-01 — model count 149 · `c387fcd`
-☐ Approve ☐ Reject
+☑ Approve ☐ Reject — owner, 2026-10-23.
 
 129/139 corrected to 149 in the seven documents: README.md, `mlm_v7_summary.md`, `knowledge_graph/README.md`, `00_Model_Index.md`, `MLM Knowledge Graph v7.md`, CAT-41, CAT-44 (149 notes counted in `02_Models`; README's series breakdown already summed to 149). Two things are flagged in the text rather than fixed: CAT-44 §3.2's per-series table uses the catalogue's own SER taxonomy and still sums to 139; the summary's other node-type rows do not match the v7 export. Still outside the seven: `MLM Knowledge Graph.md` and `MLM Knowledge Graph v4.md` state the old counts, the demo's deployment JSON is not in this repo, and the exporter count check (second half of ML-KG-01) is not implemented.
 
